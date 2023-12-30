@@ -1,0 +1,986 @@
+\documentclass[14pt]{article}\usepackage[utf8]{inputenc}
+\usepackage[paperwidth=210mm, paperheight=290mm, margin=1.65cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{arabtex}
+\usepackage{utf8}
+\setcode{utf8}
+\usepackage{kpfonts, baskervald}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{relsize}
+\usepackage{color}
+\usepackage{cancel}
+\usepackage{tikz}
+\usepackage{cases}
+\usepackage{showlabels}
+\usepackage{multicol}
+\usepackage[toc]{multitoc}
+\usetikzlibrary{arrows}
+\usepackage[shortlabels]{enumitem}
+\usepackage{varwidth}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{anyfontsize}
+\usepackage[symbol*]{footmisc}
+\usepackage[fontsize=13.2pt]{fontsize}
+\usepackage[hidelinks]{hyperref}
+\usepackage{array}
+\usepackage{cite}
+\usepackage{titling}
+
+
+\setlength{\droptitle}{-5em}
+
+\definecolor{bekgraun}{HTML}{28293D}
+
+\definecolor{teks}{HTML}{9B9BC1}
+
+\newcommand{\defeq}{\vcentcolon=}
+
+\newcommand{\eqdef}{=\vcentcolon}
+
+\newcommand{\garis} [3] []{
+	\begin{center}
+		\begin{tikzpicture}
+			\draw[#2-#3, ultra thick, #1] (0,0) to (1\linewidth,0);
+		\end{tikzpicture}
+	\end{center}
+}
+
+\newcommand{\chapternote}[1]{{%
+		\let\thempfn\relax% Remove footnote number printing mechanism
+		\footnotetext[0]{\emph{#1}}% Print footnote text
+}}
+
+\newcommand*{\coret}[1]{\renewcommand{\CancelColor}{\color{#1}}\cancel}
+
+\renewcommand{\thesection}{\Alph{section}.} 
+\renewcommand{\thesubsection}{\thesection\Roman{subsection}.}
+\renewcommand{\thesubsubsection}{\thesubsection\Roman{subsubsection}}
+
+\renewcommand*{\multicolumntoc}{2}
+\setlength{\columnseprule}{0.5pt}
+
+\renewcommand*\contentsname{Daftar Isi}
+
+\definecolor{bekgraun}{HTML}{28293D}
+\definecolor{merah}{HTML}{FF5C5C}
+\definecolor{hijau}{HTML}{57EBA3}
+\definecolor{biru}{HTML}{6798FF}
+\definecolor{oren}{HTML}{FCCC76}
+\definecolor{kuning}{HTML}{FEED73}
+\definecolor{birumuda}{HTML}{A9EFF3}
+\definecolor{ungu}{HTML}{DEA5E8}
+\definecolor{teks}{HTML}{9B9BC1}
+
+\theoremstyle{definition}
+\newtheorem{definisi}{Definisi}
+
+\theoremstyle{definition}
+\newtheorem{teorema}{Teorema}
+
+\theoremstyle{definition}
+\newtheorem{identitas}{Identitas}
+
+\newcommand\hcancel[2][merah]{\setbox0=\hbox{$#2$}%
+	\rlap{\raisebox{.45\ht0}{\textcolor{#1}{\rule{\wd0}{1pt}}}}#2} 
+
+
+\AtBeginDocument{\colorlet{defaultcolor}{teks}}
+
+\usetikzlibrary{patterns}
+
+\color{teks}
+\pagecolor{bekgraun}
+
+\begin{document}
+	\begin{center}
+		\textbf{{\LARGE 
+				Solusi Ulangan Harian Fisika\\[12pt]} {\large Kesetimbangan Benda Tegar dan Dinamika Rotasi} \\[12pt] Z. Nayaka Athadiansyah \\ \vspace{5pt} 1 Mei 2022}
+	\end{center}
+	\vspace{-3em}
+	\garis{diamond}{diamond}
+
+\begin{enumerate}
+	\item Panjang $AB = 6$ m, $BZ = 2$ m, di mana $Z$ adalah titik berat balok $AB$. Jika berat beban $C = 100$ N, maka berat balok $AB$ ($w$) adalah $\ldots$
+	
+% Pattern Info
+
+\tikzset{
+	pattern size/.store in=\mcSize, 
+	pattern size = 5pt,
+	pattern thickness/.store in=\mcThickness, 
+	pattern thickness = 0.3pt,
+	pattern radius/.store in=\mcRadius, 
+	pattern radius = 1pt}
+\makeatletter
+\pgfutil@ifundefined{pgf@pattern@name@_yhnqob562}{
+	\pgfdeclarepatternformonly[\mcThickness,\mcSize]{_yhnqob562}
+	{\pgfqpoint{0pt}{0pt}}
+	{\pgfpoint{\mcSize+\mcThickness}{\mcSize+\mcThickness}}
+	{\pgfpoint{\mcSize}{\mcSize}}
+	{
+		\pgfsetcolor{\tikz@pattern@color}
+		\pgfsetlinewidth{\mcThickness}
+		\pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+		\pgfpathlineto{\pgfpoint{\mcSize+\mcThickness}{\mcSize+\mcThickness}}
+		\pgfusepath{stroke}
+}}
+\makeatother
+
+% Pattern Info
+
+\tikzset{
+	pattern size/.store in=\mcSize, 
+	pattern size = 5pt,
+	pattern thickness/.store in=\mcThickness, 
+	pattern thickness = 0.3pt,
+	pattern radius/.store in=\mcRadius, 
+	pattern radius = 1pt}
+\makeatletter
+\pgfutil@ifundefined{pgf@pattern@name@_f4xegj8xp}{
+	\pgfdeclarepatternformonly[\mcThickness,\mcSize]{_f4xegj8xp}
+	{\pgfqpoint{0pt}{0pt}}
+	{\pgfpoint{\mcSize+\mcThickness}{\mcSize+\mcThickness}}
+	{\pgfpoint{\mcSize}{\mcSize}}
+	{
+		\pgfsetcolor{\tikz@pattern@color}
+		\pgfsetlinewidth{\mcThickness}
+		\pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+		\pgfpathlineto{\pgfpoint{\mcSize+\mcThickness}{\mcSize+\mcThickness}}
+		\pgfusepath{stroke}
+}}
+\makeatother
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+	%uncomment if require: \path (0,746); %set diagram left start at 0, and has height of 746
+	
+	%Shape: Rectangle [id:dp38490507269358354] 
+	\draw  [pattern=_yhnqob562,pattern size=13.5pt,pattern thickness=0.75pt,pattern radius=0pt, pattern color={teks}] (112,208) -- (517.1,208) -- (517.1,227) -- (112,227) -- cycle ;
+	%Shape: Circle [id:dp5797402424616175] 
+	\draw  [fill={bekgraun}  ,fill opacity=1 ] (386.3,217.5) .. controls (386.3,214.05) and (389.1,211.25) .. (392.55,211.25) .. controls (396,211.25) and (398.8,214.05) .. (398.8,217.5) .. controls (398.8,220.95) and (396,223.75) .. (392.55,223.75) .. controls (389.1,223.75) and (386.3,220.95) .. (386.3,217.5) -- cycle ;
+	%Shape: Triangle [id:dp8292436168828523] 
+	\draw   (112,227) -- (126.32,288) -- (97.68,288) -- cycle ;
+	%Shape: Rectangle [id:dp04770249436753704] 
+	\draw  [pattern=_f4xegj8xp,pattern size=10.8pt,pattern thickness=0.75pt,pattern radius=0pt, pattern color={teks}] (512.55,23.8) -- (582.55,23.8) -- (582.55,63.8) -- (512.55,63.8) -- cycle ;
+	%Straight Lines [id:da2992306626888811] 
+	\draw    (547.55,43.8) -- (547.55,119.45) ;
+	%Shape: Circle [id:dp9066620642213318] 
+	\draw   (517.1,119.45) .. controls (517.1,102.63) and (530.73,89) .. (547.55,89) .. controls (564.37,89) and (578,102.63) .. (578,119.45) .. controls (578,136.27) and (564.37,149.9) .. (547.55,149.9) .. controls (530.73,149.9) and (517.1,136.27) .. (517.1,119.45) -- cycle ;
+	%Straight Lines [id:da1300750762361642] 
+	\draw    (517.1,119.45) -- (517.1,208) ;
+	%Straight Lines [id:da1195274191104424] 
+	\draw    (578,119.45) -- (578,229.6) ;
+	%Shape: Rectangle [id:dp05019456691587121] 
+	\draw   (544,229) -- (610.1,229) -- (610.1,281.6) -- (544,281.6) -- cycle ;
+	%Straight Lines [id:da6201522823314235] 
+	\draw [color={merah}  ,draw opacity=1 ]   (115.7,125) -- (510.7,125) ;
+	\draw [shift={(510.7,125)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(115.7,125)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Straight Lines [id:da9671561790557801] 
+	\draw [color={merah}  ,draw opacity=1 ]   (391.9,163) -- (509.9,163) ;
+	\draw [shift={(509.9,163)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(391.9,163)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Straight Lines [id:da477642263974298] 
+	\draw [color={merah}  ,draw opacity=1 ]   (116.7,163) -- (389.7,163) ;
+	\draw [shift={(389.7,163)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(116.7,163)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Straight Lines [id:da7011962041538856] 
+	\draw [color={merah}  ,draw opacity=1 ]   (578,119.45) -- (578,171.53) ;
+	\draw [shift={(578,174.53)}, rotate = 270] [fill={merah}  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	%Straight Lines [id:da14430459756798397] 
+	\draw [color={merah}  ,draw opacity=1 ]   (578,229.6) -- (578,177.53) ;
+	\draw [shift={(578,174.53)}, rotate = 90] [fill={merah}  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	%Straight Lines [id:da35328899924493284] 
+	\draw [color={merah}  ,draw opacity=1 ]   (517.1,119.45) -- (517.1,160.73) ;
+	\draw [shift={(517.1,163.73)}, rotate = 270] [fill={merah}  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	%Straight Lines [id:da2979065044948398] 
+	\draw [color={merah}  ,draw opacity=1 ]   (517.1,208) -- (517.1,166.73) ;
+	\draw [shift={(517.1,163.73)}, rotate = 90] [fill={merah}  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	%Straight Lines [id:da2369675868958041] 
+	\draw [color={merah}  ,draw opacity=1 ]   (578,281.68) -- (578,308.27) ;
+	\draw [shift={(578,311.27)}, rotate = 270] [fill={merah}  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	%Straight Lines [id:da9355877048847825] 
+	\draw [color={merah}  ,draw opacity=1 ]   (392.55,217.5) -- (392.55,282.28) ;
+	\draw [shift={(392.55,285.28)}, rotate = 270] [fill={merah}  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	
+	% Text Node
+	\draw (107,186.8) node [anchor=north west][inner sep=0.75pt]    {$A$};
+	% Text Node
+	\draw (387,185.8) node [anchor=north west][inner sep=0.75pt]    {$Z$};
+	% Text Node
+	\draw (519,195.8) node [anchor=north west][inner sep=0.75pt]    {$B$};
+	% Text Node
+	\draw (570.67,247.4) node [anchor=north west][inner sep=0.75pt]    {$C$};
+	% Text Node
+	\draw (555.67,315.73) node [anchor=north west][inner sep=0.75pt]    {$100\ N$};
+	% Text Node
+	\draw (305.6,96.4) node [anchor=north west][inner sep=0.75pt]  [color={merah}  ,opacity=1 ]  {$6\ m$};
+	% Text Node
+	\draw (433.8,139.4) node [anchor=north west][inner sep=0.75pt]  [color={merah}  ,opacity=1 ]  {$2\ m$};
+	% Text Node
+	\draw (248.6,140.4) node [anchor=north west][inner sep=0.75pt]  [color={merah}  ,opacity=1 ]  {$4\ m$};
+	% Text Node
+	\draw (584.03,167.53) node [anchor=north west][inner sep=0.75pt]    {$T$};
+	% Text Node
+	\draw (525.37,155.53) node [anchor=north west][inner sep=0.75pt]    {$T$};
+	% Text Node
+	\draw (387.6,286) node [anchor=north west][inner sep=0.75pt]    {$w$};
+	
+	%Shape: Axis 2D [id:dp519226247899659] 
+	\draw  (637,216.75) -- (693.46,216.75)(642.65,165.94) -- (642.65,222.4) (686.46,211.75) -- (693.46,216.75) -- (686.46,221.75) (637.65,172.94) -- (642.65,165.94) -- (647.65,172.94)  ;
+	
+	% Text Node
+	\draw (639.21,139.05) node [anchor=north west][inner sep=0.75pt]    {$y$};
+	% Text Node
+	\draw (701.11,207.59) node [anchor=north west][inner sep=0.75pt]    {$x$};
+	
+	
+\end{tikzpicture}
+
+\vspace{1.5em}
+
+\textbf{\emph{Solusi. }} Pertama-tama, kita dapat mencari besar gaya tegangan tali ($T$) dengan meng- \linebreak analisis diagram gaya bebas beban C:
+
+
+{
+\centering	
+
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+	%uncomment if require: \path (0,746); %set diagram left start at 0, and has height of 746
+	
+	%Shape: Rectangle [id:dp11973179772221232] 
+	\draw   (41.6,407.4) -- (107.7,407.4) -- (107.7,460) -- (41.6,460) -- cycle ;
+	%Straight Lines [id:da979721398563226] 
+	\draw [color={merah}  ,draw opacity=1 ]   (75.6,408) -- (75.6,355.93) ;
+	\draw [shift={(75.6,352.93)}, rotate = 90] [fill={merah}  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	%Straight Lines [id:da7139434508754121] 
+	\draw [color={merah}  ,draw opacity=1 ]   (75.6,460.08) -- (75.6,486.67) ;
+	\draw [shift={(75.6,489.67)}, rotate = 270] [fill={merah}  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	%Shape: Axis 2D [id:dp6284757116341548] 
+	\draw  (175,456.4) -- (275,456.4)(185,366.4) -- (185,466.4) (268,451.4) -- (275,456.4) -- (268,461.4) (180,373.4) -- (185,366.4) -- (190,373.4)  ;
+	
+	% Text Node
+	\draw (68.27,425.8) node [anchor=north west][inner sep=0.75pt]    {$C$};
+	% Text Node
+	\draw (53.27,494.13) node [anchor=north west][inner sep=0.75pt]    {$100\ N$};
+	% Text Node
+	\draw (81.63,345.93) node [anchor=north west][inner sep=0.75pt]    {$T$};
+	% Text Node
+	\draw (180,338.8) node [anchor=north west][inner sep=0.75pt]    {$y$};
+	% Text Node
+	\draw (279,447.8) node [anchor=north west][inner sep=0.75pt]    {$x$};
+	
+	
+\end{tikzpicture}
+
+\par
+}
+
+Jika keseluruhan sistem berada dalam keadaan setimbang, maka tentunya $\Sigma F_y = 0$:
+
+\vspace{-1.6em}
+
+\begin{align*}
+\Sigma F_y &= 0\\
+T - 100 \ N &= 0 \\
+T &= 100 \ N
+\end{align*}
+
+\pagebreak
+
+Selanjutnya, kita bisa menganalisis torsi yang bekerja pada balok AB. Tentunya  $\Sigma \tau = 0$ kalau sistem berada dalam keadaan setimbang. Berdasarkan gambar yang diberikan oleh soal, titik A adalah titik tumpu balok AB sehingga titik inilah pusat rotasinya. Kita pilih arah berlawanan jarum jam ({\boldmath $\circlearrowleft$}) sebagai positif:
+
+
+
+% Pattern Info
+{
+\centering
+
+\tikzset{
+	pattern size/.store in=\mcSize, 
+	pattern size = 5pt,
+	pattern thickness/.store in=\mcThickness, 
+	pattern thickness = 0.3pt,
+	pattern radius/.store in=\mcRadius, 
+	pattern radius = 1pt}
+\makeatletter
+\pgfutil@ifundefined{pgf@pattern@name@_7z9czgy0x}{
+	\pgfdeclarepatternformonly[\mcThickness,\mcSize]{_7z9czgy0x}
+	{\pgfqpoint{0pt}{0pt}}
+	{\pgfpoint{\mcSize+\mcThickness}{\mcSize+\mcThickness}}
+	{\pgfpoint{\mcSize}{\mcSize}}
+	{
+		\pgfsetcolor{\tikz@pattern@color}
+		\pgfsetlinewidth{\mcThickness}
+		\pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+		\pgfpathlineto{\pgfpoint{\mcSize+\mcThickness}{\mcSize+\mcThickness}}
+		\pgfusepath{stroke}
+}}
+\makeatother
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+	%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+	
+	%Shape: Rectangle [id:dp5513090307761779] 
+	\draw  [pattern=_7z9czgy0x,pattern size=13.5pt,pattern thickness=0.75pt,pattern radius=0pt, pattern color={teks}] (109,142.4) -- (514.1,142.4) -- (514.1,161.4) -- (109,161.4) -- cycle ;
+	%Straight Lines [id:da24269192566223396] 
+	\draw [color={merah}  ,draw opacity=1 ]   (388.9,97.4) -- (506.9,97.4) ;
+	\draw [shift={(506.9,97.4)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(388.9,97.4)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Straight Lines [id:da8530698617507692] 
+	\draw [color={merah}  ,draw opacity=1 ]   (113.7,97.4) -- (386.7,97.4) ;
+	\draw [shift={(386.7,97.4)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(113.7,97.4)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Straight Lines [id:da05604931186886308] 
+	\draw [color={merah}  ,draw opacity=1 ]   (514.1,142.4) -- (514.1,101.13) ;
+	\draw [shift={(514.1,98.13)}, rotate = 90] [fill={merah}  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	%Straight Lines [id:da5049101139755895] 
+	\draw [color={merah}  ,draw opacity=1 ]   (389.55,151.9) -- (389.55,216.68) ;
+	\draw [shift={(389.55,219.68)}, rotate = 270] [fill={merah}  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	
+	% Text Node
+	\draw (104,121.2) node [anchor=north west][inner sep=0.75pt]    {$A$};
+	% Text Node
+	\draw (384,120.2) node [anchor=north west][inner sep=0.75pt]    {$Z$};
+	% Text Node
+	\draw (516,130.2) node [anchor=north west][inner sep=0.75pt]    {$B$};
+	% Text Node
+	\draw (430.8,73.8) node [anchor=north west][inner sep=0.75pt]  [color={merah}  ,opacity=1 ]  {$2\ m$};
+	% Text Node
+	\draw (245.6,74.8) node [anchor=north west][inner sep=0.75pt]  [color={merah}  ,opacity=1 ]  {$4\ m$};
+	% Text Node
+	\draw (384.6,220.4) node [anchor=north west][inner sep=0.75pt]    {$w$};
+	% Text Node
+	\draw (525.37,81.53) node [anchor=north west][inner sep=0.75pt]    {$T$};
+	% Text Node
+	\draw (302.6,40.4) node [anchor=north west][inner sep=0.75pt]  [color={merah}  ,opacity=1 ]  {$6\ m$};
+	
+	
+	%Straight Lines [id:da12449364569120636] 
+	\draw [color={merah}  ,draw opacity=1 ]   (112.7,69) -- (507.7,69) ;
+	\draw [shift={(507.7,69)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(112.7,69)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	
+\end{tikzpicture}
+\par
+}
+
+\vspace{-1.5em}
+
+\begin{align*}
+\Sigma \tau_\circlearrowleft &= 0\\
+T \cdot 6 \ \text{m} - w \cdot 4 \text{ m} &= 0\\
+100 \ \text{N} \cdot 6 \ \text{m} &=  w \cdot 4 \text{ m}\\
+\frac{600\ \text{N $\cdot$ m}}{4 \text{ m}} &=  w \\
+w &=  150 \ \text{N} \quad \blacksquare
+\end{align*}
+
+\vspace{.5em}
+
+\item Batang homogen dengan panjang 120 cm diberi gaya seperti pada gambar berikut. Berapa resultan momen gaya di pusat massa batang?
+
+\vspace{1.2em}
+
+% Pattern Info
+
+\tikzset{
+	pattern size/.store in=\mcSize, 
+	pattern size = 5pt,
+	pattern thickness/.store in=\mcThickness, 
+	pattern thickness = 0.3pt,
+	pattern radius/.store in=\mcRadius, 
+	pattern radius = 1pt}
+\makeatletter
+\pgfutil@ifundefined{pgf@pattern@name@_g5754y7fs}{
+	\pgfdeclarepatternformonly[\mcThickness,\mcSize]{_g5754y7fs}
+	{\pgfqpoint{0pt}{0pt}}
+	{\pgfpoint{\mcSize+\mcThickness}{\mcSize+\mcThickness}}
+	{\pgfpoint{\mcSize}{\mcSize}}
+	{
+		\pgfsetcolor{\tikz@pattern@color}
+		\pgfsetlinewidth{\mcThickness}
+		\pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+		\pgfpathlineto{\pgfpoint{\mcSize+\mcThickness}{\mcSize+\mcThickness}}
+		\pgfusepath{stroke}
+}}
+\makeatother
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+	%uncomment if require: \path (0,637); %set diagram left start at 0, and has height of 637
+	
+	%Shape: Rectangle [id:dp38490507269358354] 
+	\draw  [pattern=_g5754y7fs,pattern size=13.5pt,pattern thickness=0.75pt,pattern radius=0pt, pattern color={teks}] (112,199.6) -- (517.1,199.6) -- (517.1,227) -- (112,227) -- cycle ;
+	%Straight Lines [id:da49656002736671956] 
+	\draw    (112,199.6) -- (112,140.6) ;
+	\draw [shift={(112,137.6)}, rotate = 90] [fill={teks}  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	%Straight Lines [id:da05075687955409258] 
+	\draw    (517.1,227) -- (517.1,312) ;
+	\draw [shift={(517.1,315)}, rotate = 270] [fill={teks}  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	%Straight Lines [id:da7961984108014909] 
+	\draw    (187.1,227) -- (187.1,312) ;
+	\draw [shift={(187.1,315)}, rotate = 270] [fill={teks}  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	%Straight Lines [id:da8457420252684602] 
+	\draw [color={merah}  ,draw opacity=1 ]   (190.1,176) -- (519.1,176) ;
+	\draw [shift={(519.1,176)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(190.1,176)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	
+	% Text Node
+	\draw (30,133.4) node [anchor=north west][inner sep=0.75pt]    {$F_{1} =60\ N$};
+	% Text Node
+	\draw (150,324.4) node [anchor=north west][inner sep=0.75pt]    {$F_{2} =100\ N$};
+	% Text Node
+	\draw (488,320.4) node [anchor=north west][inner sep=0.75pt]    {$F_{3} =80\ N$};
+	% Text Node
+	\draw (329,151.4) node [anchor=north west][inner sep=0.75pt]  [color={merah}  ,opacity=1 ]  {$100\ cm$};
+	
+\end{tikzpicture}
+
+\vspace{1em}
+%
+%\textbf{\emph{Solusi. }}\footnote{Kalau batangnya tidak homogen, maka tidak ada informasi yang bisa kita gunakan untuk mencari fungsi massa jenis batang tersebut. Tidak ada yang bisa kita lakukan untuk menemukan jawabannya.} 
+
+\par
+Karena batang tersebut homogen, maka pusat massanya terletak tepat di tengah-tengah batang, dengan jarak $60$ cm dari ujung kiri dan kanan batang. Kita bisa menggambarkan situasi ini secara lebih rinci:
+
+
+
+% Pattern Info
+
+\tikzset{
+	pattern size/.store in=\mcSize, 
+	pattern size = 5pt,
+	pattern thickness/.store in=\mcThickness, 
+	pattern thickness = 0.3pt,
+	pattern radius/.store in=\mcRadius, 
+	pattern radius = 1pt}
+\makeatletter
+\pgfutil@ifundefined{pgf@pattern@name@_pw5h2yv93}{
+	\pgfdeclarepatternformonly[\mcThickness,\mcSize]{_pw5h2yv93}
+	{\pgfqpoint{0pt}{0pt}}
+	{\pgfpoint{\mcSize+\mcThickness}{\mcSize+\mcThickness}}
+	{\pgfpoint{\mcSize}{\mcSize}}
+	{
+		\pgfsetcolor{\tikz@pattern@color}
+		\pgfsetlinewidth{\mcThickness}
+		\pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+		\pgfpathlineto{\pgfpoint{\mcSize+\mcThickness}{\mcSize+\mcThickness}}
+		\pgfusepath{stroke}
+}}
+\makeatother
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+	%uncomment if require: \path (0,637); %set diagram left start at 0, and has height of 637
+	
+	%Shape: Rectangle [id:dp38490507269358354] 
+	\draw  [pattern=_pw5h2yv93,pattern size=13.5pt,pattern thickness=0.75pt,pattern radius=0pt, pattern color={teks}] (112,199.6) -- (517.1,199.6) -- (517.1,227) -- (112,227) -- cycle ;
+	%Straight Lines [id:da49656002736671956] 
+	\draw    (112,199.6) -- (112,140.6) ;
+	\draw [shift={(112,137.6)}, rotate = 90] [fill={teks}  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	%Straight Lines [id:da05075687955409258] 
+	\draw    (517.1,227) -- (517.1,312) ;
+	\draw [shift={(517.1,315)}, rotate = 270] [fill={teks}  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	%Straight Lines [id:da7961984108014909] 
+	\draw    (187.1,227) -- (187.1,312) ;
+	\draw [shift={(187.1,315)}, rotate = 270] [fill={teks}  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	%Straight Lines [id:da9113528730958406] 
+	\draw [color={merah}  ,draw opacity=1 ]   (113,76) -- (519.1,76) ;
+	\draw [shift={(519.1,76)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(113,76)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Straight Lines [id:da8457420252684602] 
+	\draw [color={merah}  ,draw opacity=1 ]   (190.1,176) -- (519.1,176) ;
+	\draw [shift={(519.1,176)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(190.1,176)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Straight Lines [id:da7248757242463595] 
+	\draw [color={merah}  ,draw opacity=1 ]   (117.1,176) -- (187.1,176) ;
+	\draw [shift={(187.1,176)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(117.1,176)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Straight Lines [id:da44196732324789034] 
+	\draw [color={merah}  ,draw opacity=1 ]   (314.55,120.3) -- (517.6,120.3) ;
+	\draw [shift={(517.6,120.3)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(314.55,120.3)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Straight Lines [id:da4218339604011264] 
+	\draw [color={merah}  ,draw opacity=1 ]   (111.5,120.3) -- (309.1,120.3) ;
+	\draw [shift={(309.1,120.3)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(111.5,120.3)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Straight Lines [id:da293352850099842] 
+	\draw [color={merah}  ,draw opacity=1 ]   (193.1,246.3) -- (314.55,246.3) ;
+	\draw [shift={(314.55,246.3)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(193.1,246.3)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Shape: Circle [id:dp5797402424616175] 
+	\draw  [fill={teks}  ,fill opacity=1 ] (308.3,213.3) .. controls (308.3,209.85) and (311.1,207.05) .. (314.55,207.05) .. controls (318,207.05) and (320.8,209.85) .. (320.8,213.3) .. controls (320.8,216.75) and (318,219.55) .. (314.55,219.55) .. controls (311.1,219.55) and (308.3,216.75) .. (308.3,213.3) -- cycle ;
+	%Straight Lines [id:da8857637931988737] 
+	\draw [color={merah}  ,draw opacity=1 ] [dash pattern={on 4.5pt off 4.5pt}]  (314.55,213.3) -- (358.89,272) ;
+	\draw [shift={(360.1,273.6)}, rotate = 232.93] [color={merah}  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+	
+	% Text Node
+	\draw (30,133.4) node [anchor=north west][inner sep=0.75pt]    {$F_{1} =60\ N$};
+	% Text Node
+	\draw (150,324.4) node [anchor=north west][inner sep=0.75pt]    {$F_{2} =100\ N$};
+	% Text Node
+	\draw (488,320.4) node [anchor=north west][inner sep=0.75pt]    {$F_{3} =80\ N$};
+	% Text Node
+	\draw (290,47.4) node [anchor=north west][inner sep=0.75pt]  [color={merah}  ,opacity=1 ]  {$120\ cm$};
+	% Text Node
+	\draw (329,151.4) node [anchor=north west][inner sep=0.75pt]  [color={merah}  ,opacity=1 ]  {$100\ cm$};
+	% Text Node
+	\draw (128,150.4) node [anchor=north west][inner sep=0.75pt]  [color={merah}  ,opacity=1 ]  {$20\ cm$};
+	% Text Node
+	\draw (389,94.4) node [anchor=north west][inner sep=0.75pt]  [color={merah}  ,opacity=1 ]  {$60\ cm$};
+	% Text Node
+	\draw (186,92.4) node [anchor=north west][inner sep=0.75pt]  [color={merah}  ,opacity=1 ]  {$60\ cm$};
+	% Text Node
+	\draw (226,251.4) node [anchor=north west][inner sep=0.75pt]  [color={merah}  ,opacity=1 ]  {$40\ cm$};
+	% Text Node
+	\draw (341,277) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={merah}  ,opacity=1 ] [align=left] {pusat massa};
+	
+	
+\end{tikzpicture}
+
+Terakhir, kita hanya perlu menghitung resultan momen gaya dengan titik pusat massa sebagai acuan:
+
+\vspace{-2em}
+
+\begin{align*}
+	\Sigma \tau_{\circlearrowleft} &= F_2 \cdot 40 \ \text{cm} \ - \ F_1 \cdot 60 \ \text{cm} \ - \ F_3 \cdot 60 \ \text{cm}\\
+	&= 100 \ \text{N} \cdot 40 \ \text{cm} \ - \ 60 \ \text{N} \cdot 60 \ \text{cm} \ - \ 80 \ \text{N} \cdot 60 \ \text{cm}\\
+	&= 4000 \ \text{N $\cdot$ cm} - 3600 \ \text{N $\cdot$ cm} - 4800 \ \text{N $\cdot$ cm}\\
+	&= -4400 \ \text{N $\cdot$ cm}\\
+	&= -44 \ \text{N $\cdot$ m}\\
+	&= \circlearrowright 44 \ \text{N $\cdot$ m} \quad \blacksquare
+\end{align*}
+
+
+\item Sebuah katrol pejal ($M = 10$ kg, $R = 10$ cm = 1/10 m, $I = 1/2 MR^2$) pada tepinya dililitkan tali yang membawa beban $m = 5$ kg seperti pada gambar di bawah. Jika $g = 10$ m/s${}^2$, maka berapa percepatan sistem? 
+
+
+{
+	\centering
+% Pattern Info
+
+\tikzset{
+	pattern size/.store in=\mcSize, 
+	pattern size = 5pt,
+	pattern thickness/.store in=\mcThickness, 
+	pattern thickness = 0.3pt,
+	pattern radius/.store in=\mcRadius, 
+	pattern radius = 1pt}
+\makeatletter
+\pgfutil@ifundefined{pgf@pattern@name@_1oaxbyzu2}{
+	\pgfdeclarepatternformonly[\mcThickness,\mcSize]{_1oaxbyzu2}
+	{\pgfqpoint{0pt}{0pt}}
+	{\pgfpoint{\mcSize+\mcThickness}{\mcSize+\mcThickness}}
+	{\pgfpoint{\mcSize}{\mcSize}}
+	{
+		\pgfsetcolor{\tikz@pattern@color}
+		\pgfsetlinewidth{\mcThickness}
+		\pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+		\pgfpathlineto{\pgfpoint{\mcSize+\mcThickness}{\mcSize+\mcThickness}}
+		\pgfusepath{stroke}
+}}
+\makeatother
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+	%uncomment if require: \path (0,450); %set diagram left start at 0, and has height of 450
+	
+	%Shape: Trapezoid [id:dp03569944747910181] 
+	\draw   (268,16) -- (282.73,74.6) -- (302.37,74.6) -- (317.1,16) -- cycle ;
+	%Shape: Circle [id:dp6658280434668403] 
+	\draw   (243.5,84.3) .. controls (243.5,57.07) and (265.57,35) .. (292.8,35) .. controls (320.03,35) and (342.1,57.07) .. (342.1,84.3) .. controls (342.1,111.53) and (320.03,133.6) .. (292.8,133.6) .. controls (265.57,133.6) and (243.5,111.53) .. (243.5,84.3) -- cycle ;
+	%Straight Lines [id:da961726162910847] 
+	\draw    (342.1,84.3) -- (342.1,165.35) ;
+	%Shape: Trapezoid [id:dp687997631120349] 
+	\draw   (312.13,164.74) -- (327.55,216.15) -- (359.8,216.15) -- (375.23,164.74) -- cycle ;
+	%Straight Lines [id:da7929554151343194] 
+	\draw [color={merah}  ,draw opacity=1 ]   (342.55,209.71) -- (342.55,242.6) ;
+	\draw [shift={(342.55,244.6)}, rotate = 270] [color={merah}  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+	%Snip Round Single Corner Rect [id:dp39805757102241934] 
+	\draw  [pattern=_1oaxbyzu2,pattern size=8.850000000000001pt,pattern thickness=0.75pt,pattern radius=0pt, pattern color={teks}] (215.28,12.32) .. controls (215.28,14.35) and (216.93,16) .. (218.96,16) -- (370.42,16) -- (374.1,12.32) -- (374.1,-2.4) -- (215.28,-2.4) -- cycle ;
+	%Straight Lines [id:da1655371492044143] 
+	\draw [color={merah}  ,draw opacity=1 ]   (292.8,84.3) -- (339.1,84.3) ;
+	\draw [shift={(339.1,84.3)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(292.8,84.3)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Shape: Circle [id:dp022700345057185545] 
+	\draw   (285.75,84.3) .. controls (285.75,80.41) and (288.91,77.25) .. (292.8,77.25) .. controls (296.69,77.25) and (299.85,80.41) .. (299.85,84.3) .. controls (299.85,88.19) and (296.69,91.35) .. (292.8,91.35) .. controls (288.91,91.35) and (285.75,88.19) .. (285.75,84.3) -- cycle ;
+	%Straight Lines [id:da8041474501855351] 
+	\draw [color={merah}  ,draw opacity=1 ]   (342.1,165.35) -- (342.1,127.83) ;
+	\draw [shift={(342.1,124.83)}, rotate = 90] [fill={merah}  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	%Straight Lines [id:da12522411215749096] 
+	\draw [color={merah}  ,draw opacity=1 ]   (342.1,84.3) -- (342.1,121.83) ;
+	\draw [shift={(342.1,124.83)}, rotate = 270] [fill={merah}  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	%Shape: Axis 2D [id:dp014195115374522449] 
+	\draw  (430,117.86) -- (508.6,117.86)(437.86,188.6) -- (437.86,110) (501.6,122.86) -- (508.6,117.86) -- (501.6,112.86) (432.86,181.6) -- (437.86,188.6) -- (442.86,181.6)  ;
+%Straight Lines [id:da08517445485196062] 
+\draw    (260,187) -- (260,240.8) ;
+\draw [shift={(260,242.8)}, rotate = 270] [color={teks}  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+	
+	% Text Node
+	\draw (335,177.4) node [anchor=north west][inner sep=0.75pt]    {$m$};
+	% Text Node
+	\draw (334,248.4) node [anchor=north west][inner sep=0.75pt]  [color={merah}  ,opacity=1 ]  {$mg$};
+	% Text Node
+	\draw (309,91.4) node [anchor=north west][inner sep=0.75pt]    {$\textcolor{merah}{R}$};
+	% Text Node
+	\draw (284,112.4) node [anchor=north west][inner sep=0.75pt]    {$M$};
+	% Text Node
+	\draw (353,116.4) node [anchor=north west][inner sep=0.75pt]  [color={merah}  ,opacity=1 ]  {$T$};
+	% Text Node
+	\draw (433,197.4) node [anchor=north west][inner sep=0.75pt]    {$y$};
+	% Text Node
+	\draw (521,111.4) node [anchor=north west][inner sep=0.75pt]    {$x$};
+	% Text Node
+	\draw (255,247.4) node [anchor=north west][inner sep=0.75pt]    {$\vec{a}$};
+
+	
+\end{tikzpicture}
+\par
+}
+
+\textbf{\emph{Solusi. }} Pertama, kita tinjau dulu gaya yang bekerja pada massa $m$. Kita pilih arah bawah sebagai positif:
+
+{
+\centering
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+	%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+	
+	%Shape: Trapezoid [id:dp8203811094732198] 
+	\draw   (284.13,91.74) -- (299.55,143.15) -- (331.8,143.15) -- (347.23,91.74) -- cycle ;
+	%Straight Lines [id:da9015419619191808] 
+	\draw [color={merah}  ,draw opacity=1 ]   (314.55,136.71) -- (314.55,169.6) ;
+	\draw [shift={(314.55,171.6)}, rotate = 270] [color={merah}  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+	%Straight Lines [id:da5477124964672394] 
+	\draw [color={merah}  ,draw opacity=1 ]   (314.1,92.35) -- (314.1,54.83) ;
+	\draw [shift={(314.1,51.83)}, rotate = 90] [fill={merah}  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	%Straight Lines [id:da6795356032493799] 
+	\draw    (256,90) -- (256,143.8) ;
+	\draw [shift={(256,145.8)}, rotate = 270] [color={teks}  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+	
+
+	% Text Node
+	\draw (307,104.4) node [anchor=north west][inner sep=0.75pt]    {$m$};
+	% Text Node
+	\draw (306,175.4) node [anchor=north west][inner sep=0.75pt]  [color={merah}  ,opacity=1 ]  {$mg$};
+	% Text Node
+	\draw (325,43.4) node [anchor=north west][inner sep=0.75pt]  [color={merah}  ,opacity=1 ]  {$T$};
+	% Text Node
+	\draw (251,150.4) node [anchor=north west][inner sep=0.75pt]    {$\vec{a}$};
+	
+	
+\end{tikzpicture}
+
+
+\par
+}
+
+\vspace{-2em}
+
+\begin{align*}
+\Sigma F &= ma\\
+mg - T &= ma\\
+T &= mg - ma = m(g - a) \textcolor{merah}{\tag{1}}
+\end{align*}
+
+Selanjutnya, kita tinjau momen gaya pada katrol. Kita ambil arah jarum jam sebagai positif:
+
+
+{
+	\centering
+
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+	%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+	
+	%Shape: Ellipse [id:dp8615306772699896] 
+	\draw   (266.5,110.06) .. controls (266.5,75.03) and (294.9,46.63) .. (329.93,46.63) .. controls (364.96,46.63) and (393.35,75.03) .. (393.35,110.06) .. controls (393.35,145.09) and (364.96,173.49) .. (329.93,173.49) .. controls (294.9,173.49) and (266.5,145.09) .. (266.5,110.06) -- cycle ;
+	%Shape: Ellipse [id:dp8121367082924491] 
+	\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (333.53,110.06) .. controls (333.53,108.07) and (331.92,106.45) .. (329.93,106.45) .. controls (327.93,106.45) and (326.32,108.07) .. (326.32,110.06) .. controls (326.32,112.05) and (327.93,113.66) .. (329.93,113.66) .. controls (331.92,113.66) and (333.53,112.05) .. (333.53,110.06) -- cycle ;
+	%Straight Lines [id:da7117489260533868] 
+	\draw [color={merah}  ,draw opacity=1 ]   (393.35,110.06) -- (393.35,159.2) ;
+	\draw [shift={(393.35,162.2)}, rotate = 270] [fill={merah}  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	%Straight Lines [id:da5578952320776697] 
+	\draw [color={merah}  ,draw opacity=1 ]   (329.93,110.06) -- (389.49,110.06) ;
+	\draw [shift={(389.49,110.06)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(329.93,110.06)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	
+	% Text Node
+	\draw (352.63,121.37) node [anchor=north west][inner sep=0.75pt]    {$\textcolor{merah}{R}$};
+	% Text Node
+	\draw (409.09,153.53) node [anchor=north west][inner sep=0.75pt]  [color={merah}  ,opacity=1 ]  {$T$};
+	% Text Node
+	\draw (314.99,97.41) node [anchor=north west][inner sep=0.75pt]  [font=\LARGE]  {${\textstyle \circlearrowright }$};
+	
+	
+\end{tikzpicture}
+
+
+\par
+}
+
+\vspace{.5em}
+
+Momen inersia katrol adalah $I = \dfrac{1}{2} MR^2 = \dfrac{1}{2} (10) \Big(\dfrac{1}{10}\Big)^2 = \dfrac{1}{20}$. Lalu,
+
+\vspace{-1em}
+
+\begin{align*}
+\Sigma \tau_{\circlearrowright} &= I\alpha \tag*{\scriptsize \big[ {\parbox{10em}{Hukum II Newton untuk gerak rotasi}} \big]}    \\[.5em]
+TR &= I\frac{a}{R}  \tag*{\scriptsize \big[ {{$a = \alpha R \Longleftrightarrow \alpha = a/R$}} \big]}   \\[.5em]
+m(g - a)R &= \frac{Ia}{R} \tag*{\scriptsize{[Substitusi persamaan (1)]}}\\[.5em] 
+mg - ma &= \frac{Ia}{R^2}\tag*{\scriptsize{[bagi kedua ruas dengan $R$]}}\\[.5em]
+mg &= ma + \frac{Ia}{R^2} \\[.5em]
+mg &= \frac{maR^2 + Ia}{R^2} \tag*{\scriptsizer \big[ {\parbox{10em}{Samakan penyebutnya}} \big]}  \\[.5em]
+mg &= \frac{(mR^2 + I)a}{R^2} \tag*{\scriptsize \big[ {\parbox{10em}{Faktorkan $a$ dari pembilang}} \big]}  \\[.5em]
+a &= \frac{mgR^2}{mR^2 + I} \tag{2}
+\end{align*}
+
+Terakhir, kita bisa masukkan nilai yang telah diketahui ke dalam persamaan (2):
+
+\vspace{-1em}
+
+\begin{align*}
+a &= \frac{mgR^2}{mR^2 + I} \\[.5em]
+&= \frac{(5)(10)\Big(\dfrac{1}{10}\Big)^2}{(5)\Big(\dfrac{1}{10}\Big)^2 + \Big(\dfrac{1}{20}\Big)}\\[.5em]
+&= \frac{\dfrac{50}{100}}{\dfrac{5}{100} + \dfrac{1}{20}}\\[.5em]
+&= \frac{\dfrac{50}{100}}{\dfrac{5}{100} + \dfrac{5}{100}}\\[.5em]
+&= \frac{\dfrac{50}{100}}{\dfrac{10}{100}} = \frac{50}{100} \div \frac{10}{100}\\[1em]
+&= \frac{5\coret{merah}{0}}{\coret{merah}{100}} \cdot \frac{\coret{merah}{100}}{\coret{merah}{10}} = 5 \ \text{m/s${}^2$} \quad \blacksquare
+\end{align*}
+
+\vspace{.5em}
+
+\item Tentukan koordinat titik berat bangun datar homogen di bawah ini!
+
+{
+\centering
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+	%uncomment if require: \path (0,362); %set diagram left start at 0, and has height of 362
+	
+	%Shape: Rectangle [id:dp08672633201912605] 
+	\draw   (231,100.6) -- (404.1,100.6) -- (404.1,144.6) -- (231,144.6) -- cycle ;
+	%Shape: Rectangle [id:dp5519102519147062] 
+	\draw   (349.1,144.38) -- (349.1,266.93) -- (287.55,266.93) -- (287.55,144.38) -- cycle ;
+	%Straight Lines [id:da36320126334506375] 
+	\draw [color={merah}  ,draw opacity=1 ]   (231,75.6) -- (404.1,75.6) ;
+	\draw [shift={(404.1,75.6)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(231,75.6)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Straight Lines [id:da12484496306102122] 
+	\draw [color={merah}  ,draw opacity=1 ]   (424.1,100.6) -- (424.1,144.6) ;
+	\draw [shift={(424.1,144.6)}, rotate = 270] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(424.1,100.6)}, rotate = 270] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Straight Lines [id:da055544565550895375] 
+	\draw [color={merah}  ,draw opacity=1 ]   (318.32,148.27) -- (318.32,262.6) ;
+	\draw [shift={(318.32,262.6)}, rotate = 270] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(318.32,148.27)}, rotate = 270] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Straight Lines [id:da5723993956106486] 
+	\draw [color={merah}  ,draw opacity=1 ]   (287.55,286.6) -- (349.1,286.6) ;
+	\draw [shift={(349.1,286.6)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(287.55,286.6)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Straight Lines [id:da9847061915395499] 
+	\draw    (380.33,139.9) -- (380.33,147.6) ;
+	%Shape: Axis 2D [id:dp6677878746029297] 
+	\draw  (224.73,266.93) -- (282.9,266.93)(230.55,221.51) -- (230.55,271.98) (275.9,261.93) -- (282.9,266.93) -- (275.9,271.93) (225.55,228.51) -- (230.55,221.51) -- (235.55,228.51)  ;
+	%Straight Lines [id:da6663302088722918] 
+	\draw    (375.33,140.15) -- (375.33,147.85) ;
+	%Straight Lines [id:da5119368997350958] 
+	\draw    (320.58,139.4) -- (320.58,147.1) ;
+	%Straight Lines [id:da25502656349532027] 
+	\draw    (315.58,139.65) -- (315.58,147.35) ;
+	%Straight Lines [id:da9426446593688408] 
+	\draw    (262.08,139.9) -- (262.08,147.6) ;
+	%Straight Lines [id:da7096914653992041] 
+	\draw    (257.08,140.15) -- (257.08,147.85) ;
+	
+	% Text Node
+	\draw (307.67,61.33) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {\textcolor{merah}{15 cm}};
+	% Text Node
+	\draw (428.67,115.33) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {\textcolor{merah}{5 cm}};
+	% Text Node
+	\draw (332.67,188.33) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,rotate=-90] [align=left] {\textcolor{merah}{10 cm}};
+	% Text Node
+	\draw (305.33,291.67) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {\textcolor{merah}{5 cm}};
+	% Text Node
+	\draw (206.33,274.87) node [anchor=north west][inner sep=0.75pt]    {$( 0,0)$};
+	% Text Node
+	\draw (304,114.4) node [anchor=north west][inner sep=0.75pt]    {$I$};
+	% Text Node
+	\draw (302,186.4) node [anchor=north west][inner sep=0.75pt]    {$II$};
+	
+	
+\end{tikzpicture}
+\par
+}
+
+\textbf{\emph{Solusi. }} Bangun tersebut adalah bangun yang homogen sehingga massa tersebar secara merata di seluruh bagiannya. Artinya, kepadatan\footnote{Kepadatan yang dimaksud di sini adalah \emph{planar density}: massa per satuan luas. Kepadatan yang lebih umum kita kenal adalah $\rho$ (\emph{rho}), massa per satuan volume atau massa jenis.} pada sembarang daerah, entah itu di bangun I maupun bangun II, selalu sama. 
+\par
+Misalkan kepadatannya adalah $\alpha$, luas dan massa tiap bangun secara berturut-turut adalah $A_I$ dan $m_{I}$ serta $A_{II}$ dan $m_{II}$. Maka $\alpha = \dfrac{m_I}{A_I} = \dfrac{m_{II}}{A_{II}}$ sehingga $m_I = \alpha A_I$ dan $m_{II} = \alpha A_{II}$. 
+\par
+Kita bisa memodifikasi persamaan titik berat sehingga kita bisa mencari koordinat titik berat cukup dengan mengetahui luasnya saja tanpa perlu mengetahui massanya:
+
+
+\begin{align*}
+x_{pm} &= \frac{m_I x_I + m_{II} x_{II}}{m_I + m_{II}}\\[.5em]
+&= \frac{\alpha A_I x_I + \alpha A_{II} x_{II}}{\alpha A_I + \alpha A_{II}}\\[.5em]
+&= \frac{\coret{merah}{\alpha} (A_I x_I + A_{II} x_{II})}{\coret{merah}{\alpha} (A_I + A_{II})}\\[.5em]
+&= \frac{A_I x_I + A_{II} x_{II}}{A_I + A_{II}}
+\end{align*}
+
+Cara yang mirip dapat digunakan untuk mencari persamaan ordinat ($y_{pm}$) titik berat. Selanjutnya, kita bisa menggunakan persamaan yang telah kita dapatkan.
+
+\vspace{.5em}
+
+{
+\centering
+	
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+	%uncomment if require: \path (0,411); %set diagram left start at 0, and has height of 411
+	
+	%Shape: Rectangle [id:dp08672633201912605] 
+	\draw   (231,100.6) -- (404.1,100.6) -- (404.1,144.6) -- (231,144.6) -- cycle ;
+	%Shape: Rectangle [id:dp5519102519147062] 
+	\draw   (349.1,144.38) -- (349.1,266.93) -- (287.55,266.93) -- (287.55,144.38) -- cycle ;
+	%Straight Lines [id:da36320126334506375] 
+	\draw [color={merah}  ,draw opacity=1 ]   (231,49.6) -- (404.1,49.6) ;
+	\draw [shift={(404.1,49.6)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(231,49.6)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Straight Lines [id:da12484496306102122] 
+	\draw [color={merah}  ,draw opacity=1 ]   (466.6,99.85) -- (466.6,143.85) ;
+	\draw [shift={(466.6,143.85)}, rotate = 270] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(466.6,99.85)}, rotate = 270] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Straight Lines [id:da055544565550895375] 
+	\draw [color={merah}  ,draw opacity=1 ]   (466.32,148.4) -- (466.32,262.1) ;
+	\draw [shift={(466.32,262.1)}, rotate = 270] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(466.32,148.4)}, rotate = 270] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Straight Lines [id:da46441799406776374] 
+	\draw    (256.58,141.9) -- (256.58,148.18) ;
+	%Straight Lines [id:da5723993956106486] 
+	\draw [color={merah}  ,draw opacity=1 ]   (287.55,318.6) -- (349.1,318.6) ;
+	\draw [shift={(349.1,318.6)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(287.55,318.6)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Straight Lines [id:da8468974789147989] 
+	\draw    (262.58,141.9) -- (262.58,148.18) ;
+	%Shape: Axis 2D [id:dp6677878746029297] 
+	\draw  (220.73,271.93) -- (278.9,271.93)(226.55,226.51) -- (226.55,276.98) (271.9,266.93) -- (278.9,271.93) -- (271.9,276.93) (221.55,233.51) -- (226.55,226.51) -- (231.55,233.51)  ;
+	%Straight Lines [id:da44637060750206303] 
+	\draw [color={merah}  ,draw opacity=1 ]   (230.9,318.27) -- (285.43,318.27) ;
+	\draw [shift={(285.43,318.27)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(230.9,318.27)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Straight Lines [id:da9841292759366855] 
+	\draw [color={merah}  ,draw opacity=1 ]   (350.9,318.27) -- (403.57,318.27) ;
+	\draw [shift={(403.57,318.27)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(350.9,318.27)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Straight Lines [id:da20191017770382258] 
+	\draw    (315.33,140.4) -- (315.33,146.68) ;
+	%Straight Lines [id:da7753444265618219] 
+	\draw    (321.33,140.4) -- (321.33,146.68) ;
+	%Straight Lines [id:da08672652648497414] 
+	\draw    (376.83,140.9) -- (376.83,147.18) ;
+	%Straight Lines [id:da5417068326761193] 
+	\draw    (382.83,140.9) -- (382.83,147.18) ;
+	%Straight Lines [id:da09618516918067122] 
+	\draw [color={merah}  ,draw opacity=1 ]   (287.55,293.1) -- (318.53,293.1) ;
+	\draw [shift={(318.53,293.1)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(287.55,293.1)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Straight Lines [id:da19527415300486017] 
+	\draw [color={merah}  ,draw opacity=1 ]   (427.85,143.85) -- (427.85,121.85) ;
+	\draw [shift={(427.85,121.85)}, rotate = 90] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(427.85,143.85)}, rotate = 90] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Straight Lines [id:da08447798755796887] 
+	\draw [color={merah}  ,draw opacity=1 ]   (427.32,205.25) -- (427.32,262.1) ;
+	\draw [shift={(427.32,262.1)}, rotate = 270] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(427.32,205.25)}, rotate = 270] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Shape: Circle [id:dp4415491996460872] 
+	\draw  [fill={teks}  ,fill opacity=1 ] (315.72,205.66) .. controls (315.72,204.22) and (316.89,203.06) .. (318.32,203.06) .. controls (319.76,203.06) and (320.92,204.22) .. (320.92,205.66) .. controls (320.92,207.09) and (319.76,208.26) .. (318.32,208.26) .. controls (316.89,208.26) and (315.72,207.09) .. (315.72,205.66) -- cycle ;
+	%Straight Lines [id:da7848629094076797] 
+	\draw [color={merah}  ,draw opacity=1 ]   (233,71.35) -- (318.53,71.35) ;
+	\draw [shift={(318.53,71.35)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(233,71.35)}, rotate = 180] [color={merah}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	%Shape: Circle [id:dp9144662022589057] 
+	\draw  [fill={teks}  ,fill opacity=1 ] (315.95,122.6) .. controls (315.95,121.16) and (317.11,120) .. (318.55,120) .. controls (319.99,120) and (321.15,121.16) .. (321.15,122.6) .. controls (321.15,124.04) and (319.99,125.2) .. (318.55,125.2) .. controls (317.11,125.2) and (315.95,124.04) .. (315.95,122.6) -- cycle ;
+	%Straight Lines [id:da28348400802933127] 
+	\draw [color={merah}  ,draw opacity=1 ] [dash pattern={on 0.84pt off 2.51pt}]  (318.53,70.6) -- (318.53,293.1) ;
+	%Straight Lines [id:da6578722432701971] 
+	\draw [color={merah}  ,draw opacity=1 ] [dash pattern={on 0.84pt off 2.51pt}]  (318.32,205.66) -- (427.32,205.25) ;
+	%Straight Lines [id:da5437866797784365] 
+	\draw [color={merah}  ,draw opacity=1 ] [dash pattern={on 0.84pt off 2.51pt}]  (317.55,122.6) -- (426.55,122.19) ;
+	
+	% Text Node
+	\draw (305.75,34.5) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {\textcolor{merah}{15 cm}};
+	% Text Node
+	\draw (483.5,110.75) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,rotate=-90] [align=left] {\textcolor{merah}{5 cm}};
+	% Text Node
+	\draw (480.75,196) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,rotate=-90] [align=left] {\textcolor{merah}{10 cm}};
+	% Text Node
+	\draw (307.25,326.75) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {\textcolor{merah}{5 cm}};
+	% Text Node
+	\draw (246.67,322.67) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {\textcolor{merah}{5 cm}};
+	% Text Node
+	\draw (367.33,322) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {\textcolor{merah}{5 cm}};
+	% Text Node
+	\draw (286.5,299.35) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {\textcolor{merah}{2,5 cm}};
+	% Text Node
+	\draw (446.68,115.25) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,rotate=-90] [align=left] {\textcolor{merah}{2,5 cm}};
+	% Text Node
+	\draw (445.17,222.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,rotate=-90] [align=left] {\textcolor{merah}{5 cm}};
+	% Text Node
+	\draw (256.93,56.5) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {\textcolor{merah}{7,5 cm}};
+	% Text Node
+	\draw (304,114.4) node [anchor=north west][inner sep=0.75pt]    {$I$};
+	% Text Node
+	\draw (302,186.4) node [anchor=north west][inner sep=0.75pt]    {$II$};
+	
+	
+\end{tikzpicture}
+\par
+}
+Dari gambar di atas, koordinat titik berat bangun I dan bangun II secara berturut-turut adalah (7.5, 12.5) dan (7.5, 5). Luas bangun I dan bangun II secara berturut-turut adalah $A_I = 15 \ \text{cm} \cdot 5 \ \text{cm} = 75 \ \text{cm}^2$ dan $A_{II} = 10 \ \text{cm} \cdot 5 \ \text{cm} = 50 \ \text{cm}^2$.
+\par
+Karena koordinat-x titik berat bangun I maupun bangun II adalah 7.5, maka cukup jelas bahwa koordinat-x titik berat dari gabungan bangun I dan bangun II adalah 7.5. Silakan coba buktikan ini sendiri dengan menggunakan persamaan titik berat.
+Untuk koordinat-y-nya:
+
+\begin{align*}
+y_{pm} &= \frac{A_I y_I + A_{II} y_{II}}{A_I + A_{II}}\\[.5em]
+&= \frac{75 \cdot 12.5 + 50 \cdot 5}{75 + 50}\\[.5em]
+&= \frac{1187.5}{125}\\[.5em]
+&= 9.5
+\end{align*}
+
+Dengan demikian, koordinat titik berat gabungan bangun I dan II adalah (7.5, 9.5). $\quad \blacksquare$
+
+\item Benar atau salah: \emph{suatu benda dikatakan mengalami kesetimbangan partikel jika resultan gaya yang bekerja pada benda tersebut sama dengan nol.}
+
+\textbf{\emph{Solusi. }} Benar. Kesetimbangan partikel didasarkan pada hukum I Newton: suatu benda akan mempertahankan keadaannya jika resultan dari gaya-gaya yang bekerja pada benda tersebut adalah nol (atau, $\Sigma F = 0$). 
+\par
+Sebagai ilustrasi, misalkan suatu balok yang diam didorong dengan gaya 50 N ke kanan. Pada saat yang bersamaan, balok tersebut juga didorong dengan gaya 20 N dan 30 N ke arah kiri. Total gaya ke arah kanan sama dengan total gaya ke arah kiri, sehingga resultan gayanya adalah nol, atau lebih mudahnya, gaya ke arah kanan dan ke arah kiri seimbang. Karena resultan gayanya nol, maka balok akan tetap diam seolah-olah tidak pernah ada gaya yang mendorongnya. Inilah yang dinamakan kesetimbangan partikel.\\[.5em]
+
+\par
+Adapun keseimbangan pada benda tegar mensyaratkan dua hal: resultan torsi dan resultan gaya harus nol. Perbedaan utama antara kesetimbangan benda partikel dengan kesetimbangan benda tegar adalah kesetimbangan yang kedua melibatkan rotasi juga, tidak hanya translasi. 
+\end{enumerate}
+
+
+
+
+\end{document}

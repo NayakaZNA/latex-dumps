@@ -1,0 +1,489 @@
+\documentclass[12pt, a4paper]{article}\usepackage[utf8]{inputenc}
+\usepackage[margin={4.2em}]{geometry}
+\usepackage[svgnames]{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{kpfonts, baskervald}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{lipsum}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage[shortlabels]{enumitem}
+\usepackage{varwidth}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{anyfontsize}
+\usepackage[fontsize=12.5pt]{fontsize}
+\usepackage{array}
+\usepackage{cite}
+\usepackage{titling}
+
+\pagenumbering{gobble}
+
+\setlength{\droptitle}{-5em}
+
+\definecolor{bekgraun}{HTML}{28293D}
+\definecolor{merah}{HTML}{FF5C5C}
+\definecolor{hijau}{HTML}{57EBA3}
+\definecolor{biru}{HTML}{6798FF}
+\definecolor{oren}{HTML}{FCCC76}
+\definecolor{kuning}{HTML}{FEED73}
+\definecolor{birumuda}{HTML}{A9EFF3}
+\definecolor{ungu}{HTML}{DEA5E8}
+\definecolor{teks}{HTML}{9B9BC1}
+
+\newcommand{\defeq}{\vcentcolon=}
+
+\newcommand{\eqdef}{=\vcentcolon}
+
+\newcommand\hcancel[2][merah]{\setbox0=\hbox{$#2$}%
+	\rlap{\raisebox{.45\ht0}{\textcolor{#1}{\rule{\wd0}{1pt}}}}#2} 
+
+\newcommand{\garis} [3] []{
+	\begin{center}
+		\begin{tikzpicture}
+			\draw[#2-#3, ultra thick, #1] (0,0) to (1\linewidth,0);
+		\end{tikzpicture}
+	\end{center}
+}
+
+\newcommand{\chapternote}[1]{{%
+		\let\thempfn\relax% Remove footnote number printing mechanism
+		\footnotetext[0]{\emph{#1}}% Print footnote text
+}}
+
+
+
+\theoremstyle{definition}
+\newtheorem{definisi}{Definisi}
+
+\theoremstyle{definition}
+\newtheorem{teorema}{Teorema}
+
+
+\color{teks}
+\pagecolor{bekgraun}
+
+\usepackage[colorlinks=true, linkcolor=teks, urlcolor=teks]{hyperref}
+
+\begin{document}
+	\vspace{-2em}
+	\begin{center}
+		\textbf{{\LARGE Dinamika Rotasi dan Kesetimbangan Benda Tegar}} \\ \vspace{14pt} {\largerr Z. Nayaka Athadiansyah} \\ \vspace{-1pt}
+	\end{center}
+	\vspace{-2.2em}
+	\garis{diamond}{diamond}
+	\vspace{0.2em}
+
+Kita sudah mempelajari kinematika dan dinamika partikel. Kita telah menginvestigasi suatu mobil yang bergerak dengan kelajuan atau akselerasi konstan, bola yang dilempar ke atas atau dijatuhkan dari atas gedung, bola meriam yang bergerak dengan lintasan berbentuk parabola dan sudut elevasi tertentu, suatu sistem katrol yang memiliki akselerasi, serta gerakan suatu balok di atas bidang datar atau bidang miring yang licin. 
+\par 
+Selamat karena telah bertahan sejauh ini. Masih ada banyak keindahan dan kerumitan dalam fisika yang menunggu.
+\par
+Ketika meninjau kasus-kasus yang disebutkan pada paragraf pertama, kita mengasumsikan bahwa gerakan benda tersebut hanyalah \textbf{gerak translasi}. Semua titik yang ada pada benda bergerak secara seragam menuju arah yang sama. 
+
+\vspace{-1em}
+\begin{center}
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+	%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+	
+	%Shape: Ellipse [id:dp36814882803956284] 
+	\draw   (103.48,151.23) .. controls (103.48,115.39) and (123.04,86.35) .. (147.15,86.35) .. controls (171.27,86.35) and (190.82,115.39) .. (190.82,151.23) .. controls (190.82,187.06) and (171.27,216.1) .. (147.15,216.1) .. controls (123.04,216.1) and (103.48,187.06) .. (103.48,151.23) -- cycle ;
+	%Shape: Circle [id:dp9408517035863977] 
+	\draw  [fill={teks}] (146.33,119.5) .. controls (146.33,117.75) and (147.75,116.33) .. (149.5,116.33) .. controls (151.25,116.33) and (152.67,117.75) .. (152.67,119.5) .. controls (152.67,121.25) and (151.25,122.67) .. (149.5,122.67) .. controls (147.75,122.67) and (146.33,121.25) .. (146.33,119.5) -- cycle ;
+	%Shape: Circle [id:dp15465903461418673] 
+	\draw  [fill={teks}] (145.1,154.5) .. controls (145.04,152.76) and (146.4,151.29) .. (148.15,151.23) .. controls (149.9,151.16) and (151.37,152.53) .. (151.43,154.28) .. controls (151.49,156.02) and (150.13,157.49) .. (148.38,157.55) .. controls (146.63,157.62) and (145.16,156.25) .. (145.1,154.5) -- cycle ;
+	%Shape: Circle [id:dp5296912100231761] 
+	\draw  [fill={teks}] (144.33,194.83) .. controls (144.33,193.08) and (145.75,191.67) .. (147.5,191.67) .. controls (149.25,191.67) and (150.67,193.08) .. (150.67,194.83) .. controls (150.67,196.58) and (149.25,198) .. (147.5,198) .. controls (145.75,198) and (144.33,196.58) .. (144.33,194.83) -- cycle ;
+	%Shape: Ellipse [id:dp5432391473967138] 
+	\draw  [dash pattern={on 4.5pt off 4.5pt}] (291.48,127.89) .. controls (291.48,92.06) and (311.04,63.02) .. (335.15,63.02) .. controls (359.27,63.02) and (378.82,92.06) .. (378.82,127.89) .. controls (378.82,163.72) and (359.27,192.77) .. (335.15,192.77) .. controls (311.04,192.77) and (291.48,163.72) .. (291.48,127.89) -- cycle ;
+	%Shape: Circle [id:dp8281216205369664] 
+	\draw  [fill={teks}] (334.33,96.17) .. controls (334.33,94.42) and (335.75,93) .. (337.5,93) .. controls (339.25,93) and (340.67,94.42) .. (340.67,96.17) .. controls (340.67,97.92) and (339.25,99.33) .. (337.5,99.33) .. controls (335.75,99.33) and (334.33,97.92) .. (334.33,96.17) -- cycle ;
+	%Shape: Circle [id:dp7293341021794524] 
+	\draw  [fill={teks}] (333.1,131.17) .. controls (333.04,129.42) and (334.4,127.95) .. (336.15,127.89) .. controls (337.9,127.83) and (339.37,129.19) .. (339.43,130.94) .. controls (339.49,132.69) and (338.13,134.16) .. (336.38,134.22) .. controls (334.63,134.28) and (333.16,132.92) .. (333.1,131.17) -- cycle ;
+	%Shape: Circle [id:dp41094350836971216] 
+	\draw  [fill={teks}] (332.33,171.5) .. controls (332.33,169.75) and (333.75,168.33) .. (335.5,168.33) .. controls (337.25,168.33) and (338.67,169.75) .. (338.67,171.5) .. controls (338.67,173.25) and (337.25,174.67) .. (335.5,174.67) .. controls (333.75,174.67) and (332.33,173.25) .. (332.33,171.5) -- cycle ;
+	%Straight Lines [id:da5862261329608571] 
+	\draw  [dash pattern={on 0.84pt off 2.51pt}]  (149.5,119.5) -- (331.36,96.54) ;
+	\draw [shift={(334.33,96.17)}, rotate = 172.81] [fill={teks}][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	%Straight Lines [id:da5995068795931064] 
+	\draw  [dash pattern={on 0.84pt off 2.51pt}]  (148.27,154.5) -- (330.12,131.55) ;
+	\draw [shift={(333.1,131.17)}, rotate = 172.81] [fill={teks}][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	%Straight Lines [id:da033226124454233785] 
+	\draw  [dash pattern={on 0.84pt off 2.51pt}]  (147.5,194.83) -- (329.36,171.88) ;
+	\draw [shift={(332.33,171.5)}, rotate = 172.81] [fill={teks}][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	%Shape: Ellipse [id:dp8217429159220357] 
+	\draw  [dash pattern={on 4.5pt off 4.5pt}] (527.48,87.23) .. controls (527.48,51.39) and (547.04,22.35) .. (571.15,22.35) .. controls (595.27,22.35) and (614.82,51.39) .. (614.82,87.23) .. controls (614.82,123.06) and (595.27,152.1) .. (571.15,152.1) .. controls (547.04,152.1) and (527.48,123.06) .. (527.48,87.23) -- cycle ;
+	%Shape: Circle [id:dp76349188490061] 
+	\draw  [fill={teks}] (570.33,55.5) .. controls (570.33,53.75) and (571.75,52.33) .. (573.5,52.33) .. controls (575.25,52.33) and (576.67,53.75) .. (576.67,55.5) .. controls (576.67,57.25) and (575.25,58.67) .. (573.5,58.67) .. controls (571.75,58.67) and (570.33,57.25) .. (570.33,55.5) -- cycle ;
+	%Shape: Circle [id:dp28329686526494546] 
+	\draw  [fill={teks}] (569.1,90.5) .. controls (569.04,88.76) and (570.4,87.29) .. (572.15,87.23) .. controls (573.9,87.16) and (575.37,88.53) .. (575.43,90.28) .. controls (575.49,92.02) and (574.13,93.49) .. (572.38,93.55) .. controls (570.63,93.62) and (569.16,92.25) .. (569.1,90.5) -- cycle ;
+	%Shape: Circle [id:dp3373429615427215] 
+	\draw  [fill={teks}] (568.33,130.83) .. controls (568.33,129.08) and (569.75,127.67) .. (571.5,127.67) .. controls (573.25,127.67) and (574.67,129.08) .. (574.67,130.83) .. controls (574.67,132.58) and (573.25,134) .. (571.5,134) .. controls (569.75,134) and (568.33,132.58) .. (568.33,130.83) -- cycle ;
+	%Curve Lines [id:da5505045467895817] 
+	\draw  [dash pattern={on 0.84pt off 2.51pt}]  (335.6,131.06) .. controls (489.6,124.33) and (522.86,66.52) .. (567.45,87.73) ;
+	\draw [shift={(569.5,88.75)}, rotate = 207.73] [fill={teks}][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	%Curve Lines [id:da5423047780084072] 
+	\draw  [dash pattern={on 0.84pt off 2.51pt}]  (337.5,96.17) .. controls (491.5,89.44) and (524.76,31.63) .. (569.36,52.84) ;
+	\draw [shift={(571.4,53.86)}, rotate = 207.73] [fill={teks}] [line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	%Curve Lines [id:da9968746642832553] 
+	\draw  [dash pattern={on 0.84pt off 2.51pt}]  (335.5,171.5) .. controls (489.5,164.77) and (522.76,106.97) .. (567.36,128.17) ;
+	\draw [shift={(569.4,129.19)}, rotate = 207.73] [fill={teks}][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+	
+	
+	
+	
+\end{tikzpicture}
+\end{center}
+{\centering \scriptsizer Gambar 1. Pada suatu benda yang bergerak translasi murni, semua titik bergerak secara seragam pada arah yang sama \\\par}
+\vspace{1em}\par
+Kita bisa memikirkan gerak translasi dengan membayangkan seolah-olah semua massa yang ada pada benda tersebut dipadatkan dan dikumpulkan pada satu titik saja, dan pada titik inilah semua gaya bekerja pada benda. Titik ini dinamakan \textbf{pusat massa}.
+
+\subsection{Kinematika Rotasi}
+
+\begin{definisi}
+	{Gerak rotasi adalah gerakan di mana tiap titik pada suatu benda bergerak melingkar memutari suatu sumbu yang dinamakan sumbu rotasi.}
+\end{definisi}
+
+\vspace{-2em}
+\begin{center}
+	
+	
+	
+	
+	\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+	
+	\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+		%uncomment if require: \path (0,471); %set diagram left start at 0, and has height of 471
+		
+		%Shape: Polygon Curved [id:ds4179726728419959] 
+		\draw   (168.8,130.6) .. controls (178.8,125.6) and (225.6,128.2) .. (254.6,136.6) .. controls (283.6,145) and (270.8,173.6) .. (290.8,203.6) .. controls (310.8,233.6) and (204.2,214.2) .. (184.2,184.2) .. controls (164.2,154.2) and (146.8,155.6) .. (146.8,145.6) .. controls (146.8,135.6) and (158.8,135.6) .. (168.8,130.6) -- cycle ;
+		%Straight Lines [id:da5908984538381599] 
+		\draw  [dash pattern={on 4.5pt off 4.5pt}]  (120.47,126.27) -- (310.13,220.93) ;
+		%Shape: Can [id:dp33695926196174963] 
+		\draw   (406.2,109.73) -- (406.2,228.73) .. controls (406.2,233.7) and (392.77,237.73) .. (376.2,237.73) .. controls (359.63,237.73) and (346.2,233.7) .. (346.2,228.73) -- (346.2,109.73) .. controls (346.2,104.76) and (359.63,100.73) .. (376.2,100.73) .. controls (392.77,100.73) and (406.2,104.76) .. (406.2,109.73) .. controls (406.2,114.7) and (392.77,118.73) .. (376.2,118.73) .. controls (359.63,118.73) and (346.2,114.7) .. (346.2,109.73) ;
+		%Straight Lines [id:da7268577226986848] 
+		\draw  [dash pattern={on 4.5pt off 4.5pt}]  (376.2,71) -- (376.2,253.4) ;
+		%Shape: Ellipse [id:dp8328837492858367] 
+		\draw  [dash pattern={on 0.84pt off 2.51pt}] (346.6,180.99) .. controls (346.6,175.46) and (360.03,170.98) .. (376.6,170.98) .. controls (393.17,170.98) and (406.6,175.46) .. (406.6,180.99) .. controls (406.6,186.52) and (393.17,191) .. (376.6,191) .. controls (360.03,191) and (346.6,186.52) .. (346.6,180.99) -- cycle ;
+		%Straight Lines [id:da31919640792634496] 
+		\draw    (386.4,190.18) -- (388.02,189.98) ;
+		\draw [shift={(390,189.74)}, rotate = 172.96] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (7.65,-2.3) .. controls (4.86,-0.97) and (2.31,-0.21) .. (0,0) .. controls (2.31,0.21) and (4.86,0.98) .. (7.65,2.3)   ;
+		%Straight Lines [id:da030509771455817347] 
+		\draw    (364.8,171.5) -- (361.73,172.32) ;
+		\draw [shift={(359.8,172.84)}, rotate = 345.06] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (7.65,-2.3) .. controls (4.86,-0.97) and (2.31,-0.21) .. (0,0) .. controls (2.31,0.21) and (4.86,0.98) .. (7.65,2.3)   ;
+		%Straight Lines [id:da047598743540977484] 
+		\draw  [dash pattern={on 0.84pt off 2.51pt}]  (406.7,179.73) -- (376.6,179.73) ;
+		%Shape: Ellipse [id:dp4863583398073821] 
+		\draw  [dash pattern={on 0.84pt off 2.51pt}] (205.3,223.54) .. controls (209.32,225.55) and (222.05,208.28) .. (233.72,184.96) .. controls (245.39,161.64) and (251.6,141.1) .. (247.58,139.09) .. controls (243.55,137.07) and (230.83,154.35) .. (219.16,177.67) .. controls (207.49,200.99) and (201.28,221.52) .. (205.3,223.54) -- cycle ;
+		%Straight Lines [id:da8238491481846717] 
+		\draw    (224.88,167.38) -- (227.56,162.19) ;
+		\draw [shift={(228.48,160.42)}, rotate = 117.35] [color={teks}  ][line width=0.75]    (7.65,-2.3) .. controls (4.86,-0.97) and (2.31,-0.21) .. (0,0) .. controls (2.31,0.21) and (4.86,0.98) .. (7.65,2.3)   ;
+		%Straight Lines [id:da20042963193772168] 
+		\draw    (221.52,206.77) -- (218.4,212.46) ;
+		\draw [shift={(217.43,214.21)}, rotate = 298.74] [color={teks}  ][line width=0.75]    (7.65,-2.3) .. controls (4.86,-0.97) and (2.31,-0.21) .. (0,0) .. controls (2.31,0.21) and (4.86,0.98) .. (7.65,2.3)   ;
+		
+		%Curve Left Arrow [id:dp298984619750426] 
+		\draw  [fill={bekgraun}  ,fill opacity=1 ][line width=0.75]  (103.03,136.35) .. controls (99.48,134.28) and (103.66,120.48) .. (112.38,105.52) -- (118.81,109.27) .. controls (110.1,124.23) and (105.92,138.03) .. (109.47,140.1) ;\draw  [fill={bekgraun}  ,fill opacity=1 ][line width=0.75]  (109.47,140.1) .. controls (112.31,141.75) and (119.24,135.41) .. (126.35,125.16) -- (128.5,126.41) -- (128.46,114.9) -- (117.77,120.16) -- (119.92,121.41) .. controls (112.8,131.66) and (105.88,138.01) .. (103.03,136.35)(109.47,140.1) -- (103.03,136.35) ;
+		%Curve Right Arrow [id:dp08671404775244662] 
+		\draw  [fill={bekgraun}  ,fill opacity=1 ] (392.6,70.56) .. controls (392.6,66.54) and (382.03,63.28) .. (369,63.28) -- (369,56.2) .. controls (382.03,56.2) and (392.6,59.46) .. (392.6,63.48) ;\draw  [fill={bekgraun}  ,fill opacity=1 ] (392.6,63.48) .. controls (392.6,66.47) and (386.78,69.03) .. (378.44,70.15) -- (378.44,67.79) -- (369,74.3) -- (378.44,79.59) -- (378.44,77.23) .. controls (386.78,76.11) and (392.6,73.55) .. (392.6,70.56)(392.6,63.48) -- (392.6,70.56) ;
+		%Straight Lines [id:da7841804322952053] 
+		\draw  [dash pattern={on 0.84pt off 2.51pt}]  (247.58,139.09) -- (226.44,181.31) ;
+		%Shape: Right Angle [id:dp5921683450778785] 
+		\draw   (229.62,175.77) -- (233.31,177.55) -- (231.13,182.08) ;
+		%Shape: Right Angle [id:dp8988717342529207] 
+		\draw   (382,179.73) -- (382,184.25) -- (376.6,184.25) ;
+		
+		% Text Node
+		\draw (84.78,116.67) node [anchor=north west][inner sep=0.75pt]  [rotate=-295.74]  {$\omega $};
+		% Text Node
+		\draw (370.02,35.72) node [anchor=north west][inner sep=0.75pt]  [rotate=-0.13]  {$\omega $};
+		
+		
+	\end{tikzpicture}
+\end{center}
+{\centering \scriptsizer Gambar 2. Dua benda yang berotasi terhadap suatu sumbu \\\par}
+
+Pada gerak translasi, kita berurusan dengan perpindahan ($\Delta s$) serta turunan-turunannya terhadap waktu, yakni kecepatan ($v$) dan percepatan ($a$). Ketiganya punya kembaran pada gerak rotasi, yakni \textbf{perpindahan sudut} ($\Delta \theta$), \textbf{kecepatan sudut} ($\omega$), dan \textbf{percepatan sudut} ($\alpha$). Percaya atau tidak, persamaan-persamaan pada kinematika gerak translasi juga memiliki kembaran pada gerak rotasi.
+\par
+
+\subsubsection{Satuan Radian}
+
+\begin{center}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+	%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+	
+	%Shape: Circle [id:dp4120842236518314] 
+	\draw   (235,133.5) .. controls (235,89.59) and (270.59,54) .. (314.5,54) .. controls (358.41,54) and (394,89.59) .. (394,133.5) .. controls (394,177.41) and (358.41,213) .. (314.5,213) .. controls (270.59,213) and (235,177.41) .. (235,133.5) -- cycle ;
+	%Straight Lines [id:da5326884017396061] 
+	\draw    (324.4,54.4) -- (314.5,133.5) ;
+	%Straight Lines [id:da44905490606684806] 
+	\draw    (390.4,154.9) -- (314.5,133.5) ;
+	%Curve Lines [id:da8760024434500921] 
+	\draw    (315.5,121.4) .. controls (320.9,120.4) and (330.4,125.9) .. (327.4,136.4) ;
+	%Curve Lines [id:da4184184044894401] 
+	\draw [color={merah}  ,draw opacity=1 ][line width=1.5]    (324.4,54.4) .. controls (378,63.4) and (403.5,112.9) .. (390.4,154.9) ;
+	%Shape: Circle [id:dp3183091702525598] 
+	\draw   (420,139.5) .. controls (420,95.59) and (455.59,60) .. (499.5,60) .. controls (543.41,60) and (579,95.59) .. (579,139.5) .. controls (579,183.41) and (543.41,219) .. (499.5,219) .. controls (455.59,219) and (420,183.41) .. (420,139.5) -- cycle ;
+	%Straight Lines [id:da523588864322307] 
+	\draw    (509.4,60.4) -- (499.5,139.5) ;
+	%Shape: Circle [id:dp8310410994057045] 
+	\draw  [color={merah}  ,draw opacity=1 ][line width=1.5]  (420,139.5) .. controls (420,95.59) and (455.59,60) .. (499.5,60) .. controls (543.41,60) and (579,95.59) .. (579,139.5) .. controls (579,183.41) and (543.41,219) .. (499.5,219) .. controls (455.59,219) and (420,183.41) .. (420,139.5) -- cycle ;
+	%Shape: Circle [id:dp1226294403067707] 
+	\draw   (486.85,139.5) .. controls (486.85,132.51) and (492.51,126.85) .. (499.5,126.85) .. controls (506.49,126.85) and (512.15,132.51) .. (512.15,139.5) .. controls (512.15,146.49) and (506.49,152.15) .. (499.5,152.15) .. controls (492.51,152.15) and (486.85,146.49) .. (486.85,139.5) -- cycle ;
+	%Shape: Circle [id:dp08146332157976688] 
+	\draw   (54,137.5) .. controls (54,93.59) and (89.59,58) .. (133.5,58) .. controls (177.41,58) and (213,93.59) .. (213,137.5) .. controls (213,181.41) and (177.41,217) .. (133.5,217) .. controls (89.59,217) and (54,181.41) .. (54,137.5) -- cycle ;
+	%Straight Lines [id:da8544407864151775] 
+	\draw    (143.4,58.4) -- (133.5,137.5) ;
+	%Straight Lines [id:da6533250106264161] 
+	\draw    (209.4,158.9) -- (133.5,137.5) ;
+	%Curve Lines [id:da9618526155957787] 
+	\draw    (134.5,125.4) .. controls (139.9,124.4) and (149.4,129.9) .. (146.4,140.4) ;
+	%Curve Lines [id:da4355062535156067] 
+	\draw [color={merah}  ,draw opacity=1 ][line width=1.5]    (143.4,58.4) .. controls (197,67.4) and (222.5,116.9) .. (209.4,158.9) ;
+	
+	% Text Node
+	\draw (325.5,111.3) node [anchor=north west][inner sep=0.75pt]    {$\theta $};
+	% Text Node
+	\draw (310,77.3) node [anchor=north west][inner sep=0.75pt]    {$r$};
+	% Text Node
+	\draw (387.03,55.52) node [anchor=north west][inner sep=0.75pt]  [font=\large,rotate=-47.9]  {$\textcolor{merah}{\theta r}$};
+	% Text Node
+	\draw (473.5,151.55) node [anchor=north west][inner sep=0.75pt]    {$\theta \ =\ 360^{\circ }$};
+	% Text Node
+	\draw (495,83.3) node [anchor=north west][inner sep=0.75pt]    {$r$};
+	% Text Node
+	\draw (298,134.4) node [anchor=north west][inner sep=0.75pt]    {$O$};
+	% Text Node
+	\draw (147.5,115.3) node [anchor=north west][inner sep=0.75pt]    {$1\ rad$};
+	% Text Node
+	\draw (129,81.3) node [anchor=north west][inner sep=0.75pt]    {$r$};
+	% Text Node
+	\draw (206.88,62.92) node [anchor=north west][inner sep=0.75pt]  [font=\large,rotate=-35.44]  {$\textcolor{merah}{r}$};
+	% Text Node
+	\draw (117,138.4) node [anchor=north west][inner sep=0.75pt]    {$O$};
+	% Text Node
+	\draw (167,152.3) node [anchor=north west][inner sep=0.75pt]    {$r$};
+	% Text Node
+	\draw (349,152.3) node [anchor=north west][inner sep=0.75pt]    {$r$};
+	% Text Node
+	\draw (575.6,63.81) node [anchor=north west][inner sep=0.75pt]  [font=\large,rotate=-51.6]  {$\textcolor{merah}{2\pi r}$};
+	% Text Node
+	\draw (118,226.4) node [anchor=north west][inner sep=0.75pt]    {$(A)$};
+	% Text Node
+	\draw (303.2,226.4) node [anchor=north west][inner sep=0.75pt]    {$(B)$};
+	% Text Node
+	\draw (490.8,226.8) node [anchor=north west][inner sep=0.75pt]    {$(C)$};
+	
+	
+\end{tikzpicture}
+\end{center}
+\vspace{-.7em}
+{\centering \scriptsizer Gambar 3. Lingkaran dengan jari-jari $r$ \par}
+\vspace{.5em}
+Misalkan pada sebuah lingkaran (titik pusat: $O$) dengan jari-jari $r$ ada suatu \textcolor{merah}{busur} dengan panjang $r$ juga. Maka sudut pusat yang mengapit busur ini didefinisikan sebagai 1 radian. Secara umum, jika besar sudut pusatnya adalah $\theta$, maka panjang busur yang diapit adalah $\theta r$.
+\par
+Kalau sudut pusatnya adalah satu putaran ($\theta = 360^\circ$), maka panjang busur yang diapit ($\theta r$) setara dengan keliling lingkaran ($2\pi r$). Jadi,
+
+\vspace{-1.5em}
+\begin{flalign*}
+	\theta r &= 2\pi r\\
+	\theta &= 2\pi\\
+	360^\circ &=2\pi
+\end{flalign*}
+
+Dari fakta bahwa $360^\circ = 2 \pi$, bisa kita temukan nilai untuk sudut-sudut lainnya:
+
+\begin{center}
+	{\renewcommand{\arraystretch}{2.6}
+	\begin{tabular}{c c}
+	\begin{tabular}{|c|c|}
+		\hline
+		Derajat & Radian\\
+		\hline
+		$180^\circ$ & $= \dfrac{1}{2} \cdot 360^\circ = \dfrac{1}{2} \cdot 2\pi = \pi$\\
+		\hline
+		$90^\circ$ & $= \dfrac{1}{2} \cdot 180^\circ = \dfrac{1}{2} \cdot \pi = \dfrac{\pi}{2}$\\
+		\hline
+		$45^\circ$ & $= \dfrac{1}{2} \cdot 90^\circ = \dfrac{1}{2} \cdot \dfrac{\pi}{2} = \dfrac{\pi}{4}$\\
+		\hline
+	\end{tabular}
+	&
+	\begin{tabular}{|c|c|}
+		\hline
+		Derajat & Radian\\
+		\hline
+		$60^\circ$ & $= \dfrac{1}{6} \cdot 360^\circ = \dfrac{1}{6} \cdot 2\pi = \dfrac{\pi}{3}$\\
+		\hline
+		$30^\circ$ & $= \dfrac{1}{2} \cdot 60^\circ = \dfrac{1}{2} \cdot \dfrac{\pi}{3} = \dfrac{\pi}{6}$\\
+		\hline
+		$150^\circ$ & $= 180^\circ - 30^\circ = \pi - \dfrac{\pi}{6} = \dfrac{5\pi}{6}$\\
+		\hline
+	\end{tabular}
+	\end{tabular}
+	}
+\end{center}
+{\centering dan seterusnya. \par}
+\vspace{.5em}
+\par
+Ketimbang satuan derajat, satuan radian lah yang dijadikan sebagai satuan sudut dalam Sistem Satuan Internasional. Satuan radian juga dipakai dalam kalkulus. Salah satu kelebihan satuan radian adalah dapat menghubungkan antara besaran sudut dengan besaran panjang, sebagaimana telah dicontohkan pada ilustrasi tadi. Selain itu, penulisan satuan radian pun juga lebih sederhana.
+\par
+Satuan radian juga tidak arbitrer. Fakta bahwa sudut satu putaran adalah $2 \pi$ lebih masuk akal karena bisa dikaitkan dengan keliling lingkaran. 
+\par
+Bagaimana dengan satuan derajat? Satuan derajat lebih arbitrer. Tak jarang kita menanyakan pertanyaan semacam ``Kenapa sudut satu putaran itu $360^\circ$, bukan $100^\circ$ atau $200^\circ$?" 
+Itu semua adalah warisan sejarah dari bangsa Babilonia yang menggunakan sistem bilangan seksagesimal (basis 60).
+\par
+
+\subsubsection{Persamaan-Persamaan Kinematika Rotasi}
+
+
+\begin{center}
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+	%uncomment if require: \path (0,397); %set diagram left start at 0, and has height of 397
+	
+	%Shape: Arc [id:dp057832121256562674] 
+	\draw  [draw opacity=0] (246.82,177.69) .. controls (249.55,183.29) and (251.08,189.58) .. (251.08,196.23) -- (208.74,196.23) -- cycle ; \draw  [color={kuning}  ,draw opacity=1 ] (246.82,177.69) .. controls (249.55,183.29) and (251.08,189.58) .. (251.08,196.23) ;
+	%Shape: Arc [id:dp3400861462611464] 
+	\draw  [draw opacity=0] (251.04,131.29) .. controls (272.23,145.12) and (286.24,169.04) .. (286.24,196.23) -- (208.74,196.23) -- cycle ; \draw  [color={biru}  ,draw opacity=1 ] (251.04,131.29) .. controls (272.23,145.12) and (286.24,169.04) .. (286.24,196.23) ;
+	%Shape: Arc [id:dp3435978134118629] 
+	\draw  [draw opacity=0] (271.75,99.47) .. controls (289.12,110.8) and (303.25,126.69) .. (312.45,145.43) -- (208.74,196.23) -- cycle ; \draw  [color={merah}  ,draw opacity=1 ] (271.75,99.47) .. controls (289.12,110.8) and (303.25,126.69) .. (312.45,145.43) ;
+	%Shape: Axis 2D [id:dp5102415880220637] 
+	\draw  (191.26,196.23) -- (366.1,196.23)(208.74,29.26) -- (208.74,214.79) (359.1,191.23) -- (366.1,196.23) -- (359.1,201.23) (203.74,36.26) -- (208.74,29.26) -- (213.74,36.26)  ;
+	%Straight Lines [id:da47973252429686997] 
+	\draw    (208.74,196.23) -- (359.32,122.29) ;
+	%Straight Lines [id:da8622401032953346] 
+	\draw    (208.74,196.23) -- (300.05,54.55) ;
+	%Shape: Circle [id:dp8579949678128769] 
+	\draw  [fill={teks}  ,fill opacity=1 ] (352.82,122.29) .. controls (352.82,118.69) and (355.73,115.78) .. (359.32,115.78) .. controls (362.92,115.78) and (365.83,118.69) .. (365.83,122.29) .. controls (365.83,125.88) and (362.92,128.79) .. (359.32,128.79) .. controls (355.73,128.79) and (352.82,125.88) .. (352.82,122.29) -- cycle ;
+	%Shape: Circle [id:dp9035562924122562] 
+	\draw  [fill={teks}  ,fill opacity=1 ] (293.55,54.55) .. controls (293.55,50.95) and (296.46,48.04) .. (300.05,48.04) .. controls (303.64,48.04) and (306.55,50.95) .. (306.55,54.55) .. controls (306.55,58.14) and (303.64,61.05) .. (300.05,61.05) .. controls (296.46,61.05) and (293.55,58.14) .. (293.55,54.55) -- cycle ;
+	%Shape: Arc [id:dp6915678495094821] 
+	\draw  [draw opacity=0][dash pattern={on 4.5pt off 4.5pt}] (299.69,52.88) .. controls (325.99,69.6) and (347.38,93.36) .. (361.21,121.51) -- (208.74,196.23) -- cycle ; \draw  [dash pattern={on 4.5pt off 4.5pt}] (299.69,52.88) .. controls (325.99,69.6) and (347.38,93.36) .. (361.21,121.51) ;
+	%Shape: Arc [id:dp9944598305595727] 
+	\draw  [draw opacity=0][dash pattern={on 0.84pt off 2.51pt}] (359.97,119.05) .. controls (371.84,142.26) and (378.53,168.57) .. (378.49,196.44) .. controls (378.38,290.19) and (302.29,366.1) .. (208.54,365.98) .. controls (114.79,365.87) and (38.88,289.78) .. (38.99,196.03) .. controls (39.11,102.28) and (115.2,26.37) .. (208.95,26.48) .. controls (242.14,26.53) and (273.1,36.09) .. (299.24,52.59) -- (208.74,196.23) -- cycle ; \draw  [dash pattern={on 0.84pt off 2.51pt}] (359.97,119.05) .. controls (371.84,142.26) and (378.53,168.57) .. (378.49,196.44) .. controls (378.38,290.19) and (302.29,366.1) .. (208.54,365.98) .. controls (114.79,365.87) and (38.88,289.78) .. (38.99,196.03) .. controls (39.11,102.28) and (115.2,26.37) .. (208.95,26.48) .. controls (242.14,26.53) and (273.1,36.09) .. (299.24,52.59) ;
+	%Shape: Brace [id:dp5734498355804292] 
+	\draw   (384,93.33) .. controls (387.49,90.23) and (387.68,86.94) .. (384.58,83.45) -- (367.77,64.57) .. controls (363.34,59.59) and (362.86,55.55) .. (366.35,52.44) .. controls (362.86,55.55) and (358.9,54.61) .. (354.47,49.63)(356.47,51.87) -- (339.89,33.24) .. controls (336.78,29.75) and (333.49,29.56) .. (330,32.66) ;
+	%Straight Lines [id:da40809022249643556] 
+	\draw [color={hijau}  ,draw opacity=1 ]   (224.33,228.33) -- (373.33,159.67) ;
+	\draw [shift={(373.33,159.67)}, rotate = 155.26] [color={hijau}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+	\draw [shift={(224.33,228.33)}, rotate = 155.26] [color={hijau}  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+
+	% Text Node
+	\draw (256.5,174.57) node [anchor=north west][inner sep=0.75pt]  [color={kuning}  ,opacity=1 ]  {$\theta _{0}$};
+	% Text Node
+	\draw (291.25,155.07) node [anchor=north west][inner sep=0.75pt]  [color={biru}  ,opacity=1 ]  {$\theta $};
+	% Text Node
+	\draw (298.75,98.07) node [anchor=north west][inner sep=0.75pt]  [color={merah}  ,opacity=1 ]  {$\Delta \theta $};
+	% Text Node
+	\draw (365,99.82) node [anchor=north west][inner sep=0.75pt]    {$A$};
+	% Text Node
+	\draw (301,30.57) node [anchor=north west][inner sep=0.75pt]    {$A'$};
+	% Text Node
+	\draw (373.08,33.57) node [anchor=north west][inner sep=0.75pt]    {\Large $s$};
+	% Text Node
+	\draw (191.33,198.07) node [anchor=north west][inner sep=0.75pt]    {$O$};
+	% Text Node
+	\draw (294.57,210.42) node [anchor=north west][inner sep=0.75pt]  [font=\Large, rotate=-328.09]  {$\textcolor{hijau}{r}$};
+\end{tikzpicture}
+\end{center}
+{\centering \scriptsizer Gambar 4. Benda $A$ mengalami perpindahan sudut $\Delta \theta$ dan melintasi jarak $s$ \par}
+\vspace{.5em}
+\par
+Misalkan benda $A$ mulanya membentuk sudut $\theta_0$ terhadap suatu sumbu seperti pada Gambar 4. Benda $A$ kemudian berotasi terhadap titik $O$ dengan jarak $r$. Mulanya benda A membentuk  Beberapa saat kemudian, sudut yang terbentuk menjadi $\theta$. Maka \textbf{perpindahan sudut} ($\Delta \theta$, radian) didefinisikan sebagai 
+
+
+\vspace{-.5em}
+{
+\large \boldmath
+\begin{equation}
+	\Delta \theta = \theta - \theta_0 \tag{A.1}
+\end{equation}
+}
+
+dengan arah berlawanan jarum jam adalah arah positif, dan sebaliknya.
+
+\par
+\textbf{Jarak yang ditempuh} oleh benda ($s$, meter) setara dengan busur yang diapit oleh sudut $\Delta \theta$. Berdasarkan definisi radian yang telah dibahas sebelumnya, jarak tersebut adalah
+
+\vspace{-.5em}
+{
+	\large \boldmath
+	\begin{equation}
+		s = \left| \Delta  \theta \right| \cdot r \tag{A.2}
+	\end{equation}
+}
+dengan $\Delta \theta$ dalam satuan radian. \footnote{Notasi yang lebih umum digunakan adalah $S = \theta r$. Akan tetapi, di catatan ini $\theta$ digunakan untuk menotasikan ``sudut akhir". Nilai mutlak digunakan di sini karena $\Delta \theta$ bisa jadi negatif, padahal jarak haruslah positif.}
+\vspace{.2em}\par
+\textbf{Kecepatan sudut} $\vec{\omega}$, radian per detik) didefinisikan sebagai perpindahan sudut yang terjadi dalam satu satuan waktu. Misalkan benda menempuh sudut $\Delta \theta$ dalam waktu $\Delta t$, maka kecepatan sudut rata-ratanya adalah
+
+\vspace{-.5em}
+{
+	\large \boldmath
+	\begin{equation}
+		\overline{\omega} = \dfrac{\Delta \theta}{\Delta t} \tag{A.3}
+	\end{equation}
+}
+Ketika $\omega$ bernilai positif, maka benda berotasi berlawanan arah jarum jam, dan sebaliknya.
+Kelajuan rata-rata benda adalah jarak ($s$) dibagi waktu ($\Delta t$), yakni
+
+\vspace{-.5em}
+{
+	\large \boldmath
+	\begin{equation}
+		v = \dfrac{s}{\Delta t} = \dfrac{\Delta \theta \cdot r}{\Delta t} = \omega r \tag{A.4}
+	\end{equation}
+}
+
+dan kelajuan ini didefinisikan sebagai kelajuan tangensial, karena arah gerak benda tegak lurus dengan jari-jari lintasan sebagaimana digambarkan di bawah ini:
+
+{
+\large \boldmath$\omega = \omega_0 + \alpha t$
+}
+
+{
+\large \boldmath $\Delta \theta = \dfrac{\omega + \omega_0}{2} t$
+}
+
+{
+\large \boldmath$\Delta \theta = \omega_0 t + \dfrac{1}{2}\alpha t^2$
+}
+
+{
+\large \boldmath$\Delta \theta = \omega t - \dfrac{1}{2}\alpha t^2$
+}
+
+{
+	\large \boldmath$\omega^2 = \omega_0^2 + 2\alpha \Delta \theta$
+}
+
+\subsection{Dinamika Rotasi}
+Penyebab dari gerak translasi adalah gaya. Bagaimana dengan gerak rotasi? Pada gerak rotasi, penyebabnya adalah \textbf{torsi}. 
+
+\pagebreak
+{\centering \Large \textbf{Daftar Pustaka} \par}
+\vspace{5mm}
+Giancoli, Douglas C. (2016). \emph{Physics: Principles with applications} (jilid ke-1, edisi ke-7). Boston, Mass: Pearson.
+\par Halliday, David; Resnick, Robert; Silaban, Pantur (penerj.); Sucipto, Erwin (penerj.). (1984). \emph{Fisika} (jilid ke-1, edisi ke-3). Jakarta: Erlangga.
+
+\vspace{3em}
+{\centering \Large \textbf{Catatan} \par}
+\begin{itemize}
+	\item Ketika mengenalkan suatu variabel, penulis sering menuliskannya dengan format \textbf{variabel} (simbol variabel, satuan variabel dalam SI). Misalnya: \textbf{Kecepatan sudut} ($\omega$, radian per detik)
+	\item Secara \emph{default}, satuan-satuan yang digunakan di sini adalah Satuan Internasional, misalnya radian untuk satuan sudut, meter untuk panjang, dan detik untuk waktu.
+	\item Penulis berusaha menjaga kekonsistenan dan keakuratan tiap pernyataan. Sebagai contoh, di sini penulis merumuskan kelajuan linear/tangensial sebagai $v = \left|{\omega} \right|  $
+\end{itemize}
+
+
+
+\end{document}

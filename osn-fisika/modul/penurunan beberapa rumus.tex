@@ -1,0 +1,926 @@
+\documentclass[12pt, a4paper, margin=1.3cm]{article}\usepackage[utf8]{inputenc}
+\usepackage[margin=1.6cm]{geometry}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{xcolor,cancel}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\eqdef}{=\vcentcolon}
+\newcommand\hcancel[2][red]{\setbox0=\hbox{$#2$}%
+\rlap{\raisebox{.45\ht0}{\textcolor{#1}{\rule{\wd0}{1pt}}}}#2} 
+
+\usepackage{soul,xcolor}
+
+\title{tes}
+\author{Z. Nayaka Athadiansyah}
+\date{12 Februari 2022}
+
+\begin{document}
+\maketitle
+
+\setcounter{section}{1}
+
+\subsection{Kecepatan benda yang didorong dengan gaya konstan}
+Misalkan sebuah benda bermassa $m$ didorong dengan gaya konstan $F$. Berapa kecepatannya setelah $\Delta t$ detik?\\
+Kalau kecepatan awal benda adalah $v_0$, sedangkan kecepatan akhir benda adalah $v$, maka berdasarkan kinematika $v = v_0 + a\Delta t$. Berdasarkan hukum II Newton, $F = ma$ sehingga $a = \dfrac F m$.
+
+\begin{flalign*}
+v &= v_0 + a \Delta t\\[6pt]
+\qquad \qquad v &= v_0 + \dfrac Fm \Delta t \qquad \qquad \blacksquare
+\end{flalign*} 
+
+\subsection{Gaya pengereman}
+Misalkan mobil yang bermassa $m$ mulanya bergerak dengan kecepatan $v_0$. Sang sopir lalu menginjak pedal rem hingga mobilnya berhenti dalam waktu $\Delta t$. Maka gaya pengeremannya adalah:
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+F &= ma\\[6pt]
+&= m \cdot \frac{\Delta v}{\Delta t}\\[6pt]
+&= m \cdot \frac{v_f - v_0}{\Delta t}\\[6pt]
+&= m \cdot \frac{0 - v_0}{\Delta t}\\[6pt]
+&= m \cdot \frac{(-v_0)}{\Delta t}\\[6pt]
+\qquad \qquad &= -\frac{mv_0}{\Delta t} \qquad \qquad \blacksquare
+\end{flalign*}
+Di sini gaya memiliki tanda negatif karena arahnya berlawanan dengan arah gerak benda.
+
+\pagebreak
+
+\subsection{Desakan kaki ketika lift bergerak dengan akselerasi}
+Misalkan orang yang massanya $m$ sedang berada di lift yang bergerak dengan percepatan $a$ ke \textbf{atas}. Gaya desakan kaki yang dialaminya pada dasarnya adalah gaya normal. Maka gaya desakan kakinya adalah:
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+\Sigma F_y &= ma_y\\[6pt]
+N - mg &= ma_y\\[6pt]
+N &= mg + ma_y\\[6pt]
+\qquad \qquad \quad N&= m(g + a_y)\qquad \qquad \blacksquare
+\end{flalign*}
+
+Kalau lift bergerak dengan percepatan $a_y$ ke \textbf{bawah}, kita bisa menurunkan rumus yang mirip. Bedanya kita memberikan tanda negatif pada $a_y$.
+
+\begin{flalign*}
+\qquad \qquad \quad N&= m(g - a_y)\qquad \qquad \blacksquare
+\end{flalign*}
+
+\subsection{Usaha adalah \textbf{dot product} antara vektor gaya dengan vektor perpindahan}
+Secara definisi,
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+W = \vec{F}^{\,} \cdot \vec{s}^{\,}
+\end{flalign*}
+
+
+\begin{center}
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Rectangle [id:dp19669953929514628] 
+\draw   (100,159) -- (170,159) -- (170,231) -- (100,231) -- cycle ;
+%Straight Lines [id:da8503348367668295] 
+\draw    (100,231) -- (388.8,231) ;
+%Straight Lines [id:da4369679546300971] 
+\draw    (170,159) -- (315.05,98.96) ;
+\draw [shift={(316.9,98.2)}, rotate = 157.52] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da916950057457107] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (170,159) -- (312.9,159) ;
+\draw [shift={(314.9,159)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-4.9) .. controls (6.95,-2.3) and (3.31,-0.67) .. (0,0) .. controls (3.31,0.67) and (6.95,2.3) .. (10.93,4.9)   ;
+%Curve Lines [id:da19828039081043936] 
+\draw    (220,138.5) .. controls (245.33,123.8) and (249.12,153.33) .. (242.45,159) ;
+%Straight Lines [id:da44574864351802534] 
+\draw    (172.67,223.13) -- (373,223.13) ;
+\draw [shift={(375,223.13)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5556284475991344] 
+\draw    (172.33,248.47) -- (374.67,248.47) ;
+\draw [shift={(374.67,248.47)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+\draw [shift={(172.33,248.47)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+
+% Text Node
+\draw (248.33,135.2) node [anchor=north west][inner sep=0.75pt]    {$\theta $};
+% Text Node
+\draw (318.33,75.53) node [anchor=north west][inner sep=0.75pt]    {$\vec{F}$};
+% Text Node
+\draw (317.67,145.87) node [anchor=north west][inner sep=0.75pt]    {$\vec{F} \ cos\theta $};
+% Text Node
+\draw (269,200.53) node [anchor=north west][inner sep=0.75pt]    {$\vec{s}$};
+% Text Node
+\draw (128.67,187.53) node [anchor=north west][inner sep=0.75pt]    {$m$};
+% Text Node
+\draw (267.67,253.87) node [anchor=north west][inner sep=0.75pt]    {$\Delta s$};
+
+
+\end{tikzpicture}
+\end{center}
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+%W &= |\vec{F}^{\,}| |\vec{s}^{\,}| cos\: \theta \\[6pt]
+W &= \vec{F}^{\,} \cdot \vec{s}^{\,} \cdot \frac{|\vec{s}^{\,}|}{|\vec{s}^{\,}|}\\[6pt]
+&= \frac{\vec{F}^{\,} \cdot \vec{s}^{\,}}{|\vec{s}^{\,}|} \cdot |\vec{s}^{\,}|\\[7pt]
+&= \vec{F_s}^{\,} \cdot |\vec{s}^{\,}|\\
+\end{flalign*}
+
+{\centering atau \par}
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+W &=\vec{F}^{\,} \cdot \vec{s}^{\,} = |\vec{F}^{\,}| |\vec{s}^{\,}| cos\: \theta \\[6pt]
+\end{flalign*}
+
+
+Jadi, besar usaha yang bekerja adalah hasil perkalian antara proyeksi skalar gaya terhadap perpindahan dengan besar perpindahan. Bisa dilihat bahwa kalau gaya dan perpindahan saling tegak lurus, maka usahanya adalah nol karena $cos \: 90^\circ = 0$.
+\par Perlu dipahami bahwa ketika seseorang langsung mengatakan $W = Fs$ tanpa meninjaunya dari segi vektor, mungkin alasannya adalah karena gaya dan perpindahannya sudah searah (tidak ada sudut apit) sehingga tidak perlu dicari proyeksi skalar gaya atau cosinus sudut apitnya. Tapi, dalam kasus seperti gambar di atas, kita wajib meninjaunya dari segi vektor.
+
+\subsection{Teorema Usaha-Energi}
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+W & = F\cdot \Delta s\\[6pt]
+&= m \cdot a \cdot \Delta s\\[6pt]
+&= m  \cdot \frac{\Delta v}{\hcancel{\Delta t}} \cdot \frac{(v + v_0)}{2} \hcancel{\Delta t}\\[6pt]
+&= m \cdot \frac{(v-v_0)(v + v_0)}{2}\\[6pt]
+&= m \cdot \frac{v^2 - v_0^2}{2}\\[6pt]
+W&= \frac12 mv^2 - \frac12 mv_0^2
+\end{flalign*}
+
+{\centering 
+Jika benda mulanya diam ($v_0 = 0$), maka persamaan bisa disederhanakan menjadi \par
+}
+
+{\setlength{\abovedisplayskip}{0pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+W &= \frac12 mv^2
+\end{flalign*}
+
+{\centering
+yang didefinisikan sebagai energi kinetik ($E_k$). \par
+}
+
+{\setlength{\abovedisplayskip}{0pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+E_k &= \frac12 mv^2  \qquad \blacksquare \\
+\end{flalign*}
+
+{\centering
+ Secara umum,\par
+}
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+W&= \frac12 mv^2 - \frac12 mv_0^2\\\\[6pt]
+W&= \Delta E_k   \qquad \quad \blacksquare
+\end{flalign*}
+
+{\centering
+yakni selisih energi kinetik awal dan energi kinetik akhir.\par
+}
+
+\subsection{Energi potensial gravitasi}
+
+
+ Misalkan kita pilih arah atas adalah positif dan ketinggian tanah adalah nol. Gaya gravitasi yang bekerja pada suatu objek bermassa $m$ di dekat permukaan bumi adalah $-mg$ (percepatan $g$ negatif karena arahnya ke pusat Bumi). Gaya minimum yang diperlukan untuk mengangkat benda adalah gaya yang sama besar tetapi arahnya berlawanan, yakni $mg$. Misalkan objek diangkat setinggi $\Delta y$ (= $y - y_0$), usaha yang dilakukan adalah 
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+W &= F \cdot \Delta s\\[6pt]
+W &= mg\Delta y \\
+&= mg(y - y_0)\\[6pt]
+&= mgy - mgy_0
+\end{flalign*}
+
+{\centering 
+Jika benda mulanya berada pada $y_0 = 0$ lalu berada pada ketinggian $y = h$, maka persamaan bisa disederhanakan menjadi \par
+}
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+W &= mgh\\
+\end{flalign*}
+
+{\centering
+yang didefinisikan sebagai energi potensial gravitasi. \par
+}
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+\; \quad E_p &= mgh \quad  \blacksquare
+\end{flalign*}
+
+
+Rumus ini hanya digunakan untuk meninjau benda yang dekat dengan permukaan Bumi (titik acuan $y_0 = 0$ adalah tanah). Secara lebih umum, kita bisa menggunakan rumus energi potensial gravitasi yang dijelaskan pada 1.7. \par
+
+
+\subsection{Persamaan umum energi potensial gravitasi }
+Secara umum, energi potensial gravitasi adalah usaha yang dilakukan untuk memindahkan suatu benda dari jarak tak hingga menuju posisi mereka sekarang, misalkan r.
+
+\begin{flalign*}
+F &= \frac{G \cdot m_1 \cdot m_2}{r^2}\\[6pt]
+\int_{\infty}^{r} F \:dr &= \int_{\infty}^{r} (\frac{G \cdot m_1 \cdot m_2}{r^2}) \: dr\\[6pt]
+W &=\Big[\frac{G \cdot m_1 \cdot m_2}{r}\Big]_{r = \infty}^{r}\\[6pt]
+E_p &= -\frac{G \cdot m_1 \cdot m_2}{r} - \frac{G \cdot m_1 \cdot m_2}{\infty}\\[6pt]
+&= -\frac{G \cdot m_1 \cdot m_2}{r} - 0 \\[6pt]
+\qquad \quad \qquad E_p &= -\frac{G \cdot m_1 \cdot m_2}{r}\qquad \qquad  \blacksquare
+\end{flalign*}
+
+Ini terlihat berlawanan dengan fakta yang umumnya diketahui, yakni bahwa $E_p = mgh$, yang mana bertanda positif, sedangkan persamaan di atas memiliki tanda negatif. Padahal, sebenarnya keduanya sama saja. Perbedaannya adalah persamaan di atas menggunakan suatu titik yang jaraknya tak hingga sebagai titik acuan, sedangkan $E_p = mgh$ menggunakan ketinggian tanah sebagai acuan.
+
+\subsection{Energi potensial pegas}
+
+
+\par Misalkan suatu pegas yang mula-mula diam ditarik dari posisi setimbangnya ($x_0$) sejauh x, maka pegas akan memberikan gaya pegas pada yang menariknya. Gaya ini dirumuskan sebagai \\
+{\centering
+$F = - kx$\\
+}
+dengan k adalah konstanta pegas yang menyatakan seberapa kaku suatu pegas dalam satuan N/m. Supaya bisa menarik pegas, kita perlu memberikan gaya yang sama besar dan berlawanan arah, yakni $F = kx$. Perhatikan bahwa gaya menjadi makin besar jika kita menarik pegas makin jauh dari posisi setimbangnya. Ini membuat gaya yang diberikan tidak konstan. \par Perhatikan pula bahwa persamaan $F = kx$ bisa dipandang sebagai sebuah fungsi linear dengan gradien $k$, berdasarkan bentuk umum fungsi linear $f(x) = mx + c$, di mana $m$ menyatakan gradien dan (0, c) adalah titik potong garis dengan sumbu-y. \par Grafik F sebagai fungsi x adalah sebagai berikut:
+ 
+
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da554127563912346] 
+\draw    (100,207) -- (100,44.47) ;
+\draw [shift={(100,42.47)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7051077089315154] 
+\draw    (100,207) -- (293.27,207) ;
+\draw [shift={(295.27,207)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da25315000640881125] 
+\draw    (100,207) -- (268.76,59.12) ;
+\draw [shift={(270.27,57.8)}, rotate = 138.77] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da16882792704522864] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (268.33,60.8) -- (268.33,207) ;
+%Straight Lines [id:da29816014470590524] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (268.33,60.8) -- (98.93,60.8) ;
+
+% Text Node
+\draw (91.67,25.87) node [anchor=north west][inner sep=0.75pt]    {$F$};
+% Text Node
+\draw (263.33,211.2) node [anchor=north west][inner sep=0.75pt]    {$x$};
+% Text Node
+\draw (148.18,129.54) node [anchor=north west][inner sep=0.75pt]  [rotate=-319.18]  {$F( x) \ =\ kx$};
+% Text Node
+\draw (75.67,52.87) node [anchor=north west][inner sep=0.75pt]    {$kx$};
+
+
+\end{tikzpicture}
+
+
+Di sini kita memiliki sebuah segitiga siku-siku dengan tinggi $kx$ dan alas $x$. Luasnya adalah $\frac12 kx^2$. Perhatikan bahwa di sini kita mengalikan dimensi gaya ($kx$) dengan panjang (perpindahan $x$), yang menghasilkan dimensi usaha. Maka $\frac12 kx^2$ pada dasarnya adalah usaha yang diberikan oleh gaya $F$ supaya pegas berpindah posisi sejauh $x$. Ini didefinisikan sebagai energi potensial pegas.\par
+Hasil yang sama bisa didapatkan dengan integral:
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+F &= kx\\[6pt]
+F\:dx &= (kx)\: dx\\[6pt]
+\int_{0}^{x} F\:dx &= \int_{0}^{x}(kx)\: dx\\[6pt]
+Fx&= \frac12 kx^2\\[6pt]
+W&= \frac12 kx^2
+\end{flalign*}
+
+{\centering
+Dan usaha ini didefinisikan sebagai energi potensial pegas ($E_{p \: pegas}$).\par
+}
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+E_{p \: pegas} = \frac12 kx^2 \qquad \qquad  \blacksquare
+\end{flalign*}
+
+%Pendekatan lain yang bisa diambil adalah dengan memandang perubahan gaya sebagai suatu deret aritmetika.
+
+
+\subsection{Kuat Medan Gravitasi}
+
+Kuat/intensitas medan gravitasi (I) adalah ukuran seberapa kuat gaya gravitasi yang dialami oleh suatu benda bermassa. Secara matematis, kuat medan gravitasi dirumuskan sebagai
+
+\begin{flalign*}
+I = \frac Fm
+\end{flalign*}
+
+di mana F adalah gaya gravitasi dan m adalah massa benda yang berada dalam pengaruh medan gravitasi. Misalkan kita punya dua benda A dan B yang terpisah oleh jarak r, maka gaya gravitasi yang dirasakan oleh A adalah
+
+\begin{flalign*}
+F = \frac{G\:m_A\:m_B}{r^2}
+\end{flalign*}
+sehingga medan gravitasinya adalah
+\begin{flalign*}
+ {\dfrac{F}{m_A}} &= \dfrac{\dfrac{Gm_Am_B}{r^2}}{m_A}\\[6pt]
+I &=\frac{Gm_B}{r^2}
+\end{flalign*}
+
+Jadi, kuat medan gravitasi benda B yang dirasakan oleh benda A adalah konstanta G dikali massa benda B dibagi kuadrat jarak antara pusat massa kedua benda.
+
+\subsection{Medan gravitasi Bumi sama dengan percepatan gravitasi Bumi}
+
+
+Misalkan suatu benda bermassa $m$ berada dalam pengaruh gravitasi Bumi (massa Bumi = $M_E$). Berdasarkan persamaan sebelumnya, kekuatan medan gravitasi yang dirasakan oleh benda tersebut adalah
+
+\begin{flalign*}
+I&= \frac{GM_E}{r^2}
+\end{flalign*}
+
+Di dekat permukaan Bumi, gaya berat suatu benda dirumuskan dengan
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+ W = mg
+ \end{flalign*}
+ 
+sedangkan gaya gravitasi yang bekerja pada benda dirumuskan dengan 
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+F = \frac{G M_E m}{r^2}
+\end{flalign*}
+dengan $G$ adalah konstanta gravitasi, $M_E$ adalah massa Bumi, $m$ adalah massa benda, dan $r$ adalah jarak pusat massa benda ke pusat massa Bumi. Karena gaya berat pada dasarnya adalah gaya gravitasi yang bekerja pada benda, maka $W = F$ sehingga kedua persamaan di atas bisa disetarakan:
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+mg & = \frac{GM_E m}{r^2}\\[6pt]
+\hcancel{m}g & = \frac{GM_E \hcancel{m}}{r^2}\\[6pt]
+g &= \frac{GM_E}{r^2}\\[6pt]
+g&= I\qquad \quad \blacksquare
+\end{flalign*}
+
+Menyatakan $g$ sebagai medan gravitasi cukup berguna. Ketika kita berada di dekat permukaan Bumi, kita mungkin cukup menggunakan aproksimasi $g = 9,8$m/s${}^2$. Akan tetapi, ketika kita makin menjauh dari Bumi, gaya gravitasi yang kita alami akan berkurang sehingga percepatan gravitasi kita pun juga berkurang, sehingga $g$ menjadi kurang dari 9,8. Pada kasus semacam ini, $g = \frac{GM_E}{r^2}$ bisa kita gunakan, sebab rumus tersebut pada dasarnya adalah sebuah fungsi dengan variabel r sehingga nilainya bisa berubah-ubah tergantung dengan r, jarak benda ke pusat Bumi. Hal ini berbeda dengan $g = 9,8$m/s${}^2$ yang merupakan suatu konstanta.
+
+%Misalkan ada sebuah satelit yang mengorbit pada ketinggian $h$ dan jari-jari Bumi adalah $R$, maka $r = R + h$. Alasannya adalah karena $r$ mewakili jarak pusat massa benda (satelit) ke pusat massa Bumi, sedangkan jarak satelit ke pusat massa Bumi adalah $R + h$ (lihat gambar di bawah).
+\subsection{Kecepatan Orbital}
+Kecepatan orbital adalah kecepatan yang harus dipertahankan oleh suatu objek agar ia bisa mengorbit suatu objek lainnya. Misalkan suatu satelit bermassa m mengorbit Bumi (massa: $M_E$, jari-jari: $R$) dari ketinggian $h$. Maka jarak dari pusat massa satelit ke pusat Bumi adalah $R + h$. 
+
+\includegraphics[scale = 0.6]{diagram-20220212 (9)}
+
+
+\par Untuk simplifikasi saja, kita asumsikan bentuk orbitnya adalah lingkaran. Kalau satelit bergerak dalam orbit lingkaran, maka pada dasarnya satelit bergerak melingkar. Benda yang bergerak melingkar mengalami gaya sentripetal ke arah pusat rotasi. Pada kasus ini, pusat rotasinya adalah pusat Bumi. 
+\par Nah, kebetulan gaya yang menarik satelit ke pusat Bumi adalah gaya gravitasi. \textbf{Maka bisa disimpulkan bahwa pada kasus ini gaya sentripetal sama dengan gaya gravitasi}:
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+\text{Gaya sentripetal} &= \text{Gaya gravitasi}\\[6pt]
+m\frac{v^2}{(R + h)}& = \frac{GM_E m}{(R+h)^2}\\[6pt]
+\hcancel{m}\frac{v^2}{\hcancel{(R + h)}}& = \frac{GM_E \hcancel{m}}{(R+h)^{\hcancel{2}}}\\[6pt]
+v^2 & = \frac{GM_E}{R + h}\\[6pt]
+v_{orbital} & = \sqrt{\frac{GM_E}{R+h}} \qquad \qquad  \blacksquare
+\end{flalign*}
+
+{\centering
+Ada bentuk lain dari rumus kecepatan orbital:\par
+}
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+v_{orbital} & = \sqrt{\frac{GM_E}{(R+h)}}\\[6pt]
+&= \sqrt{\frac{GM_E}{R^2} \cdot \frac{R^2}{(R+h)}}\\[6pt]
+&= \sqrt{g \cdot \frac{R^2}{R + h}}\\[6pt]
+&= R\sqrt{\frac{g}{R + h}}\qquad \qquad  \blacksquare
+\end{flalign*}
+
+\subsection{\emph{Escape velocity}}
+
+Secara definisi \emph{escape velocity} adalah kecepatan yang diperlukan suatu benda untuk ``lolos'' dari pengaruh gravitasi suatu planet, misal Bumi. Misalkan benda bermassa m mulanya berjarak $r$ dari pusat Bumi. Kita mau mencari dengan kecepatan $v_0$ berapakah benda tersebut bisa lepas dari medan gravitasi Bumi dan bisa bergerak menuju tak hingga jauhnya dari Bumi. Kita akan gunakan hukum kekekalan energi mekanik:
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+E_{k1} + E_{p1} &= E_{k2} + E_{p2}\\[6pt]
+\frac12 mv_0^2  -\frac{G \cdot M_E \cdot m}{r} &= \frac12 mv^2  -\frac{G \cdot M_E \cdot m}{r_f}\\[6pt]
+\end{flalign*}
+
+Tak hingga ($\infty$) adalah jarak maksimum benda dari Bumi. Ketika benda berhasil menempuh jarak tersebut, kecepatannya akan jadi nol. Ibaratkan benda seperti suatu objek yang bergerak secara vertikal. Ketika objek mencapai tinggi maksimum, kecepatannya adalah nol. Maka $r_f = \infty$ dan $v$ = 0.
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+\frac12 mv_0^2  -\frac{G \cdot M_E \cdot m}{r} &= \frac12 m(0)^2  -\frac{G \cdot M_E \cdot m}{\infty}\\[6pt]
+\frac12 mv_0^2  -\frac{G \cdot M_E \cdot m}{r} &= 0 - 0\\[6pt]
+\frac12 \hcancel{m}v_0^2 &= \frac{G \cdot M_E \cdot \hcancel{m}}{r}\\[6pt]
+v_0^2 &=\frac{2G \cdot M_E}{r}\\[6pt]
+&= \sqrt{\frac{2G \cdot M_E}{r}}\\[6pt]
+&= \sqrt{\frac{2G \cdot M_E}{r} \cdot \frac{r}{r}}\\[6pt]
+&= \sqrt{\frac{2G \cdot M_E}{r^2} \cdot r} = \sqrt{2gr}  \qquad  \blacksquare
+\end{flalign*}
+
+\subsection{Hubungan antara periode revolusi dengan jari-jari suatu planet}
+Misalkan planet Ban dan planet Bekasi masing-masing memiliki periode $T_1$ dan $T_2$ serta jari-jari $r_1$ dan $r_2$. Menurut hukum III Kepler, kuadrat dari periode revolusi planet berbanding lurus dengan kubik jari-jari planet. Dengan kata lain,
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+T^2 &\propto r^3 \\
+\text{atau}\\
+\frac{T^2}{r^3} &= \text{suatu konstanta} \\
+\end{flalign*}
+
+{\centering dan ini berlaku untuk sembarang planet dengan sembarang periode revolusi dan jari-jari.\par}
+
+Misalkan kita hanya mengetahui periode planet Bekasi, sedangkan semua informasi tentang planet Ban diketahui. Bagaimana cara kita mencari jari-jari planet Bekasi? Itu cukup mudah.
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+\frac{T_1^2}{r_1^3} &= \text{suatu konstanta} \\[6pt]
+\text{dan}\\[6pt]
+\frac{T_2^2}{r_2^3} &= \text{suatu konstanta}\\[6pt]
+\text{sehingga}\\[6pt]
+\dfrac{T_2^2}{r_2^3} &= \dfrac{T_1^2}{r_1^3}  \\[6pt]
+\dfrac{r_1^3r_2^3}{T_1^2} \cdot \dfrac{T_2^2}{r_2^3} &= \dfrac{T_1^2}{r_1^3} \cdot \dfrac{r_1^3r_2^3}{T_1^2}
+\end{flalign*}
+
+\begin{flalign*}
+\dfrac{r_1^3T_2^2}{T_1} &= r_2^3 \leftrightarrow r_2 = \sqrt[3]{\dfrac{r_1^3T_2^2}{T_1}}
+\end{flalign*}
+
+Secara umum, kita bisa gunakan perbandingan di bawah ini untuk menyelesaikan permasalahan terkait dengan hukum III Kepler:
+
+\begin{flalign*}
+\dfrac{T_2^2}{r_2^3} &= \dfrac{T_1^2}{r_1^3} \qquad \qquad \blacksquare \\[6pt] 
+\end{flalign*}
+
+\subsection{Impuls adalah perubahan momentum}
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+I &\defeq F \cdot \Delta t\\[6pt]
+&= m \cdot a \cdot \Delta t\\[6pt]
+&=m \cdot \frac{\Delta v}{\hcancel{\Delta t}} \cdot \hcancel{\Delta t}\\[6pt]
+I = F\Delta t&= m\Delta v \qquad \qquad \qquad \blacksquare
+\end{flalign*}
+
+\subsection{Impuls adalah luas daerah di bawah grafik gaya vs. waktu}
+Misalkan kita diberikan grafik gaya vs. waktu seperti di bawah ini:
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\includegraphics[scale = 0.3]{diagram-20220213}
+
+\par Luas daerah di bawah grafik adalah
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+&\int_{t_1}^{t_2} F_{(t)} \: dt \\[6pt]
+=&\int_{t_1}^{t_2} ma_{(t)} \: dt\\[6pt]
+=&\Big[mv_{(t)}\Big]_{t = t_1}^{t_2}\\[6pt]
+=& mv_2 - mv_1 \\[6pt]
+=& m\Delta v\\[6pt]
+=& I \qquad  \blacksquare
+\end{flalign*}
+
+Kesimpulannya, ketika kita diberikan sebuah grafik gaya vs. waktu lalu diminta untuk mencari impuls, maka kita hanya perlu mencari luas daerah di bawah grafik tersebut.
+
+\subsection{Koefisien restitusi}
+Koefisien restitusi (e) didefinisikan sebagai rasio besar kecepatan relatif benda sesudah dan sebelum tumbukan. Misalkan ada dua benda: benda 1 dan benda 2. Kecepatan awal masing-masing adalah $v_1$ dan $v_2$, sedangkan kecepatan akhirnya adalah $v_1'$ dan $v_2'$. Maka besar kecepatan relatif awal benda 1 terhadap benda 2 adalah $|v_1 - v_2|$ sedangkan besar kecepatan relatif akhirnya adalah $|v_1' - v_2'|$
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+e & = \frac{|v_1' - v_2'|}{|v_1 - v_2|} \qquad  \blacksquare
+\end{flalign*}
+
+Untuk tumbukan lenting sempurna
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+\frac12 m_1v_1^2 + \frac12 m_2v_2^2 &= m_1v_1'{}^2 + m_2v_2'{}^2\\[6pt]
+m_1v_1^2 + m_2v_2^2 &= m_1v_1'{}^2 + m_2v_2'{}^2\\[6pt]
+m_1v_1^2 - m_1v_1'{}^2 &= m_2v_2'{}^2 - m_2v_2\\[6pt]
+m_1(v_1^2 - v_1'{}^2) &= m_2(v_2'{}^2-v_2^2)\\[6pt]
+m_1(v_1+v_1')(v_1-v_1') &= m_2(v_2+v_2')(v_2'-v_2) .........(1)\\[6pt]
+\end{flalign*}
+
+{\centering
+dan \par
+}
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+m_1v_1 + m_2 v_2 &= m_1v_1' + m_2v_2'\\[6pt]
+m_1v_1 - m_1v_1' &= m_2v_2' - m_2v_2\\[6pt]
+m_1(v_1-v_1') &= m_2(v_2' - v_2).............(2)
+\end{flalign*}
+
+Membagi persamaan (1) dengan (2) memberikan kita
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+v_1 + v_1' &= v_2'+v_2\\[6pt]
+v_1 - v_2 &= v_2' - v_1'\\[6pt]
+v_1 - v_2 &= -(v_1' - v_2')\\[6pt]
+1&=-\dfrac{v_1' - v_2'}{v_1 - v_2}\\[6pt]
+-1&=\dfrac{v_1' - v_2'}{v_1 - v_2}\\[6pt]
+|-1|&= \Big|\dfrac{v_1' - v_2'}{v_1 - v_2}\Big|\\[6pt]
+e &= 1 \qquad  \blacksquare
+\end{flalign*}
+
+Untuk tumbukan yang tidak lenting sama sekali, benda 1 dan benda 2 menyatu sehingga kecepatan akhirnya sama ($v_1' = v_2'$) sehingga
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+e & = \frac{|v_1' - v_2'|}{|v_1 - v_2|} = \frac{|v_1' - v_1'|}{|v_1 - v_2|}= \frac{0}{|v_1 - v_2|} = 0 \qquad  \blacksquare
+\end{flalign*}
+
+Untuk tumbukan lenting tidak sempurna, $0<e<1$.
+
+\subsection{Ketinggian bola yang memantul}
+Misalkan sebuah bola dijatuhkan dari ketinggian $h_0$, lalu memantul hingga ketinggian $h_1$, lalu jatuh dan memantul hingga ketinggian $h_2$, dan seterusnya. Kecepatan awal benda ketika dijatuhkan ($v_0$) adalah nol. Berdasarkan kinematika, kecepatan benda tepat ketika menumbuk tanah ($v_1$) adalah
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+v_1^2 &= v_0^2 +2gh_0\\[6pt]
+v_1^2&=0 + 2gh_0\\[6pt]
+v_1&=\sqrt{2gh_0}
+\end{flalign*}
+
+sedangkan kecepatan benda tepat setelah tumbukan ($v_1'$) adalah
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+0&= v_1'{}^2 - 2gh_1\\[6pt]
+v_1'{}^2&=2gh_1\\[6pt]
+v_1'&=\sqrt{2gh_1}
+\end{flalign*}
+
+NB: kecepatan akhir sama dengan 0 karena merupakan kecepatan di ketinggian maksimum\\
+Pada semua tumbukan, kecepatan tanah adalah nol. Koefisien restitusi tumbukan adalah
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+e &= \frac{|v_1' - 0|}{|v_1 - 0|}\\[6pt]
+\end{flalign*}
+
+dan berdasarkan definisi nilai mutlak, $|x| = \sqrt{x^2}$
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+e &= \dfrac{\sqrt{v_1'{}^2}}{\sqrt{v_1^2}} = \dfrac{\sqrt{\sqrt{2gh_1}^2}}{\sqrt{\sqrt{2gh_0}^2}} = \dfrac{\sqrt{2gh_1}}{\sqrt{2gh_0}} = \dfrac{\sqrt{\hcancel{2g}h_1}}{\sqrt{\hcancel{2g}h_0}} = \sqrt{\frac{h_1}{h_0}} \\[6pt]
+\end{flalign*}
+
+Kita bisa pakai cara yang sama untuk mendapatkan 
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+e &= \sqrt{\frac{h_1}{h_0}} = \sqrt{\frac{h_2}{h_1}} = \sqrt{\frac{h_3}{h_2}} = ... \qquad  \blacksquare \\[6pt]
+\end{flalign*}
+
+\subsection{Beberapa persamaan yang berguna}
+Periode (T) didefinisikan sebagai waktu yang diperlukan untuk menempuh satu getaran.
+
+\begin{flalign*}
+T =\dfrac{waktu}{banyaknya\:getaran}\qquad  \blacksquare
+\end{flalign*}
+
+Frekuensi ($f$) didefinisikan sebagai banyaknya getaran dalam satu satuan waktu.
+
+\begin{flalign*}
+f =\dfrac{banyaknya\:getaran}{waktu}\qquad  \blacksquare
+\end{flalign*}
+
+Dari sini bisa dilihat bahwa getaran dan frekuensi saling berkebalikan.
+
+\begin{flalign*}
+T = \frac{1}{F}\qquad  \blacksquare
+\end{flalign*}
+
+Frekuensi/kecepatan sudut ($\omega$) didefinisikan sebagai besar sudut yang ditempuh dalam satuan waktu.
+
+\begin{flalign*}
+\omega = \dfrac{2\pi}{T} = 2\pi f\qquad  \blacksquare
+\end{flalign*}
+
+Sudut $\theta$ yang ditempuh dalam waktu $t$ adalah
+
+\begin{flalign*}
+\theta = \omega t\qquad  \blacksquare
+\end{flalign*}
+
+\subsection{Persamaan-persamaan gerak harmonik sederhana}
+Kita bayangkan sebuah pegas yang ditarik sejauh $x$ dari posisi setimbangnya. Gaya yang bekerja adalah
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+\Sigma F &= - kx \\[6pt]
+ma &= -kx\\[6pt]
+m \frac{dv}{dt}&= -kx\\[6pt]
+\frac{d^2x}{dt^2} &=- \dfrac km x\\[6pt]
+\end{flalign*}
+
+Di sini kita punya sebuah fungsi yang jika diturunkan dua kali maka hasilnya adalah negatif. Ada dua fungsi yang memiliki sifat ini, yakni fungsi sinus dan fungsi kosinus. Turunan kedua dari $sin(x)$ adalah $-sin(x)$, sedangkan turunan kedua dari $cos(x)$ adalah $-cos(x)$. Kita pilih fungsi sinus saja dahulu (tentunya kita juga bisa memilih fungsi cosinus). \par
+Bentuk umum fungsi sinus adalah
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+f(x) &= A\:sin \: b(x + \phi) + C \\[6pt]
+\end{flalign*}
+
+x bisa diganti dengan t karena berdasarkan penurunan dari gaya pegas yang tadi kita lakukan, fungsi ini adalah fungsi waktu|ada dt menandakan bahwa fungsi ini bisa diturunkan terhadap waktu, sehingga fungsi ini sendiri adalah suatu fungsi waktu.
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+f(t) &= A\:sin \: [b(t + \phi)] + C \\[6pt]
+\end{flalign*}
+
+Di mana A adalah amplitudo dari fungsi tersebut. Konsep amplitudo dalam fungsi trigonometri sebenarnya mirip dengan amplitudo suatu benda yang bergerak harmonik sederhana. Periode (T) dari fungsi sinus dengan bentuk umum tersebut adalah $\dfrac{2\pi}{b}$.
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+T &= \frac{2\pi}{b}\\[6pt]
+b &= \frac{2\pi}{T} = \omega
+\end{flalign*}
+
+Maka, sebagai catatan
+
+\begin{flalign*}
+T = \dfrac{2\pi}{\omega} \qquad  \blacksquare
+\end{flalign*}
+
+Setelah mengetahui bahwa $b = \omega$, kita bisa memperbarui fungsi kita menjadi seperti berikut:
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+f(t) &= A\:sin \:[ \omega(t + \phi)] + C \\[6pt]
+\end{flalign*}
+
+Selanjutnya, $\phi$ adalah sudut fase awal, atau sudut simpangan pertama. Kalau benda mulai bergerak dari titik setimbang, maka $\phi$ = 0. Sedangkan C adalah suatu konstanta yang satu dimensi dengan $A\:sin \: \omega(t + \phi) + C $ (dalam fisika, penjumlahan dua kuantitas baru bisa dilakukan kalau dimensinya sama. Menjumlahkan waktu dengan kecepatan yang beda dimensi tentunya tidak masuk akal.) 
+
+\par Lalu, dari $\frac{d^2x}{dt^2} =- \dfrac km x$ bisa kita lihat bahwa fungsi ini merepresentasikan perpindahan benda ($x$). Maka C pada dasarnya adalah perpindahan awal benda pada waktu t = 0, yang tidak dipengaruhi oleh waktu. Fungsi yang menggambarkan gerak harmonik sederhana berhasil kita temukan:
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+x(t) &= A\:sin \: [\omega(t + \phi)] + x_0 \qquad  \blacksquare
+\end{flalign*}
+
+Untuk simplisitas, kita pilih $\phi=0$ dan $x_0=0$ sehingga akan memberikan fungsi yang lebih familiar:
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+x(t) &= A\:sin \: (\omega t) \qquad  \blacksquare
+\end{flalign*}
+
+Fungsi di atas mendeskripsikan simpangan benda yang bergerak harmonik sederhana. Fungsi untuk kecepatan dan percepatan bisa dicari dengan menurunkan fungsi ini terhadap waktu:
+
+{\setlength{\abovedisplayskip}{6pt}
+{\setlength{\belowdisplayskip}{6pt}
+\begin{flalign*}
+v(t) = \dfrac{d}{dt} x(t) &= \dfrac{d}{dt} ( A\:sin \: (\omega t)) \\[6pt]
+v(t) &= \omega \: A \: cos(\omega t)\qquad  \blacksquare  \\\\
+a(t) = \dfrac{d}{dt} v(t) &=  \dfrac{d}{dt}(\omega \: A \: cos(\omega t)) \\[6pt]
+a(t) &= -\omega^2 \: A \: sin(\omega t) \qquad  \blacksquare \\
+\end{flalign*}
+
+Fungsi kecepatan v(t) memiliki bentuk lain:
+\begin{flalign*}
+v(t) &= \omega \: A \: cos(\omega t) \\[6pt]
+&= \omega \: A \: \sqrt{1 - sin^2(\omega t)}\\[6pt]
+&= \omega \: \sqrt{A^2(1 - sin^2(\omega t))}\\[6pt]
+&= \omega \: \sqrt{A^2 - A^2sin^2(\omega t)}\\[6pt]
+&= \omega \: \sqrt{A^2 - (A \: sin(\omega t))^2}\\[6pt]
+v &= \omega \: \sqrt{A^2 - x^2} \qquad  \blacksquare
+\end{flalign*}
+
+Dengan ini, kita bisa menentukan kecepatan benda tanpa perlu tahu kapan waktunya. Kita hanya perlu tahu amplitudo ($A$), simpangan ($x$), serta antara frekuensi sudut, frekuensi, atau periode getaran. Menggunakan cara yang mirip, kita bisa lakukan hal yang sama pada akselerasi:
+
+\begin{flalign*}
+a &= -\omega^2 \: A \: sin(\omega t)\\[6pt]
+&= -\omega^2 \: A \sqrt{1-cos^2(\omega t)}\\[6pt]
+&= -\omega^2 \sqrt{A^2 - (A\:cos(\omega t)^2)}\\[6pt]
+&= -\omega \sqrt{\omega^2A^2 - (\omega A\: cos(\omega t))^2}\\[6pt]
+a&= -\omega \sqrt{\omega^2A^2 - v^2} \qquad  \blacksquare
+\end{flalign*}
+
+
+\subsection{Kecepatan dan percepatan maksimum pada GHS}
+$v(t) = \omega \: A \: cos(\omega t) $ akan menjadi maksimum ketika $ cos(\omega t)$ maksimum, yakni ketika $ cos(\omega t) = 1$ (nilai maksimum cosinus adalah 1). Ketika $ cos(\omega t) = 1$, maka kecepatan menjadi maksimum
+
+\begin{flalign*}
+v_{max}= \omega \: A \qquad  \blacksquare
+\end{flalign*}
+
+Menggunakan logika yang sama, $a(t) = -\omega^2 \: A \: sin(\omega t)$ akan menjadi maksimum ketika $sin(\omega t) = 1$, sehingga percepatan maksimumnya adalah
+
+\begin{flalign*}
+a_{max}=-\omega^2A \qquad  \blacksquare
+\end{flalign*}
+
+\subsection{Periode bandul}
+
+
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,475); %set diagram left start at 0, and has height of 475
+
+%Straight Lines [id:da4763281669352648] 
+\draw    (20.1,51.4) -- (160.3,51.4) ;
+%Straight Lines [id:da5296528959261335] 
+\draw    (20.1,18.4) -- (20.1,51.4) ;
+%Straight Lines [id:da3769431872639002] 
+\draw    (160.3,18.4) -- (160.3,51.4) ;
+%Straight Lines [id:da43593188592343735] 
+\draw    (136.6,24.4) -- (147.3,49.9) ;
+%Straight Lines [id:da047568995043096196] 
+\draw    (124.1,24.4) -- (134.8,49.9) ;
+%Straight Lines [id:da7365881674326911] 
+\draw    (108.6,25.4) -- (119.3,50.9) ;
+%Straight Lines [id:da4039519867262604] 
+\draw    (93.1,26.4) -- (103.8,51.9) ;
+%Straight Lines [id:da3214434259510903] 
+\draw    (77.1,26.9) -- (87.8,52.4) ;
+%Straight Lines [id:da8716823474087025] 
+\draw    (64.6,26.9) -- (75.3,52.4) ;
+%Straight Lines [id:da6587733049582416] 
+\draw    (52.1,25.9) -- (62.8,51.4) ;
+%Straight Lines [id:da8371934151807838] 
+\draw    (32.6,26.4) -- (43.3,51.9) ;
+%Straight Lines [id:da7296056105908058] 
+\draw    (87.8,52.4) -- (186.8,200.4) ;
+%Straight Lines [id:da3026933293338463] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (87.8,52.4) -- (87.8,292.84) ;
+%Curve Lines [id:da6243820841176819] 
+\draw    (88.1,92.55) .. controls (95.35,101.8) and (112.85,91.55) .. (105.1,79.4) ;
+%Shape: Circle [id:dp18550300079307336] 
+\draw   (177.26,215.12) .. controls (177.26,206.44) and (184.3,199.4) .. (192.98,199.4) .. controls (201.66,199.4) and (208.7,206.44) .. (208.7,215.12) .. controls (208.7,223.8) and (201.66,230.84) .. (192.98,230.84) .. controls (184.3,230.84) and (177.26,223.8) .. (177.26,215.12) -- cycle ;
+%Straight Lines [id:da40678177849196073] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ] [dash pattern={on 4.5pt off 4.5pt}]  (179.72,225.24) -- (134.74,250.18) ;
+\draw [shift={(132.12,251.64)}, rotate = 330.99] [fill={rgb, 255:red, 255; green, 0; blue, 0 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da7360610490569663] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ] [dash pattern={on 4.5pt off 4.5pt}]  (192.98,230.84) -- (192.98,286.64) ;
+\draw [shift={(192.98,289.64)}, rotate = 270] [fill={rgb, 255:red, 255; green, 0; blue, 0 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da280798075638955] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ] [dash pattern={on 4.5pt off 4.5pt}]  (201.6,228.8) -- (230.4,274.66) ;
+\draw [shift={(232,277.2)}, rotate = 237.87] [fill={rgb, 255:red, 255; green, 0; blue, 0 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da47327641690954914] 
+\draw  [dash pattern={on 0.84pt off 2.51pt}]  (132.12,251.64) -- (89.32,274.84) ;
+%Straight Lines [id:da3371314071815241] 
+\draw  [dash pattern={on 0.84pt off 2.51pt}]  (192.98,199.4) -- (192.98,124.2) ;
+%Curve Lines [id:da6504479881919041] 
+\draw    (100.5,268.55) .. controls (116.92,262.44) and (104.92,233.64) .. (88.12,247.24) ;
+%Curve Lines [id:da2861586652644186] 
+\draw    (176.12,227.24) .. controls (167.72,239.24) and (186.12,250.84) .. (193.72,242.84) ;
+%Straight Lines [id:da4495544010947672] 
+\draw    (168.12,205.8) -- (179.72,225.24) ;
+%Straight Lines [id:da14358149546579502] 
+\draw    (182.12,196.6) -- (168.12,205.8) ;
+%Curve Lines [id:da9596438312769706] 
+\draw    (193.72,242.84) .. controls (199.72,248.2) and (208.12,246.6) .. (208.52,239.4) ;
+%Straight Lines [id:da594785514462749] 
+\draw    (340.9,45.8) -- (481.1,45.8) ;
+%Straight Lines [id:da8800642916079491] 
+\draw    (340.9,12.8) -- (340.9,45.8) ;
+%Straight Lines [id:da8146483495453247] 
+\draw    (481.1,12.8) -- (481.1,45.8) ;
+%Straight Lines [id:da648042509392625] 
+\draw    (457.4,18.8) -- (468.1,44.3) ;
+%Straight Lines [id:da107398203611625] 
+\draw    (444.9,18.8) -- (455.6,44.3) ;
+%Straight Lines [id:da6230065696068516] 
+\draw    (429.4,19.8) -- (440.1,45.3) ;
+%Straight Lines [id:da7131666885934704] 
+\draw    (413.9,20.8) -- (424.6,46.3) ;
+%Straight Lines [id:da7697669178599635] 
+\draw    (397.9,21.3) -- (408.6,46.8) ;
+%Straight Lines [id:da9350733295971774] 
+\draw    (385.4,21.3) -- (396.1,46.8) ;
+%Straight Lines [id:da7514719860917312] 
+\draw    (372.9,20.3) -- (383.6,45.8) ;
+%Straight Lines [id:da0762177987555015] 
+\draw    (353.4,20.8) -- (364.1,46.3) ;
+%Straight Lines [id:da3468491487001819] 
+\draw    (408.6,46.8) -- (507.6,194.8) ;
+%Straight Lines [id:da05728879844950763] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (408.6,46.8) -- (408.6,287.24) ;
+%Curve Lines [id:da9637059722229389] 
+\draw    (408.9,86.95) .. controls (416.15,96.2) and (433.65,85.95) .. (425.9,73.8) ;
+%Shape: Circle [id:dp13411484392816164] 
+\draw   (498.06,209.52) .. controls (498.06,200.84) and (505.1,193.8) .. (513.78,193.8) .. controls (522.46,193.8) and (529.5,200.84) .. (529.5,209.52) .. controls (529.5,218.2) and (522.46,225.24) .. (513.78,225.24) .. controls (505.1,225.24) and (498.06,218.2) .. (498.06,209.52) -- cycle ;
+%Straight Lines [id:da4077874107835977] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (500.52,219.64) -- (455.54,244.58) ;
+\draw [shift={(452.92,246.04)}, rotate = 330.99] [fill={rgb, 255:red, 255; green, 0; blue, 0 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da5524060462408205] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ] [dash pattern={on 0.84pt off 2.51pt}]  (513.78,225.24) -- (513.78,284.04) ;
+%Straight Lines [id:da8694463053739137] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ] [dash pattern={on 4.5pt off 4.5pt}]  (522.4,223.2) -- (551.2,269.06) ;
+\draw [shift={(552.8,271.6)}, rotate = 237.87] [fill={rgb, 255:red, 255; green, 0; blue, 0 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da8746119197909021] 
+\draw  [dash pattern={on 0.84pt off 2.51pt}]  (452.92,246.04) -- (410.12,269.24) ;
+%Straight Lines [id:da3155284308393309] 
+\draw  [dash pattern={on 0.84pt off 2.51pt}]  (513.78,193.8) -- (513.78,118.6) ;
+%Curve Lines [id:da7837260102440573] 
+\draw    (421.3,262.95) .. controls (437.72,256.84) and (425.72,228.04) .. (408.92,241.64) ;
+%Curve Lines [id:da6886248775659316] 
+\draw    (496.92,221.64) .. controls (488.52,233.64) and (506.92,245.24) .. (514.52,237.24) ;
+%Straight Lines [id:da05168848755548372] 
+\draw    (488.92,200.2) -- (500.52,219.64) ;
+%Straight Lines [id:da7657394974759408] 
+\draw    (502.92,191) -- (488.92,200.2) ;
+%Curve Lines [id:da07129929749540764] 
+\draw    (514.52,237.24) .. controls (520.52,242.6) and (528.92,241) .. (529.32,233.8) ;
+
+% Text Node
+\draw (93.6,96.05) node [anchor=north west][inner sep=0.75pt]    {$\thinspace \theta $};
+% Text Node
+\draw (184.72,204.24) node [anchor=north west][inner sep=0.75pt]    {$m$};
+% Text Node
+\draw (159.52,127.84) node [anchor=north west][inner sep=0.75pt]    {$l$};
+% Text Node
+\draw (92.96,233.59) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,rotate=-317.66]  {$\thinspace 90^{\circ } -\theta $};
+% Text Node
+\draw (155.6,238.66) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,rotate=-18.96]  {$\thinspace 90^{\circ } -\theta $};
+% Text Node
+\draw (181.12,289.8) node [anchor=north west][inner sep=0.75pt]    {$\textcolor[rgb]{0.96,0.05,0.05}{mg}$};
+% Text Node
+\draw (195.72,246.24) node [anchor=north west][inner sep=0.75pt]    {$\thinspace \theta $};
+% Text Node
+\draw (228.32,277) node [anchor=north west][inner sep=0.75pt]    {$\textcolor[rgb]{0.96,0.05,0.05}{mg\ cos\ \theta }$};
+% Text Node
+\draw (99.11,268.32) node [anchor=north west][inner sep=0.75pt]  [rotate=-341.97]  {$\textcolor[rgb]{0.96,0.05,0.05}{mg\ sin\ \theta }$};
+% Text Node
+\draw (414.4,90.45) node [anchor=north west][inner sep=0.75pt]    {$\thinspace \theta $};
+% Text Node
+\draw (505.52,198.64) node [anchor=north west][inner sep=0.75pt]    {$m$};
+% Text Node
+\draw (480.32,122.24) node [anchor=north west][inner sep=0.75pt]    {$l$};
+% Text Node
+\draw (413.76,227.99) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize,rotate=-317.66]  {$\thinspace 90^{\circ } -\theta $};
+% Text Node
+\draw (516.52,240.64) node [anchor=north west][inner sep=0.75pt]    {$\thinspace \theta $};
+
+
+\end{tikzpicture}
+
+Pada bandul di atas, gaya yang membuat benda bergerak adalah $mg\: sin \theta$. Tanda minus diberikan karena gaya tersebut merupakan gaya pemulih. Amplitudonya adalah jarak bandul dari titik setimbang, yakni $l \theta$. Untuk sudut yang kecil ($< 10^\circ$), $sin \theta \approx \theta$. Kita tinjau gaya yang bekerja pada arah gerak benda:
+
+\begin{flalign*}
+\Sigma F &= -mg\: sin\theta\\[6pt]
+\hcancel{m}a &= - \hcancel{m}g\: sin\theta \\[6pt]
+a &= -g \: sin \theta \\[6pt]
+a& \approx -g \: \theta \\[6pt]
+-\omega^2 \cdot l \hcancel{\theta} &= -g \hcancel{\theta}\\[6pt]
+-\omega^2 &= \dfrac{-g}{l}\\[6pt]
+\omega^2 &= \dfrac{g}{l}\\[6pt]
+\omega &= \sqrt{\dfrac{g}{l}} \qquad  \blacksquare
+\end{flalign*}
+
+dan periodenya adalah 
+
+\begin{flalign*}
+\omega &= \sqrt{\dfrac{g}{l}}\\[6pt]
+\dfrac{2\pi}{T} &=\sqrt{\dfrac{g}{l}}\\[6pt]
+2\pi &= T \sqrt{\dfrac{g}{l}}\\[6pt]
+2\pi \div \sqrt{\dfrac{g}{l}} &= T\\[6pt]
+T &= 2\pi \sqrt{\dfrac{l}{g}} \qquad  \blacksquare
+\end{flalign*}
+
+Sedangkan frekuensinya adalah
+
+\begin{flalign*}
+f &= \dfrac{1}{2\pi} \sqrt{\dfrac{g}{l}} \qquad  \blacksquare
+\end{flalign*}
+
+\end{document}

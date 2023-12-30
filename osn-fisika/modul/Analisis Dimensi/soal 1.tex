@@ -1,0 +1,223 @@
+\documentclass[12pt, a4paper]{article}\usepackage[utf8]{inputenc}
+\usepackage[paperwidth=210mm, paperheight=297mm, margin=1.5cm]{geometry}
+\usepackage[svgnames]{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{arabtex}
+\usepackage{utf8}
+\setcode{utf8}
+\usepackage{lipsum}
+\usepackage[T1]{fontenc}
+\usepackage{fouriernc}
+%\usepackage{kpfonts, baskervald}
+\usepackage{amsmath, systeme}
+\usepackage{amssymb}
+\usepackage{spalign}
+\usepackage{relsize}
+\usepackage{color}
+\usepackage{amsthm}
+\usepackage{cancel}
+\usepackage{xstring}
+\usepackage{tikz}
+\usepackage{cases}
+\usepackage{showlabels}
+\usepackage{multicol}
+\usetikzlibrary{arrows}
+\usepackage[shortlabels]{enumitem}
+\usepackage{varwidth}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{anyfontsize}
+\usepackage[fontsize=11pt]{fontsize}
+\usepackage{array}
+\usepackage{cite}
+\usepackage{titling}
+%\usepackage[toc]{multitoc}
+
+
+\setlength{\droptitle}{-5em}
+
+
+\newcommand{\defeq}{\vcentcolon=}
+
+\newcommand{\eqdef}{=\vcentcolon}
+
+\newcommand\hcancel[2][merah]{\setbox0=\hbox{$#2$}%
+	\rlap{\raisebox{.45\ht0}{\textcolor{#1}{\rule{\wd0}{1pt}}}}#2} 
+
+\newcommand{\garis} [3] []{
+	\begin{center}
+		\begin{tikzpicture}
+			\draw[#2-#3, ultra thick, #1] (0,0) to (1\linewidth,0);
+		\end{tikzpicture}
+	\end{center}
+}
+
+\newcommand{\chapternote}[1]{{%
+		\let\thempfn\relax% Remove footnote number printing mechanism
+		\footnotetext[0]{\emph{#1}}% Print footnote text
+}}
+
+\renewcommand{\figurename}{Gambar}
+
+\renewcommand{\thesection}{\Alph{section}} 
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesection.\arabic{subsubsection}.}
+
+\renewcommand*\contentsname{Daftar Isi}
+
+\renewcommand{\thefootnote}{\roman{footnote}}
+
+\newcommand*{\coret}[1]{\renewcommand{\CancelColor}{\color{#1}}\cancel}
+
+\newcommand\Ccancel[2][black]{
+	\let\OldcancelColor\CancelColor
+	\renewcommand\CancelColor{\color{#1}}
+	\cancel{#2}
+	\renewcommand\CancelColor{\OldcancelColor}
+}
+
+\theoremstyle{definition}
+\newtheorem{definisi}{Definisi}
+
+\theoremstyle{definition}
+\newtheorem{teorema}{Teorema}
+
+\def\typesystem#1{%
+	\begingroup\expandarg
+	\baselineskip=1.5\baselineskip% 1.5 to enlarge vertical space between lines
+	\StrSubstitute{\noexpand#1}+{&+&}[\tempsystem]%
+	\StrSubstitute\tempsystem={&=&}[\tempsystem]%
+	\StrSubstitute\tempsystem,{\noexpand\cr}[\tempsystem]%
+	$\vcenter{\halign{&$\hfil\strut##$&${}##{}$\cr\tempsystem\crcr}}$%
+	\endgroup
+}
+
+%\renewcommand*{\multicolumntoc}{2}
+%\setlength{\columnseprule}{0.5pt}
+
+
+\usepackage[colorlinks=true, linkcolor=teks, urlcolor=teks]{hyperref}
+
+\begin{document}
+	
+	\begin{center}
+		\textbf{{\LARGErrr
+				Rambat Ralat dan Analisis Dimensi\\[13pt]} {\large B-Bolt Fisika --- SMA Negeri 3 Malang}}
+		\vspace{-.5em}
+		\garis{diamond}{diamond}
+	\end{center} 
+	
+	\begin{enumerate}
+		\item Sebuah kuantitas $X$ didefinisikan oleh variabel-variabel $a$, $b$, $c$, dan $d$ sebagai
+		
+		\begin{equation*}
+			X = \frac{a^4 \cdot \sqrt[3]{b^2}}{cd^5}
+		\end{equation*}
+	
+	Untuk tiap kuantitas, $X_0$, $a_0$, $b_0$, $c_0$, dan $d_0$ adalah nilai benarnya sedangkan $\Delta X$, $\Delta a$, $\Delta b$, $\Delta c$, dan $\Delta d$ adalah ketidakpastiannya.
+	
+		\begin{enumerate}[label=(\alph*)]
+			\item $\left[ \text{7 poin} \right]$ Buktikan bahwa
+			
+			\begin{equation*}
+				\frac{\Delta X}{X_0} = 4 \frac{\Delta a}{a_0} + \frac{2}{3} \cdot \frac{\Delta b}{b_0} + \frac{\Delta c}{c_0} + 5 \frac{\Delta d}{d_0}
+			\end{equation*}
+		
+			\vspace{1em}
+		
+			\item $\left[ \text{7 poin} \right]$ Jika besaran $a$ adalah kecepatan, $b$ adalah volume, serta $c$ dan $d$ adalah massa jenis, tentukan dimensi dari $X$.
+			
+			\vspace{1em}
+			
+			\item $\left[ \text{4 poin} \right]$ Jika nilai $a$ dan $d$ dibuat dua kali lipat sedangkan nilai $c$ menjadi empat kali lipat, berapa perbandingan nilai $X$ sekarang dengan nilai $X$ sebelumnya?
+		\end{enumerate} 
+		
+		\vspace{1.5em}
+				
+		\item $\left[ \text{10 poin} \right]$ Energi mekanik suatu benda adalah penjumlahan energi kinetik dan energi potensialnya. Misalkan seekor burung ($m = 8 \pm 0,004$ kg) bergerak lurus konstan dengan kecepatan $v = 16 \pm 0,006$ m/s dari ketinggian $h = 5 \pm 0,01$ m. Energi yang bekerja adalah energi kinetik translasi ($=\frac{1}{2} mv^2$) dan energi potensial gravitasi ($=mgh$). Laporkan besar energi mekanik burung tersebut beserta dengan ketidakpastiannya. ($g = 10$ m/s${}^2$)
+		
+		\item Misalkan kecepatan linear dari sebuah bandul yang berayun dinyatakan sebagai fungsi waktu ($t$):
+		
+		\begin{equation*}
+			v_{(t)} = a + \sqrt{b}t + \frac{1}{c^2 + d}t^2
+		\end{equation*}
+	
+		\begin{enumerate}[label=(\alph*)]
+			\item $\left[ \text{8 poin} \right]$ Tentukan dimensi dari $a$, $b$, $c$, dan $d$.
+			\item $\left[ \text{2 poin} \right]$ Tentukan nilai $a$ jika pada saat $t = 0$, $v = 15$ m/s.
+		\end{enumerate}
+		
+		
+		\item Pada 1899, fisikawan Max Planck mengusulkan seperangkat satuan pengukuran yang hanya menggunakan konstanta-konstanta fisika universal sebagai alternatif dari Satuan Internasional (SI). Ambil contoh tiga konstanta berikut: konstanta Planck, $h = 6,63 \cdot 10^{-34}$ Js; konstanta gravitasi universal, $G = 6,67 \cdot 10^{-11}$ m${}^3$/(kg s${}^2$); dan kecepatan cahaya, $c = 3 \cdot 10^{8}$ m/s. Ketiga konstanta tersebut dapat dikombinasikan menjadi kuantitas berdimensi massa, panjang, dan waktu (dikenal sebagai massa Planck ($m_p$), dst). Dengan analisis dimensi, 
+		
+		\begin{enumerate}[label=(\alph*)]
+			\item $\left[ \text{9 poin} \right]$ Tentukan ekspresi/rumus untuk massa Planck ($m_p$), panjang Planck ($\ell_p$), dan waktu Planck ($t_p$) yang menyatakan ketergantungannya terhadap $h$, $c$, dan $G$.
+			\item $\left[ \text{3 poin} \right]$ Hitung nilai numerik dari ketiga kuantitas tersebut.
+		\end{enumerate}
+		
+	\end{enumerate}
+	
+	\pagebreak
+
+	
+	\begin{center}
+		\textbf{\Large Petunjuk}
+	\end{center}
+	
+	
+	Misalkan kita punya tiga kuantitas (panjang, massa, dll) yang dituliskan sebagai berikut:
+	\begin{align*}
+		A&=A_{0} \pm \Delta A\\
+		B&=B_{0} \pm \Delta B\\
+		C&=C_{0} \pm \Delta C
+	\end{align*}
+	 di mana $\displaystyle A_{0}$ , $\displaystyle B_{0}$ , dan $\displaystyle C_{0}$  adalah nilai benar sedangkan $\displaystyle \Delta A$ , $\displaystyle \Delta B$ , dan $\displaystyle \Delta C$  adalah ketidakpastian mutlak dari tiap kuantitas tersebut. Maka,
+	 
+	 \begin{itemize}
+	 	\item Jika $C = A \pm B$ maka $\Delta C = \Delta A + \Delta B$
+	 	\item Jika $C = A \times B$ atau $C = A \div B$ maka $\dfrac{\Delta C}{C_0} = \dfrac{\Delta A}{A_0} + \dfrac{\Delta B}{B_0}$
+	 \end{itemize}
+ 	
+ 	\vspace{3em}
+ 	
+ 	\begin{center}
+ 		\begin{tabular}{c|c|c}
+ 			Besaran & Dimensi & Satuan SI\\
+ 			\hline
+ 			Panjang & $L$ & m\\
+ 			Massa & $M$ & kg\\
+ 			Waktu & $T$ & s\\
+ 			Volume & $L^3$ & m$^3$\\
+ 			Kecepatan & $LT^{-1}$ & m/s\\
+ 			Percepatan & $LT^{-2}$ & m/s$^2$\\
+ 			Gaya & $MLT^{-2}$ & N $=$ kg $\cdot$ m/s$^2$\\
+ 			Energi dan Usaha & $ML^2T^{-2}$ & J = kg $\cdot$ m$^2$/s$^2$\\
+ 		\end{tabular}
+ 		
+ 	\end{center}
+ 
+ 	\pagebreak
+ 	
+ 			\begin{center}
+ 			\textbf{\Large Solusi}
+ 		\end{center}
+ 	
+ 	
+	%$\systeme{
+		%	\log_3 (9)p+ \ln(e^2)q = 60,
+		%	\sqrt{3^4}p + 2^{3}q = 340
+		%}$
+	
+	
+\end{document}
+
+
+
+%	\item Dua partikel saling berhadapan pada suatu garis lurus
+%
+%\item \textbf{Bertepuk sebelah tangan.} Berdasarkan hukum III Newton, ``Untuk setiap aksi ada reaksi yang sama besar dan berlawanan arah.'' Maksudnya, ketika benda A memberikan gaya pada benda B, maka benda B juga akan memberikan gaya dengan besar yang sama tetapi arahnya berlawanan dengan gaya yang benda A berikan. 
+%\par
+%Bumi memberikan gaya gravitasi pada kita dan berdasarkan hukum III Newton, harusnya kita juga memberikan gaya gravitasi dengan besar yang sama pada Bumi. Akan tetapi, mengapa Bumi tidak tertarik oleh kita melainkan hanya kita saja yang seolah tertarik oleh Bumi?
+%
+%\item \textbf{Strategi yang salah.} Ade melempar 

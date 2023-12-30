@@ -1,0 +1,110 @@
+\documentclass{article}
+\pagenumbering{gobble}
+
+% Packages
+\usepackage[margin=1.25cm]{geometry} 
+\usepackage[fontsize=10pt]{fontsize}
+
+%% Math and Physics
+\usepackage{amsmath}
+\usepackage{physics}
+
+%% Image
+\usepackage{graphicx}
+
+%% Formatting
+\usepackage{multicol}
+\usepackage{indentfirst}
+\usepackage{titlesec}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor={red!50!black},
+	citecolor={blue!50!black},
+	urlcolor={blue!50!black}
+}
+
+% Settings
+\renewcommand*{\thefootnote}{[\arabic{footnote}]}
+\renewcommand\thesection{\Roman{section}}
+\titleformat{\section}
+{\sffamily\large\scshape}
+{\thesection}{.5em}{}
+
+% Contents
+\begin{document}
+	\noindent Z. Nayaka Athadiansyah \hfill {\Large Asal-Muasal $v_{rms}$} \hfill FI1101-25 STEI\\
+	19623116 \hfill {} \hfill 13/11/2023
+	
+	\begin{multicols}{2}    
+		\section{Pendahuluan}
+		Dalam statistika, akar rerata kuadrat (\textit{root mean square}, RMS) dari $n$ buah data diskrit $x_i (1 \leq i \leq n$) adalah akar dari rata-rata kuadrat data, yakni\footnote{Weisstein, Eric W. "Root-Mean-Square." Dari \textit{MathWorld--A Wolfram Web Resource}. Diakses melalui \href{https://mathworld.wolfram.com/Root-Mean-Square.html}{https://mathworld.wolfram.com/Root-Mean-Square.html} \label{fn2}}
+		
+		\vspace{-1.25em}
+		\begin{equation}
+			x_{rms} = \sqrt{\frac{x_1^2 + x_2^2 + \ldots + x_n^2}{n}} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} x_i^2} = \sqrt{\expval{x^2}}
+		\end{equation}
+		
+		Adapun definisi RMS untuk data yang terdistribusi secara kontinu menurut fungsi $f(x)$ ($D_f = [X_1, X_2]$) adalah\textsuperscript{\ref{fn2}}
+		
+		\begin{equation}
+			x_{rms} = \sqrt{\frac{1}{X_2 - X_1} \int_{X_1}^{X_2} f(x)^2 \dd{x}}
+		\end{equation}
+		\vspace{-.5em}
+		
+		Konsep \textit{standar deviasi} yang dikembangkan oleh Karl Pearson, Carl Friedrich Gauss, Sir George Biddel Airy, dan matematikawan lainnya juga berasal dari RMS.\footnote{Taleb, Nasim N. (2014). "Standard Deviation". Dari \textit{2014: What Scientific Idea is Ready for Retirement?}. Edge.org. Diakses melalui \href{https://www.edge.org/response-detail/25401}{https://www.edge.org/response-detail/25401}} RMS juga digunakan di fisika, misalnya untuk menyatakan nilai efektif daya, potensial, dan kuat arus rangkaian AC. 
+		\par Barangkali yang menjadi fokus pembahasan ini adalah RMS untuk kecepatan partikel dalam teori kinetik gas (TKG), yakni $v_{rms}$. \textit{Mengapa ia tiba-tiba muncul dan mengapa kita gunakan RMS ketimbang rata-rata aritmetika?}
+		
+		\section{Pembahasan}
+		\textbf{Pertama.} Menurut asumsi dasar TKG, gas kinetik dalam kondisi stabil tersusun atas molekul-molekul identik dengan jumlah banyak yang selalu bergerak secara acak menurut hukum Newton.\footnote{Sears, Francis W. dan Salinger, Gerhard L. (1982). \textit{Thermodynamics, Kinetic Theory, and Statistical Thermodynamics}. Canada: Addison-Wesley.\label{fn3}}\textsuperscript{\ref{fn4}}
+		
+		\par Akibatnya, untuk setiap partikel, kita bisa temukan satu partikel lain yang bergerak ke arah berlawanan sehingga vektor kecepatan mereka saling meniadakan sehingga kecepatan rata-rata seluruh partikel nol dan ini tidak begitu membantu kita memahami kondisi partikel-partikel dalam gas. \\
+		
+		\par 
+		\textbf{Kedua.} Barangkali argumen matematis dapat menjelaskan dengan baik dari mana $v_{rms}$ muncul. Perhatikan bahwa energi kinetik rata-rata seluruh partikel dalam gas dapat dinyatakan sebagai
+
+		\vspace{-1.5em}
+		\begin{align}
+			\allowdisplaybreaks
+			\expval{K} &= \frac{1}{n} \sum_{i=1}^{n} K_i = \frac{1}{n} \sum_{i=1}^{n} \qty(\frac{1}{2} m_iv_i^2) = \frac{1}{2} m \qty(\frac{1}{n} \sum_{i=1}^{n} v_i^2) \notag \\[.5em]
+			&= \frac{1}{2} m \expval{v^2} \label{k_ek}
+		\end{align}
+		
+		\par Di samping itu, energi kinetik rata-rata gas juga dideskripsikan oleh persamaan\footnote{Jeans, James. (1967). \textit{An Introduction to the Kinetic Theory of Gases}. New York, NY: Cambridge University Press.\label{fn4}}\footnote{Ling, Samuel J.; Moebs, William; Sanny, Jeff. (2016). \textit{University Physics Volume 2.} Houston, TX. Diakses melalui \href{https://openstax.org/books/university-physics-volume-2/pages/2-2-pressure-temperature-and-rms-speed}{https://openstax.org/books/university-physics-volume-2/pages/2-2-pressure-temperature-and-rms-speed}\label{fn5}}
+		
+		\vspace{-1.5em}
+		\begin{equation}
+			\expval{K} = \frac{3}{2}k_BT \label{k_tkg}
+		\end{equation}
+		
+		dengan $k_B = 1{,}380649 \times 10^{-23} \ \mathrm{m}^2 \cdot \mathrm{kg} \cdot \mathrm{s}^{-2} \cdot \mathrm{K}^{-1}$ adalah konstanta Boltzmann dan $T$ adalah temperatur absolutnya. Dari Persamaan \ref{k_ek} dan \ref{k_tkg} didapatkan\textsuperscript{\ref{fn3}}\textsuperscript{\ref{fn5}}
+		
+		\vspace{-.5em}
+		\begin{equation}
+			\sqrt{\expval{v^2}} = v_{rms} = \sqrt{\frac{3k_BT}{m}}
+		\end{equation}
+		
+		Kecepatan ini adalah kecepatan yang dimiliki partikel dalam gas jika seluruh partikel diberi energi kinetik secara sama rata dengan besar $3k_B T/2$. \\
+		
+		\textbf{Terakhir.} Ketimbang menghitung kecepatan rata-rata, mengapa kita tidak hitung \textit{kelajuan} rata-ratanya ($\expval{|v|}$) saja?
+		
+		Kita lebih tertarik dengan $v_{rms}$ ketimbang $\expval{|v|}$ karena $v^2$ berkaitan erat dengan energi kinetik $K$ (lihat Pers. \ref{k_ek}). Lebih lanjut lagi, $K$ juga berhubungan dengan temperatur gas menurut Persamaan \ref{k_tkg}. Jadi, kuantitas $v_{rms}$ lebih relevan
+		
+		\par Sebagai tambahan, grafik distribusi Maxwell-Boltzmann berikut menunjukkan sebaran probabilitas kecepatan partikel dalam gas ideal:
+		
+		{
+		\vspace{.5em}
+		\centering
+		\includegraphics[scale=0.13]{diagram.png}
+		\par
+		}
+		
+		\section{Pertanyaan}
+		\begin{enumerate}
+			\item \textbf{Bagaimana} $v_{rms}$ berubah ketika partikel gas mendekati kecepatan cahaya, dan \textbf{apa} saja prinsip relativitas yang perlu kita perhitungkan?
+			\item Jika gas dikenai medan eksternal---misalnya medan magnetik atau medan listrik, \textbf{apa} pengaruhnya terhadap $v_{rms}$ dan distribusi partikel-partikel gas? \textbf{Apa} teknologi yang mungkin bisa dirancang berdasarkan hal ini?
+		\end{enumerate}
+	\end{multicols}
+	
+\end{document}

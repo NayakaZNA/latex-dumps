@@ -1,0 +1,476 @@
+\documentclass[12pt, a4paper]{article}\usepackage[utf8]{inputenc}
+\usepackage[paperwidth=210mm, paperheight=297mm, margin=1.5cm]{geometry}
+\usepackage[svgnames]{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{arabtex}
+\usepackage{utf8} 
+\setcode{utf8}
+\usepackage{lipsum}
+\usepackage[T1]{fontenc}
+\usepackage{fouriernc}
+%\usepackage{kpfonts, baskervald}
+\usepackage{textgreek}
+\usepackage{amsmath, systeme}
+\usepackage{amssymb, physymb}
+\usepackage{spalign}
+\usepackage{relsize}
+\usepackage{color}
+\usepackage{amsthm}
+\usepackage{makecell}
+\usepackage{cancel}
+\usepackage{xstring}
+\usepackage{tikz}
+\usepackage{cases}
+\usepackage{showlabels}
+\usepackage{multicol}
+\usetikzlibrary{arrows}
+\usepackage[shortlabels]{enumitem}
+\usepackage{varwidth}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{anyfontsize}
+\usepackage[fontsize=11.5pt]{fontsize}
+\usepackage{array}
+\usepackage{cite}
+\usepackage{titling}
+%\usepackage[toc]{multitoc}
+
+
+\setlength{\droptitle}{-5em}
+
+
+\newcommand{\defeq}{\vcentcolon=}
+
+\newcommand{\eqdef}{=\vcentcolon}
+
+\newcommand\hcancel[2][merah]{\setbox0=\hbox{$#2$}%
+	\rlap{\raisebox{.45\ht0}{\textcolor{#1}{\rule{\wd0}{1pt}}}}#2} 
+
+\newcommand{\garis} [3] []{
+	\begin{center}
+		\begin{tikzpicture}
+			\draw[#2-#3, ultra thick, #1] (0,0) to (1\linewidth,0);
+		\end{tikzpicture}
+	\end{center}
+}
+
+\newcommand{\chapternote}[1]{{%
+		\let\thempfn\relax% Remove footnote number printing mechanism
+		\footnotetext[0]{\emph{#1}}% Print footnote text
+		
+}}
+
+
+
+
+
+\renewcommand{\figurename}{Gambar}
+
+\renewcommand{\thesection}{\Alph{section}} 
+\renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
+\renewcommand{\thesubsubsection}{\thesection.\roman{subsubsection}.}
+
+\renewcommand*\contentsname{Daftar Isi}
+
+\renewcommand{\thefootnote}{\roman{footnote}}
+
+\newcommand*{\coret}[1]{\renewcommand{\CancelColor}{\color{#1}}\cancel}
+
+\newcommand\Ccancel[2][black]{
+	\let\OldcancelColor\CancelColor
+	\renewcommand\CancelColor{\color{#1}}
+	\cancel{#2}
+	\renewcommand\CancelColor{\OldcancelColor}
+}
+
+\renewcommand{\tablename}{Tabel}
+
+\theoremstyle{plain}
+\newtheorem{teorema}{Teorema}[section]
+
+\theoremstyle{plain}
+\newtheorem{teor}[teorema]{Teorema}
+\newtheorem{prop}[teorema]{Proposisi}
+\newtheorem{lema}[teorema]{Lema}
+
+\numberwithin{equation}{section}
+\renewcommand{\theequation}{Pers. \arabic{equation}}
+
+
+\theoremstyle{definition}
+\newtheorem{defin}[teorema]{Definisi}
+\newtheorem{catat}[teorema]{Catatan}
+\newtheorem{contoh}[teorema]{Contoh}
+\newtheorem{corr}[teorema]{\emph{Corollary}}
+
+
+
+%\renewcommand*{\multicolumntoc}{2}
+%\setlength{\columnseprule}{0.5pt}
+
+
+\usepackage[colorlinks=true, linkcolor=black, urlcolor=black]{hyperref}
+
+\begin{document}
+	
+	\begin{center}
+		\textbf{{\LARGErrr
+				Pembinaan B-Bolt Fisika\\[.5em] Analisis Dimensi} \\[.5em]  {\large (\emph{Dimensional Analysis})}\\[1em] {\large Z. Nayaka Athadiansyah \\[.1em] SMA Negeri 3 Malang \\[.1em] 25 Januari 2023}}
+		\vspace{-.5em}
+		\garis{diamond}{diamond}
+	\end{center}
+	
+	\section{Pendahuluan}
+	
+	\par Besaran dan satuan adalah hal mendasar yang kita gunakan untuk menyatakan sifat fisik dari segala objek secara kuantitatif. Di sisi lain, fisika juga sarat akan persamaan-persamaan dan rumus-rumus yang kita gunakan untuk mendeskripsikan suatu fenomena alamiah dan melakukan perhitungan. 
+	
+	Bagaimana kita bisa yakin bahwa persamaan atau perhitungan tersebut benar atau salah? Bagaimana kalau besaran atau satuan yang kita gunakan kurang tepat? Jika kita menghitung massa matahari dan mendapatkan hasil 150$^{\circ}$C, tentunya kita akan tahu bahwa perhitungan kita salah karena Celcius adalah satuan temperatur, sedangkan satuan untuk massa adalah gram.
+	
+	Solusi dari permasalahan tersebut adalah \textbf{analisis dimensi}. Analisis dimensi adalah alat yang kita gunakan untuk menentukan apakah suatu persamaan atau perhitungan \textit{mungkin benar} atau \textit{pasti salah}. Analisis dimensi juga bisa dimanfaatkan sebagai alat untuk membantu kita mengingat rumus.
+	
+	\section{Dimensi}
+	
+	Basis dimensi yang paling umum digunakan adalah Sistem Internasional (SI). Menurut SI, tiap besaran dalam fisika dapat didefinisikan berdasarkan dimensi-dimensi berikut: massa ($M$), panjang ($L$), waktu ($T$), kuat arus listrik ($I$), suhu termodinamika ($\Theta$), jumlah zat ($N$), dan intensitas cahaya ($J$). Dimensi dari suatu besaran $X$ dituliskan sebagai
+	
+	\begin{equation*}
+		\left[X\right] = M^a L^b T^c I^d \Theta^e N^f J^g
+	\end{equation*}
+	
+	di mana $a, b, c, d, e, f,$ dan $g$ adalah pangkat dari dimensinya. Sebagai contoh, dimensi dari jari-jari, jarak, dan ketinggian adalah
+	
+	\vspace{-.5em}
+	\begin{equation*}
+		M^0 L^1 T^0 I^0 \Theta^0 N^0 J^0 = L^1 = L.
+	\end{equation*}
+	
+	Dimensi dari kelajuan dan kecepatan adalah
+	
+	\vspace{-.5em}
+	\begin{equation*}
+		\dim v = \frac{jarak_{=panjang}}{waktu} = \frac{L}{T} = LT^{-1}.
+	\end{equation*}
+	
+	Dimensi dari percepatan adalah
+	
+	\vspace{-.5em}
+	\begin{equation*}
+		\dim a = \frac{panjang}{waktu^2} = \frac{L}{T^2} = LT^{-2}.
+	\end{equation*}
+	
+	Dan dimensi dari gaya adalah
+	
+	\begin{equation*}
+		\dim F = massa \times percepatan = massa \times \frac{panjang}{waktu^2} = \frac{ML}{T^2} = MLT^{-2}
+	\end{equation*}
+	
+	Adapun bilangan real seperti $0, 1, \sqrt{2},$ dan $\pi$ tidak punya dimensi. Berikut adalah beberapa besaran dan dimensinya:
+	
+	\begin{center}
+		
+		\begin{table}[!h]
+			\caption{Berbagai besaran dan dimensinya}
+			\centering
+			
+			\begin{tabular}{|p{0.13\textwidth}|p{0.28\textwidth}|p{0.1\textwidth}|}
+				\hline 
+				\begin{center}
+					\textbf{Besaran}
+				\end{center}
+				& \begin{center}
+					\textbf{Rumus}
+				\end{center}
+				& \begin{center}
+					\textbf{Dimensi}
+				\end{center}
+				\\
+				\hline 
+				\begin{center}
+					Luas
+				\end{center}
+				& \begin{center}
+					$\displaystyle [ panjang] \times [ panjang]$
+				\end{center}
+				& \begin{center}
+					$\displaystyle L^{2}$
+				\end{center}
+				\\
+				\hline 
+				\begin{center}
+					Volume
+				\end{center}
+				& \begin{center}
+					$\displaystyle [ panjang] \times [ panjang] \times [ panjang]$
+				\end{center}
+				& \begin{center}
+					$\displaystyle L^{3}$
+				\end{center}
+				\\
+				\hline 
+				\begin{center}
+					Massa Jenis
+				\end{center}
+				& \begin{center}
+					$\displaystyle \frac{[ massa]}{[ volume]}$
+				\end{center}
+				& \begin{center}
+					$\displaystyle ML^{-3}$
+				\end{center}
+				\\
+				\hline 
+				\begin{center}
+					Tekanan
+				\end{center}
+				& \begin{center}
+					$\displaystyle \frac{[ gaya]}{[ luas]}$
+				\end{center}
+				& \begin{center}
+					$\displaystyle ML^{-1} T^{-2}$
+				\end{center}
+				\\
+				\hline 
+				\begin{center}
+					Usaha/Energi
+				\end{center}
+				& \begin{center}
+					$\displaystyle [ gaya] \times [ panjang]$
+				\end{center}
+				& \begin{center}
+					$\displaystyle ML^{2} T^{-2}$
+				\end{center}
+				\\
+				\hline 
+				\begin{center}
+					Daya
+				\end{center}
+				& \begin{center}
+					$\displaystyle \frac{[ usaha]}{[ waktu]}$
+				\end{center}
+				& \begin{center}
+					$\displaystyle ML^{2} T^{-3}$
+				\end{center}
+				\\
+				\hline 
+				\begin{center}
+					Momentum Linear
+				\end{center}
+				& \begin{center}
+					$\displaystyle [ massa] \times [ kecepatan]$
+				\end{center}
+				& \begin{center}
+					$\displaystyle MLT^{-1}$
+				\end{center}
+				\\
+				\hline 
+				\begin{center}
+					Debit
+				\end{center}
+				& \begin{center}
+					$\displaystyle \frac{[ volume]}{[ waktu]}$
+				\end{center}
+				& \begin{center}
+					$\displaystyle L^{3} T^{-1}$
+				\end{center}
+				\\
+				\hline 
+				{\begin{center}
+						Kekentalan (Viskositas)
+					\end{center}
+				} & \begin{center}
+					$\displaystyle [ tekanan] \times [ waktu]$
+				\end{center}
+				& \begin{center}
+					$\displaystyle ML^{-1} T^{-1}$
+				\end{center}
+				\\
+				\hline
+			\end{tabular}
+			
+		\end{table}
+	\end{center}
+	
+	
+	\section{Prinsip Homogeneitas Dimensi}
+	
+	Analisis dimensi didasari oleh suatu prinsip:
+	
+	\begin{quote}
+		\emph{Hanya besaran-besaran dengan dimensi yang sama yang boleh dibandingkan ($<, \leq, >, \geq$), disamakan ($=$), dijumlahkan ($+$), atau dikurangkan ($-$).}
+	\end{quote}
+	
+	Menanyakan, ``Mana yang lebih besar: 20 meter atau 1000 volt?'' adalah tidak masuk akal. Di samping itu, dalam suatu persamaan akan jadi tidak masuk akal untuk mengatakan bahwa
+	
+	\vspace{-.5em}
+	\begin{equation*}
+		5 \text{ kg} = 20 \text{ m/s}
+	\end{equation*}
+	
+	sebab besaran di ruas kiri adalah massa sedangkan di ruas kanan adalah besaran kecepatan, yang keduanya berbeda dimensi.  Lebih lanjut lagi, menjumlahkan atau mengurangkan dua besaran yang berbeda dimensi adalah suatu omong kosong:
+	
+	\vspace{-.5em}
+	\begin{equation*}
+		5 \text{ m/s} - 10^\circ \text{C} + 200  \ \Omega - 3,5 \text{ N}.
+	\end{equation*}
+	
+	Menambahkan 4 anggur dan 3 jeruk pada 2 apel tidak membuat apelnya menjadi 9 buah.
+	
+	\section{Menggunakan Analisis Dimensi}
+	
+	\begin{contoh}
+		Posisi dari suatu partikel yang bergerak 1-dimensi dinyatakan sebagai
+		
+		\begin{equation*}
+			x = \alpha t^2 + \frac{1}{\beta} t + \gamma^3
+		\end{equation*}
+		dengan $x$ dalam meter dan $t$ dalam sekon. Tentukan dimensi dari $\alpha, \beta,$ dan $\gamma$.
+	\end{contoh}
+	\begin{proof}[Jawab]
+		Dengan cepat kita bisa tentukan bahwa $\dim x = L$ dan $\dim t = T$. Berdasarkan prinsip homogeneitas dimensi, kita hanya bisa menyamakan dua dimensi yang sama, sehingga dimensi di ruas kiri harus sama dengan dimensi di ruas kanan. Dengan kata lain,
+		
+		\begin{equation*}
+			\dim x = \dim \Big(\alpha t^2 + \frac{1}{\beta} t + \gamma^3\Big) = L.
+		\end{equation*}
+		
+		Lalu, kita juga hanya bisa menjumlahkan besaran-besaran yang dimensinya sama. Konsekuensinya,
+		
+		\begin{equation*}
+			\dim \alpha t^2 = \dim \frac{1}{\beta} t = \dim \gamma^3 = L.
+		\end{equation*}
+		
+		Pertama, karena $\dim \gamma^3 = L$, maka $\dim \gamma = \sqrt[3]{L} = L^{1/3}.$ Kedua, 
+		\begin{align*}
+			\dim \Big(\frac{1}{\beta} t \Big) &= L\\[.2em]
+			\dim \Big(\frac{1}{\beta}\Big) \cdot T &= L\\[.4em]
+			\dim (\beta)^{-1} &= \frac{L}{T} = LT^{-1}\\[.8em]
+			\dim \beta &= L^{-1}T
+		\end{align*}
+		
+		Terakhir,
+		
+		\vspace{-.5em}
+		\begin{align*}
+			\dim \Big(\alpha t^2\Big) &= L\\[.5em]
+			\dim \alpha \cdot T^2 &= L\\[.5em]
+			\dim \alpha &= LT^{-2}
+		\end{align*}
+		
+		Jadi, $(\dim \alpha, \dim \beta, \dim \gamma) = (LT^{-2}, L^{-1}T, L^{1/3}).$
+	\end{proof}
+	
+	\begin{contoh}
+		Besar energi kinetik translasi ($E_k$) suatu objek hanya bergantung pada massa ($m$) dan kecepatannya ($v$). Tentukan rumus untuk $E_k$ yang secara eksplisit menyatakan ketergantungannya terhadap variabel $m$ dan $v$.
+	\end{contoh}
+	\begin{proof}[Jawab]
+		Anda sudah tahu jawabannya dari pelajaran IPA Anda semasa SMP. Mari kita coba, apakah hasil analisis dimensi kita cocok? Pertama, kita tentukan dulu dimensi energi kinetik translasi. Anda bisa saja melihat tabel 1, tetapi ada cara lain untuk menentukannya.
+		
+		Usaha adalah perubahan energi sehingga keduanya pasti punya dimensi yang sama ($\dim E_k = \dim W$). Usaha adalah hasil kali antara gaya dengan perpindahan ($W = F \cdot s$), sedangkan berdasarkan hukum II Newton, gaya adalah hasil kali antara massa dan percepatan ($F = ma$), sehingga $W = mas$ dan
+		
+		\vspace{-1em}
+		
+		\begin{align*}
+			\dim E_k = \dim W &= \dim (m \cdot a \cdot s)\\
+			&= [M][LT^{-2}][L]\\
+			&= ML^{2}T^{-2}
+		\end{align*}
+		
+		Selanjutnya, waktunya analisis dimensi bekerja. Kita bisa menyatakan $E_k$ dalam $m$ dan $v$ sebagai berikut:
+		
+		\begin{equation*}
+			E_k = m^a v^b \tag{A}
+		\end{equation*}
+		
+		Karena dimensi pada kedua ruas harus sama, maka
+		
+		\begin{align*}
+			ML^2T^{-2} &= M^a [LT^{-1}]^b\\
+			M L^2 T^{-2} &= M^a L^b T^{-b}
+		\end{align*}
+		
+		Dengan mencocokkan pangkatnya, kita dapatkan $a = 1$ dan $b = 2.$ Substitusikan kembali ke persamaan (A),
+		
+		\begin{equation*}
+			E_k = mv^2
+		\end{equation*}
+		
+		Akan tetapi, masih ada yang kurang. Bisa saja $mv^2$ dikalikan oleh sembarang bilangan, misalnya $1, 1/2,$ dan lain-lain. Sayangnya, analisis dimensi tidak mampu menentukan berapa nilai bilangan ini. Oleh karena itu, kita memisalkan suatu bilangan real $k$ dan menyatakan $E_k$ sebagai
+		
+		\begin{equation*}
+			E_k = kmv^2
+		\end{equation*}
+		
+		Dalam kasus ini, kita tahu bahwa nilai $k$ adalah 1/2.
+	\end{proof}
+	
+	\begin{contoh}
+		Kekuatan medan gravitasi ($g$) yang diciptakan oleh suatu benda bermassa $m$ pada jarak $R$ adalah
+		
+		\begin{equation*}
+			g = \frac{Gm}{R^2}
+		\end{equation*}
+		
+		di mana $G$ adalah suatu konstanta dan $g$ dimensinya sama dengan percepatan. Tentukan dimensi $G$.
+	\end{contoh}
+	
+	\begin{proof}[Jawab]
+		\begin{align*}
+			\dim g &= \dim \Bigg( \frac{Gm}{R^2} \Bigg)  = \frac{\dim G \cdot \dim m}{\dim R^2}\\[1em]
+			LT^{-2} &= \frac{\dim G \cdot [M]}{[L^2]}\\[.5em]
+			M^{-1} L^{3} T^{-2} &= \dim G \qedhere
+		\end{align*}
+	\end{proof}
+	
+	\section{Daftar Pustaka}
+	
+	\par Bridgman, P.W. (1922). \textit{Dimensional Analysis.} New Haven, CT: Yale University Press.
+	\par Sonin, Ain A. (2001). \textit{The Physical Basis of Dimensional Analysis} (edisi ke-2). Cambridge, MA: Departement of Mechanical Engineering (MIT).
+	\par Zhou, Kevin. \text{Problem Solving I: Mathematical Techniques}. \hyperlink{knzhou.github.io}{\color{blue}{knzhou.github.io}}
+	
+	
+	\vspace{3em}
+	\pagebreak
+	\section{Lampiran}
+	
+	\begin{center}
+		\textbf{Alfabet Yunani}
+	\end{center}
+	
+	\begin{table}[!h]
+		\centering
+		
+		\begin{tabular}{cccccc}
+			{\LARGErr \textAlpha   \textalpha} \qquad \qquad &  {\LARGErr \textBeta   \textbeta} \qquad \qquad &   {\LARGErr\textGamma   \textgamma} \qquad \qquad &   {\LARGErr\textDelta   \textdelta} \qquad \qquad &   {\LARGErr\textEpsilon   \textepsilon} \qquad \qquad  &   {\LARGErr \textZeta   \textzeta}  \\
+			Alpha \qquad \qquad & Beta \qquad \qquad & Gamma \qquad \qquad & Delta \qquad \qquad & Epsilon \qquad \qquad & Zeta \\[2em]
+			{\LARGErr \textEta   \texteta} \qquad \qquad &  {\LARGErr \textTheta   \texttheta} \qquad \qquad &  {\LARGErr \textIota   \textiota} \qquad \qquad &  {\LARGErr \textKappa   \textkappa} \qquad \qquad &  {\LARGErr \textLambda   \textlambda} \qquad \qquad &   {\LARGErr \textMu   \textmu}  \\
+			Eta \qquad \qquad & Theta \qquad \qquad & Iota \qquad \qquad & Kappa \qquad \qquad & Lambda \qquad \qquad & Mu \\[2em]
+			{\LARGErr \textNu   \textnu} \qquad \qquad &  {\LARGErr \textXi   \textxi} \qquad \qquad &  {\LARGErr \textOmikron   \textomikron} \qquad \qquad &  {\LARGErr \textPi   \textpi} \qquad \qquad &  {\LARGErr \textRho   \textrho} \qquad \qquad &  {\LARGErr \textSigma  \textsigma/\textvarsigma}  \\
+			Nu \qquad \qquad & Xi \qquad \qquad & Omikron \qquad \qquad & Pi \qquad \qquad & Rho \qquad \qquad & Sigma \\[2em]
+			{\LARGErr\textTau   \texttau } \qquad \qquad &  {\LARGErr \textupsilon   \textUpsilon} \qquad \qquad &  {\LARGErr \textPhi   \textphi} \qquad \qquad &  {\LARGErr \textChi   \textchi} \qquad \qquad &  {\LARGErr \textPsi   \textpsi} \qquad \qquad & {\LARGErr \textOmega  \textomega}  \\
+			Tau \qquad \qquad & Upsilon \qquad \qquad & Phi \qquad \qquad & Chi \qquad \qquad & Psi \qquad \qquad & Omega 
+			
+		\end{tabular}
+		
+	\end{table}
+	
+	\vspace{2em}
+	
+	\begin{center}
+		\textbf{Identitas-identitas Pemfaktoran}
+	\end{center}
+	
+	\vspace{-2em}
+	
+	\begin{align*}
+		(a \pm b)^2 \ &= \ a^2 + b^2 \pm 2ab \\[.5em]
+		a^2 - b^2 \ &= \ (a - b)(a + b)\\[.5em]
+		(x + a)(x + b) \ &= \ x^2 + (a+b)x + ab\\[.5em]
+		(a + b + c)^2 \ &= \ a^2 + b^2 + c^2 + 2ab + 2ac + 2bc\\[.5em]
+		(a \pm b)^3 \ &= \ a^3 \pm b^3 \pm 3ab(a \pm b) \ = \ a^3 \pm b^3 \pm 3a^2b + 3ab^2 \\[.5em]
+		a^3 + b^3 \ &= \ (a + b)(a^2 - ab + b^2)\\[.5em]
+		a^3 - b^3 \ &= \ (a - b)(a^2 + ab + b^2)\\[.5em]
+		a^n - b^n \ &= \ (a - b)(a^{n-1} + a^{n-2} b + a^{n-3}b^2 + \ldots + ab^{n-2} + b^{n-1}), \qquad n \in \mathbb{N} \\[.5em]
+		\text{\emph{Aproksimasi Binomial}}. & \text{ Jika $ |x| << 1$ (baca: harga mutlak $x$ jauh lebih kecil dari satu)}\\[.5em] & \text{ dan $|nx| << 1$ maka } (1 + x)^n \approx 1 + nx
+	\end{align*}
+	
+	
+	
+\end{document}

@@ -1,0 +1,605 @@
+\documentclass[12pt, a4paper]{article}\usepackage[utf8]{inputenc}
+\usepackage[paperwidth=210mm, paperheight=297mm, margin=1.5cm]{geometry}
+\usepackage[svgnames]{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{arabtex}
+\usepackage{utf8}
+\setcode{utf8}
+\usepackage{lipsum}
+\usepackage[T1]{fontenc}
+%\usepackage{kpfonts, baskervald}
+\usepackage{amsmath, systeme}
+\usepackage{amssymb}
+\usepackage{spalign}
+\usepackage{relsize}
+\usepackage{color}
+\usepackage{amsthm}
+\usepackage{subfig}
+\usepackage{cancel}
+\usepackage{xstring}
+\usepackage{tikz}
+\usepackage{cases}
+\usepackage{showlabels}
+\usepackage{multicol}
+\usetikzlibrary{arrows}
+\usepackage[shortlabels]{enumitem}
+\usepackage{varwidth}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{anyfontsize}
+\usepackage[fontsize=11pt]{fontsize}
+\usepackage{array}
+\usepackage{cite}
+\usepackage{titling}
+%\usepackage[toc]{multitoc}
+
+
+\setlength{\droptitle}{-5em}
+
+
+\newcommand{\defeq}{\vcentcolon=}
+
+\newcommand{\eqdef}{=\vcentcolon}
+
+\newcommand\hcancel[2][merah]{\setbox0=\hbox{$#2$}%
+	\rlap{\raisebox{.45\ht0}{\textcolor{#1}{\rule{\wd0}{1pt}}}}#2} 
+
+\newcommand{\garis} [3] []{
+	\begin{center}
+		\begin{tikzpicture}
+			\draw[#2-#3, ultra thick, #1] (0,0) to (1\linewidth,0);
+		\end{tikzpicture}
+	\end{center}
+}
+
+\newcommand{\chapternote}[1]{{%
+		\let\thempfn\relax% Remove footnote number printing mechanism
+		\footnotetext[0]{\emph{#1}}% Print footnote text
+}}
+
+\renewcommand{\figurename}{Gambar}
+
+\renewcommand{\thesection}{\Alph{section}} 
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesection.\arabic{subsubsection}.}
+
+\renewcommand*\contentsname{Daftar Isi}
+
+\renewcommand{\thefootnote}{\roman{footnote}}
+
+\newcommand*{\coret}[1]{\renewcommand{\CancelColor}{\color{#1}}\cancel}
+
+\newcommand\Ccancel[2][black]{
+	\let\OldcancelColor\CancelColor
+	\renewcommand\CancelColor{\color{#1}}
+	\cancel{#2}
+	\renewcommand\CancelColor{\OldcancelColor}
+}
+
+\theoremstyle{definition}
+\newtheorem{definisi}{Definisi}
+
+\theoremstyle{definition}
+\newtheorem{teorema}{Teorema}
+
+
+%\renewcommand*{\multicolumntoc}{2}
+%\setlength{\columnseprule}{0.5pt}
+
+
+\usepackage[colorlinks=true, linkcolor=black, urlcolor=black]{hyperref}
+
+\begin{document}
+	
+	\begin{center}
+		\textbf{{\LARGErrr
+				Kinematika}}
+		\vspace{-.5em}
+		\garis{diamond}{diamond}
+	\end{center} 
+	
+	\begin{enumerate}
+
+			\item \textbf{Grafik Gerakan Partikel} (*). Gerakan lurus sebuah partikel digambarkan dalam sebuah grafik perpindahan vs. waktu sebagai berikut:
+			
+			\begin{center}
+				
+				
+				\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+				
+				\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+					%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+					
+					%Shape: Axis 2D [id:dp687551270727794] 
+					\draw  (195.6,238.12) -- (408.64,238.12)(200.64,32.8) -- (200.64,245.84) (401.64,233.12) -- (408.64,238.12) -- (401.64,243.12) (195.64,39.8) -- (200.64,32.8) -- (205.64,39.8) (218.64,233.12) -- (218.64,243.12)(236.64,233.12) -- (236.64,243.12)(254.64,233.12) -- (254.64,243.12)(272.64,233.12) -- (272.64,243.12)(290.64,233.12) -- (290.64,243.12)(308.64,233.12) -- (308.64,243.12)(326.64,233.12) -- (326.64,243.12)(344.64,233.12) -- (344.64,243.12)(362.64,233.12) -- (362.64,243.12)(380.64,233.12) -- (380.64,243.12)(195.64,220.12) -- (205.64,220.12)(195.64,202.12) -- (205.64,202.12)(195.64,184.12) -- (205.64,184.12)(195.64,166.12) -- (205.64,166.12)(195.64,148.12) -- (205.64,148.12)(195.64,130.12) -- (205.64,130.12)(195.64,112.12) -- (205.64,112.12)(195.64,94.12) -- (205.64,94.12)(195.64,76.12) -- (205.64,76.12)(195.64,58.12) -- (205.64,58.12) ;
+					\draw   ;
+					%Shape: Grid [id:dp7497427730106021] 
+					\draw  [draw opacity=0] (200.64,58.12) -- (381.27,58.12) -- (381.27,238.4) -- (200.64,238.4) -- cycle ; \draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.1 ] (200.64,58.12) -- (200.64,238.4)(218.64,58.12) -- (218.64,238.4)(236.64,58.12) -- (236.64,238.4)(254.64,58.12) -- (254.64,238.4)(272.64,58.12) -- (272.64,238.4)(290.64,58.12) -- (290.64,238.4)(308.64,58.12) -- (308.64,238.4)(326.64,58.12) -- (326.64,238.4)(344.64,58.12) -- (344.64,238.4)(362.64,58.12) -- (362.64,238.4)(380.64,58.12) -- (380.64,238.4) ; \draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.1 ] (200.64,58.12) -- (381.27,58.12)(200.64,76.12) -- (381.27,76.12)(200.64,94.12) -- (381.27,94.12)(200.64,112.12) -- (381.27,112.12)(200.64,130.12) -- (381.27,130.12)(200.64,148.12) -- (381.27,148.12)(200.64,166.12) -- (381.27,166.12)(200.64,184.12) -- (381.27,184.12)(200.64,202.12) -- (381.27,202.12)(200.64,220.12) -- (381.27,220.12)(200.64,238.12) -- (381.27,238.12) ; \draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.1 ]  ;
+					%Curve Lines [id:da8479721064933654] 
+					\draw    (200.64,238.12) .. controls (252.6,234.73) and (282.4,207.87) .. (290.64,184.12) .. controls (333.47,75) and (301.8,155.67) .. (326.64,94.12) .. controls (336.01,69.24) and (354.82,59.21) .. (377.75,58.2) ;
+					\draw [shift={(380.64,58.12)}, rotate = 179.34] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+					
+					% Text Node
+					\draw (186.8,8.8) node [anchor=north west][inner sep=0.75pt]    {$s\ _{( m)}$};
+					% Text Node
+					\draw (412.4,229) node [anchor=north west][inner sep=0.75pt]    {$t\ _{( s)}$};
+					% Text Node
+					\draw (283.27,245.87) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$10$};
+					% Text Node
+					\draw (373.27,245.93) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$20$};
+					% Text Node
+					\draw (184.93,142.93) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$1$};
+					% Text Node
+					\draw (184.93,53.27) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$2$};
+					
+					
+				\end{tikzpicture}
+			\end{center}
+			
+			Tentukan:
+			
+			\begin{enumerate}[label=(\alph*)]
+				\item $\left[\text{2 poin}\right]$ kecepatan rata-rata dari partikel tersebut (dari $t = 0$ s hingga $t = 20$ s);
+				\item $\left[\text{4 poin}\right]$ kecepatan maksimumnya. [Irodov 1.4]
+			\end{enumerate}
+			
+			\item \textbf{Kecepatan Motor} (*). Karena bangun kesiangan, Nayaka berangkat sekolah ugal-ugalan dengan grafik kecepatan vs. waktu sebagai berikut:
+			
+			\begin{center}
+				
+				
+				
+				\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+				
+				\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+					%uncomment if require: \path (0,168); %set diagram left start at 0, and has height of 168
+					
+					%Shape: Axis 2D [id:dp687551270727794] 
+					\draw  (217.6,141.88) -- (430.64,141.88)(222.64,36.6) -- (222.64,145.84) (423.64,136.88) -- (430.64,141.88) -- (423.64,146.88) (217.64,43.6) -- (222.64,36.6) -- (227.64,43.6) (240.64,136.88) -- (240.64,146.88)(258.64,136.88) -- (258.64,146.88)(276.64,136.88) -- (276.64,146.88)(294.64,136.88) -- (294.64,146.88)(312.64,136.88) -- (312.64,146.88)(330.64,136.88) -- (330.64,146.88)(348.64,136.88) -- (348.64,146.88)(366.64,136.88) -- (366.64,146.88)(384.64,136.88) -- (384.64,146.88)(402.64,136.88) -- (402.64,146.88)(217.64,123.88) -- (227.64,123.88)(217.64,105.88) -- (227.64,105.88)(217.64,87.88) -- (227.64,87.88)(217.64,69.88) -- (227.64,69.88)(217.64,51.88) -- (227.64,51.88) ;
+					\draw   ;
+					%Shape: Grid [id:dp7497427730106021] 
+					\draw  [draw opacity=0] (222.64,34.6) -- (403.27,34.6) -- (403.27,138.4) -- (222.64,138.4) -- cycle ; \draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.1 ] (222.64,34.6) -- (222.64,138.4)(240.64,34.6) -- (240.64,138.4)(258.64,34.6) -- (258.64,138.4)(276.64,34.6) -- (276.64,138.4)(294.64,34.6) -- (294.64,138.4)(312.64,34.6) -- (312.64,138.4)(330.64,34.6) -- (330.64,138.4)(348.64,34.6) -- (348.64,138.4)(366.64,34.6) -- (366.64,138.4)(384.64,34.6) -- (384.64,138.4)(402.64,34.6) -- (402.64,138.4) ; \draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.1 ] (222.64,34.6) -- (403.27,34.6)(222.64,52.6) -- (403.27,52.6)(222.64,70.6) -- (403.27,70.6)(222.64,88.6) -- (403.27,88.6)(222.64,106.6) -- (403.27,106.6)(222.64,124.6) -- (403.27,124.6) ; \draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=0.1 ]  ;
+					%Straight Lines [id:da15728436688920455] 
+					\draw    (399.96,89.94) -- (366.64,106.6) -- (366.64,70.6) -- (312.64,70.6) -- (312.64,106.6) -- (276.64,88.6) -- (222.64,141.88) ;
+					\draw [shift={(402.64,88.6)}, rotate = 153.43] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+					
+					% Text Node
+					\draw (203.8,7.8) node [anchor=north west][inner sep=0.75pt]    {$v\ _{( m/s)}$};
+					% Text Node
+					\draw (436.4,133) node [anchor=north west][inner sep=0.75pt]    {$t\ _{( s)}$};
+					% Text Node
+					\draw (305.27,145.87) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$10$};
+					% Text Node
+					\draw (395.27,145.93) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$20$};
+					% Text Node
+					\draw (191.93,45.93) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$100$};
+					% Text Node
+					\draw (242.64,92) node [anchor=north west][inner sep=0.75pt]    {$A$};
+					% Text Node
+					\draw (291,77.4) node [anchor=north west][inner sep=0.75pt]    {$B$};
+					% Text Node
+					\draw (335,48.4) node [anchor=north west][inner sep=0.75pt]    {$C$};
+					% Text Node
+					\draw (375,78.4) node [anchor=north west][inner sep=0.75pt]    {$D$};
+					
+					
+				\end{tikzpicture}
+			\end{center}
+			
+			Tentukan:
+			\begin{enumerate}[label=(\alph*)]
+				\item $\left[\text{2 poin}\right]$ kecepatan rata-rata dari partikel tersebut (dari $t = 0$ s hingga $t = 20$ s);
+				\item $\left[\text{2 poin}\right]$ percepatan pada tiap bagian (A, B, C, dan D). [Nayaka]
+			\end{enumerate} 
+			
+			\item  $\left[ \text{12 poin} \right]$ \textbf{Berpapasan dalam Lintasan Lingkaran} (***). Dari titik $Z$, dua partikel $A$ dan $B$ bergerak berlawanan arah dalam lintasan lingkaran sempurna dengan jari-jari $R$. $B$ bergerak dengan kecepatan $k$ kali lipat dari $A$ ($k \in \mathbb{N}$). Terhitung sejak kondisi awal, tentukan berapa kali mereka berpapasan hingga $A$ menyelesaikan putaran pertamanya. [Nayaka]
+			
+			\begin{center}
+				
+				
+				\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+				
+				\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+					%uncomment if require: \path (0,155); %set diagram left start at 0, and has height of 155
+					
+					%Shape: Circle [id:dp4096236936943374] 
+					\draw   (253.4,80.3) .. controls (253.4,41.47) and (284.87,10) .. (323.7,10) .. controls (362.53,10) and (394,41.47) .. (394,80.3) .. controls (394,119.13) and (362.53,150.6) .. (323.7,150.6) .. controls (284.87,150.6) and (253.4,119.13) .. (253.4,80.3) -- cycle ;
+					%Shape: Circle [id:dp8648315801400317] 
+					\draw  [draw opacity=0][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (389.13,75.43) .. controls (389.13,72.75) and (391.31,70.57) .. (394,70.57) .. controls (396.69,70.57) and (398.87,72.75) .. (398.87,75.43) .. controls (398.87,78.12) and (396.69,80.3) .. (394,80.3) .. controls (391.31,80.3) and (389.13,78.12) .. (389.13,75.43) -- cycle ;
+					%Shape: Circle [id:dp7500170915755422] 
+					\draw  [draw opacity=0][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (389.13,85.17) .. controls (389.13,82.48) and (391.31,80.3) .. (394,80.3) .. controls (396.69,80.3) and (398.87,82.48) .. (398.87,85.17) .. controls (398.87,87.85) and (396.69,90.03) .. (394,90.03) .. controls (391.31,90.03) and (389.13,87.85) .. (389.13,85.17) -- cycle ;
+					%Straight Lines [id:da6370649461033129] 
+					\draw    (394,75.43) -- (394,31) ;
+					\draw [shift={(394,29)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+					%Straight Lines [id:da5280712713733693] 
+					\draw    (394,85.17) -- (394,113.67) ;
+					\draw [shift={(394,115.67)}, rotate = 270] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+					%Straight Lines [id:da06539762835121943] 
+					\draw    (319.53,80.3) -- (256.4,80.3) ;
+					\draw [shift={(256.4,80.3)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+					\draw [shift={(319.53,80.3)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+					%Shape: Circle [id:dp8929368637939745] 
+					\draw  [draw opacity=0][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (320.83,80.3) .. controls (320.83,78.72) and (322.12,77.43) .. (323.7,77.43) .. controls (325.28,77.43) and (326.57,78.72) .. (326.57,80.3) .. controls (326.57,81.88) and (325.28,83.17) .. (323.7,83.17) .. controls (322.12,83.17) and (320.83,81.88) .. (320.83,80.3) -- cycle ;
+					
+					% Text Node
+					\draw (385.33,3.73) node [anchor=north west][inner sep=0.75pt]    {$v_{A}$};
+					% Text Node
+					\draw (384.33,122.07) node [anchor=north west][inner sep=0.75pt]    {$v_{B}$};
+					% Text Node
+					\draw (282.67,87.07) node [anchor=north west][inner sep=0.75pt]    {$R$};
+					% Text Node
+					\draw (317.7,60.7) node [anchor=north west][inner sep=0.75pt]    {$O$};
+					
+					
+				\end{tikzpicture}
+			\end{center}
+			
+			%	\vspace{225pt}
+			
+			\item \textbf{Rakit Menyeberangi Sungai} (**). Sebuah rakit menyeberangi sungai dengan kecepatan relatif terhadap sungai dua kali lipat kecepatan arus sungai. Tentukan:
+			\begin{enumerate}[label=(\alph*)]
+				\item $\left[ \text{5 poin} \right]$ ke arah mana rakit harus diarahkan agar bergerak tegak lurus terhadap arus sungai;
+				\item $\left[ \text{2 poin} \right]$ besar kecepatan gerak rakit tersebut relatif terhadap pengamat diam andaikata kecepatan arus sungai adalah 5 m/s. [Irodov 1.9]
+			\end{enumerate}
+			
+			\begin{center}
+				
+				
+				\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+				
+				\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+					%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+					
+					%Shape: Rectangle [id:dp7532907580292374] 
+					\draw  [draw opacity=0][fill={rgb, 255:red, 74; green, 144; blue, 226 }  ,fill opacity=0.46 ] (178,67.1) -- (467,67.1) -- (467,175.1) -- (178,175.1) -- cycle ;
+					%Straight Lines [id:da7608845779967655] 
+					\draw    (178,67.1) -- (467,67.1) ;
+					%Straight Lines [id:da8016931130056122] 
+					\draw    (178,175.1) -- (467,175.1) ;
+					%Straight Lines [id:da30792795440185006] 
+					\draw  [dash pattern={on 4.5pt off 4.5pt}]  (157,175.1) -- (488,175.1) ;
+					%Straight Lines [id:da4478937485475514] 
+					\draw  [dash pattern={on 4.5pt off 4.5pt}]  (157,67.1) -- (488,67.1) ;
+					%Straight Lines [id:da8216719400527028] 
+					\draw    (324.32,174.04) -- (276.25,116.7) ;
+					\draw [shift={(274.32,114.4)}, rotate = 50.02] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+					%Straight Lines [id:da023573828827841314] 
+					\draw  [dash pattern={on 0.84pt off 2.51pt}]  (324.32,120.4) -- (324.32,174.04) ;
+					%Shape: Arc [id:dp9877548457248191] 
+					\draw  [draw opacity=0] (304.71,151.33) .. controls (309.97,146.79) and (316.82,144.04) .. (324.32,144.04) -- (324.32,174.04) -- cycle ; \draw   (304.71,151.33) .. controls (309.97,146.79) and (316.82,144.04) .. (324.32,144.04) ;  
+					%Rounded Rect [id:dp3857163239742203] 
+					\draw  [fill={rgb, 255:red, 228; green, 228; blue, 228 }  ,fill opacity=1 ] (324.41,166.59) .. controls (330.4,166.59) and (335.25,171.44) .. (335.25,177.42) -- (335.25,200.37) .. controls (335.25,206.36) and (330.4,211.21) .. (324.41,211.21) -- (320.59,211.21) .. controls (314.6,211.21) and (309.75,206.36) .. (309.75,200.37) -- (309.75,177.42) .. controls (309.75,171.44) and (314.6,166.59) .. (320.59,166.59) -- cycle ;
+					
+					% Text Node
+					\draw (306.72,129.24) node [anchor=north west][inner sep=0.75pt]    {$\theta $};
+					
+					
+				\end{tikzpicture}
+			\end{center}
+			
+			\item $\left[ \text{8 poin} \right]$ \textbf{Sepasang Kapal di Sungai} (**). Di tengah-tengah sungai, dua kapal A dan B bergerak pada lintasan yang saling tegak lurus: kapal A searah arus sungai dan kapal B tegak lurus arus sungai. Tepat setelah keduanya menempuh jarak yang sama, kedua kapal bergerak kembali ke posisi awalnya. Tentukan perbandingan waktu gerakan kedua kapal tersebut, $\tau_A / \tau_B$, jika kecepatan tiap kapal relatif terhadap air adalah $\eta = 1{,}2$ kali kecepatan arus. [Irodov 1.8] 
+			
+			\begin{center}
+				
+				
+				\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+				
+				\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+					%uncomment if require: \path (0,135); %set diagram left start at 0, and has height of 135
+					
+					%Straight Lines [id:da323809346171535] 
+					\draw    (244.5,60.1) -- (295.09,60.1) ;
+					\draw [shift={(298.09,60.1)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+					%Straight Lines [id:da6761139748966403] 
+					\draw    (424.5,64.1) -- (424.5,15) ;
+					\draw [shift={(424.5,12)}, rotate = 90] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+					%Shape: Rectangle [id:dp9837461176282609] 
+					\draw  [draw opacity=0][fill={rgb, 255:red, 74; green, 144; blue, 226 }  ,fill opacity=0.46 ] (190,6.1) -- (479,6.1) -- (479,119) -- (190,119) -- cycle ;
+					%Straight Lines [id:da2592034215410832] 
+					\draw    (190,6.1) -- (479,6.1) ;
+					%Straight Lines [id:da9582850098951823] 
+					\draw    (190,119) -- (479,119) ;
+					%Straight Lines [id:da8092870079639745] 
+					\draw  [dash pattern={on 4.5pt off 4.5pt}]  (169,119) -- (500,119) ;
+					%Straight Lines [id:da590718111616441] 
+					\draw  [dash pattern={on 4.5pt off 4.5pt}]  (169,6.1) -- (500,6.1) ;
+					%Rounded Rect [id:dp6327244746123752] 
+					\draw  [fill={rgb, 255:red, 228; green, 228; blue, 228 }  ,fill opacity=1 ] (230.59,58.91) .. controls (230.59,55.18) and (233.62,52.15) .. (237.35,52.15) -- (251.65,52.15) .. controls (255.38,52.15) and (258.41,55.18) .. (258.41,58.91) -- (258.41,61.29) .. controls (258.41,65.02) and (255.38,68.05) .. (251.65,68.05) -- (237.35,68.05) .. controls (233.62,68.05) and (230.59,65.02) .. (230.59,61.29) -- cycle ;
+					%Rounded Rect [id:dp5493120303085961] 
+					\draw  [fill={rgb, 255:red, 228; green, 228; blue, 228 }  ,fill opacity=1 ] (425.69,50.19) .. controls (429.42,50.19) and (432.45,53.22) .. (432.45,56.95) -- (432.45,71.25) .. controls (432.45,74.98) and (429.42,78.01) .. (425.69,78.01) -- (423.31,78.01) .. controls (419.58,78.01) and (416.55,74.98) .. (416.55,71.25) -- (416.55,56.95) .. controls (416.55,53.22) and (419.58,50.19) .. (423.31,50.19) -- cycle ;
+					
+					% Text Node
+					\draw (239.35,71.45) node [anchor=north west][inner sep=0.75pt]    {$X$};
+					% Text Node
+					\draw (418.68,82.78) node [anchor=north west][inner sep=0.75pt]    {$Y$};
+					
+					
+				\end{tikzpicture}
+			\end{center}
+			
+			
+			\item $\left[\text{10 poin}\right]$ \textbf{Lintasan Cahaya} (***). Sebuah pesawat luar angkasa bergerak dengan kecepatan konstan $v$. Di dalamnya, sepasang cermin dipasang berhadap-hadapan secara vertikal dengan jarak $d$. Sinar cahaya dengan kecepatan $c$ lalu ditembakkan dari bawah sehingga sinar cahaya tersebut terpantul-pantul pada kedua cermin. Sinar cahaya menyentuh cermin bawah kedua kalinya pada waktu $T$. Tentukan perbandingan jarak yang ditempuh oleh cahaya relatif terhadap pesawat dengan pengamat dari luar pesawat. Abaikan pengaruh medan gravitasi. [Nayaka]
+			
+			\begin{center}
+				
+				
+				\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+				
+				\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+					%uncomment if require: \path (0,174); %set diagram left start at 0, and has height of 174
+					
+					%Rounded Same Side Corner Rect [id:dp5529198947281975] 
+					\draw  [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=0.8 ][fill={rgb, 255:red, 74; green, 144; blue, 226 }  ,fill opacity=0.47 ] (436.8,79.41) .. controls (444.59,79.41) and (450.9,85.72) .. (450.9,93.51) -- (450.9,107.97) .. controls (450.9,115.76) and (444.59,122.07) .. (436.8,122.07) -- (413.89,122.07) .. controls (413.56,122.07) and (413.3,121.81) .. (413.3,121.49) -- (413.3,79.99) .. controls (413.3,79.67) and (413.56,79.41) .. (413.89,79.41) -- cycle ;
+					%Rounded Single Corner Rect [id:dp9139077357008913] 
+					\draw  [color={rgb, 255:red, 74; green, 74; blue, 74 }  ,draw opacity=1 ][fill={rgb, 255:red, 154; green, 148; blue, 148 }  ,fill opacity=1 ] (413.97,82.61) .. controls (413.97,60.81) and (396.3,43.14) .. (374.5,43.14) -- (214.43,43.14) -- (214.43,122.07) -- (413.97,122.07) -- cycle ;
+					%Rounded Single Corner Rect [id:dp3646419979356157] 
+					\draw  [color={rgb, 255:red, 74; green, 74; blue, 74 }  ,draw opacity=0.84 ][fill={rgb, 255:red, 217; green, 213; blue, 213 }  ,fill opacity=0.58 ] (388.58,81.4) .. controls (388.58,66.68) and (376.65,54.75) .. (361.93,54.75) -- (239.82,54.75) -- (239.82,108.05) -- (388.58,108.05) -- cycle ;
+					%Shape: Rectangle [id:dp32629806605562806] 
+					\draw  [color={rgb, 255:red, 74; green, 74; blue, 74 }  ,draw opacity=0.66 ][fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=0.66 ] (296,99.05) -- (332.4,99.05) -- (332.4,107.75) -- (296,107.75) -- cycle ;
+					%Shape: Rectangle [id:dp6783251511266237] 
+					\draw  [color={rgb, 255:red, 74; green, 74; blue, 74 }  ,draw opacity=0.66 ][fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=0.66 ] (296,55.05) -- (332.4,55.05) -- (332.4,63.75) -- (296,63.75) -- cycle ;
+					%Straight Lines [id:da9677330091952501] 
+					\draw [color={rgb, 255:red, 245; green, 166; blue, 35 }  ,draw opacity=1 ][fill={rgb, 255:red, 248; green, 231; blue, 28 }  ,fill opacity=1 ][line width=4.5]    (314.2,96.31) -- (314.2,74.49) ;
+					\draw [shift={(314.2,66.49)}, rotate = 90] [fill={rgb, 255:red, 245; green, 166; blue, 35 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (14.47,-6.95) -- (0,0) -- (14.47,6.95) -- cycle    ;
+					%Straight Lines [id:da17547741491159297] 
+					\draw [color={rgb, 255:red, 248; green, 231; blue, 28 }  ,draw opacity=1 ][fill={rgb, 255:red, 248; green, 231; blue, 28 }  ,fill opacity=1 ][line width=3]    (314.2,96.31) -- (314.2,74.9) ;
+					\draw [shift={(314.2,68.9)}, rotate = 90] [fill={rgb, 255:red, 248; green, 231; blue, 28 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (10.18,-4.89) -- (0,0) -- (10.18,4.89) -- cycle    ;
+					%Shape: Star [id:dp964431448329554] 
+					\draw  [color={rgb, 255:red, 248; green, 231; blue, 28 }  ,draw opacity=1 ] (249.8,17.66) -- (241.36,19.91) -- (239.18,26.99) -- (233.57,20.98) -- (224.58,21.13) -- (229.55,15.17) -- (226.17,8.18) -- (234.86,10.5) -- (241.76,6.03) -- (242.16,13.43) -- cycle ;
+					%Shape: Star [id:dp26371839698465616] 
+					\draw  [color={rgb, 255:red, 248; green, 231; blue, 28 }  ,draw opacity=1 ] (411.32,11.82) -- (404.3,21.36) -- (412.99,25.85) -- (403.14,23.67) -- (399.89,34.56) -- (400.82,23.67) -- (390.12,25.91) -- (400.54,21.37) -- (397.18,11.85) -- (402.7,19.93) -- cycle ;
+					%Shape: Star [id:dp46925201982766374] 
+					\draw  [color={rgb, 255:red, 248; green, 231; blue, 28 }  ,draw opacity=1 ] (292.51,135.11) -- (301.29,140.6) -- (303.94,132.28) -- (304.87,141.6) -- (314.23,141.17) -- (306.38,145) -- (313.09,152.89) -- (304.31,147.4) -- (301.66,155.72) -- (300.73,146.4) -- (291.37,146.83) -- (299.22,143) -- cycle ;
+					
+					
+					
+					
+				\end{tikzpicture}
+			\end{center}
+	
+		\pagebreak
+		
+		\item $[$10 poin$]$ \textbf{Berangkat Sekolah} (***). Selama empat hari berturut-turut, seorang anak mulai berangkat dari rumah dengan
+		berjalan kaki menuju sekolah selalu pada waktu keberangkatan yang sama. Bel masuk sekolah juga memang diatur untuk berbunyi pada waktu yang selalu sama.
+		
+		\begin{itemize}
+			
+			\item Pada hari pertama, anak tersebut mulai berjalan dengan kecepatan awal 50 meter per menit dan dipercepat dengan percepatan 2 meter per menit$^2$. Ternyata dia tiba di sekolah 5 menit setelah bel berbunyi.
+			
+			\item Pada hari kedua, anak tersebut mulai berjalan dengan kecepatan awal 150 meter per menit dan diperlambat dengan perlambatan 2 meter per menit$^2$. Ternyata dia tiba di sekolah 5 menit sebelum bel berbunyi.
+			
+			\item Pada hari ketiga, ia memutuskan untuk berjalan dengan kecepatan konstan (yang nilainya lebih besar dari 100 meter per menit) hingga tiba di sekolah. Ternyata dia tiba di sekolah tepat saat bel berbunyi.
+			
+		\end{itemize}
+		
+		Jika pada hari keempat ia berjalan dengan kecepatan konstan 100 meter per menit, berapa menit ia tiba di sekolah setelah bel berbunyi? [OSK 2020]
+		
+		\item $[$10 poin$]$ \textbf{Balapan Tiga Mobil} (***). Ada tiga buah mobil $A$, $B$, dan $C$ yang mula-mula diam dan berada pada posisi yang sama. 
+		\begin{itemize}
+			\item Pada waktu $t = 0$, mobil $A$ bergerak ke kanan dengan kecepatan konstan $v_0$.
+			\item Pada waktu $t = T$, mobil $B$ bergerak ke kanan dengan kecepatan awal $v_0$ dan percepatan $a$.
+			\item Pada waktu $t = 4T$, mobil $C$ bergerak ke kanan dengan kecepatan awal $v_0$ dan percepatan $9a$.
+		\end{itemize}
+		Suatu saat, ketiga mobil tersebut berada pada posisi yang sama. Agar hal ini dapat dipenuhi, hubungan antara $v_0$, $a$, dan $T$ dapat dinyatakan dalam bentuk $n = \dfrac{v_0}{aT}$. Nilai $n$ adalah... [OSK 2022]
+		
+		\item $[$10 poin$]$ \textbf{Gerakan Dua Partikel} (***). Terdapat dua buah titik $M$ dan $N$, di mana $N$ terletak di sebelah kanan $M$. Tinjau sebuah partikel $A$ yang bergerak dari titik $M$ dengan kecepatan awal sebesar $18$ m/s ke kanan dan percepatan $2$ m/s$^2$ ke kiri. Pada saat yang bersamaan, sebuah partikel $B$ bergerak dari titik $N$ dengan kecepatan awal sebesar $12$ m/s ke kiri dan percepatan $3$ m/s$^2$ ke kanan. Gerakan kedua partikel hanya pada satu dimensi. Kedua partikel sempat berada pada posisi yang sama sebanyak dua kali dalam selang waktu antara dua kejadian tersebut sebesar $\Delta t = 4$ s. Jarak antara $M$ dan $N$ adalah... [OSK 2022]
+		
+		%		\item $[$8 poin$]$ \textbf{Perjalanan Singkat Sebuah Mobil.} Sebuah mobil bergerak lurus dari keadaan diam, mula-mula dengan percepatan $a = 5{,}0$ m/s$^2$, lalu bergerak secara seragam\footnote{Dalam konteks ini, "bergerak secara seragam" artinya "bergerak dengan kecepatan yang seragam". Dengan demikian, kecepatannya konstan.}, lalu mengalami perlambatan sebesar $a$ hingga berhenti. Waktu total pergerakan mobil adalah $t = 25$ detik. Kecepatan rata-rata sepanjang selang waktu tersebut adalah $v = 72$ km/jam. Berapa lama mobil tersebut bergerak secara seragam? [Irodov 1.3]
+		
+		
+		
+		\item $[$8 poin$]$ \textbf{Menumbuk Tanah Bersamaan} (**). Sebuah bola dilepaskan dari ketinggian $h$. Pada saat yang bersamaan, bola kedua dilempar ke bawah dengan kecepatan $v$ dari ketinggian $2h$. Berapa nilai $v$ supaya kedua bola menumbuk tanah bersamaan? [Morin 2.10]
+		
+		\item $[$8 poin$]$ \textbf{Menumbuk Tanah Bersamaan 2.0} (**). Sebuah bola dijatuhkan tanpa kecepatan awal dari ketinggian $4h$. Setelah bola jatuh sejauh $d$, bola kedua dijatuhkan tanpa kecepatan awal dari ketinggian $h$. Berapa nilai $d$ (dinyatakan dalam $h$) supaya kedua bola menumbuk tanah bersamaan? [Morin 2.9]
+		
+		\item $[$8 poin$]$ \textbf{Baut Terlepas dari Elevator} (**). Sebuah elevator dengan tinggi $h$ mulai bergerak ke atas dengan percepatan konstan $a_E$. $t_1$ detik kemudian, sebuah baut jatuh dari langit-langitnya. Tentukan
+		
+		\begin{enumerate}[label=(\alph*)]
+			\item berapa lama ($t$) baut jatuh bebas;
+			\item perpindahan ($\Delta s$) dan jarak ($s$) yang ditempuh baut selama jatuh bebas relatif terhadap acuan tanah. [Irodov 1.15]
+		\end{enumerate}
+		
+		\pagebreak
+		
+		\begin{figure}%
+			\centering
+			\hspace{8.5em}
+			\subfloat[Gambar 1]{
+				\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+				
+				\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+					%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+					
+					%Shape: Rectangle [id:dp8614344297576191] 
+					\draw  [draw opacity=0][fill={rgb, 255:red, 193; green, 193; blue, 193 }  ,fill opacity=1 ] (270,158.91) -- (362,158.91) -- (362,174.6) -- (270,174.6) -- cycle ;
+					%Straight Lines [id:da8721539633851678] 
+					\draw    (270,158.91) -- (362,158.91) ;
+					%Shape: Ellipse [id:dp14417316547913983] 
+					\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (309.64,118.29) .. controls (309.64,114.68) and (312.49,111.75) .. (316,111.75) .. controls (319.51,111.75) and (322.36,114.68) .. (322.36,118.29) .. controls (322.36,121.9) and (319.51,124.83) .. (316,124.83) .. controls (312.49,124.83) and (309.64,121.9) .. (309.64,118.29) -- cycle ;
+					%Shape: Ellipse [id:dp9201191113070406] 
+					\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (309.64,50.21) .. controls (309.64,46.6) and (312.49,43.67) .. (316,43.67) .. controls (319.51,43.67) and (322.36,46.6) .. (322.36,50.21) .. controls (322.36,53.82) and (319.51,56.75) .. (316,56.75) .. controls (312.49,56.75) and (309.64,53.82) .. (309.64,50.21) -- cycle ;
+					%Straight Lines [id:da5770264620899976] 
+					\draw    (337.32,43.67) -- (337.32,124.83) ;
+					\draw [shift={(337.32,124.83)}, rotate = 270] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,5.59) -- (0,-5.59)(10.93,-4.9) .. controls (6.95,-2.3) and (3.31,-0.67) .. (0,0) .. controls (3.31,0.67) and (6.95,2.3) .. (10.93,4.9)   ;
+					\draw [shift={(337.32,43.67)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,5.59) -- (0,-5.59)(10.93,-4.9) .. controls (6.95,-2.3) and (3.31,-0.67) .. (0,0) .. controls (3.31,0.67) and (6.95,2.3) .. (10.93,4.9)   ;
+					
+					% Text Node
+					\draw (342.54,77.8) node [anchor=north west][inner sep=0.75pt]    {$S$};
+					% Text Node
+					\draw (291.05,43.61) node [anchor=north west][inner sep=0.75pt]    {$A$};
+					% Text Node
+					\draw (290.55,112.07) node [anchor=north west][inner sep=0.75pt]    {$B$};
+					
+					
+				\end{tikzpicture}
+			}
+			\qquad
+			\subfloat[Gambar 2]{
+				
+				
+				\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+				
+				\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+					%uncomment if require: \path (0,146); %set diagram left start at 0, and has height of 146
+					
+					%Shape: Rectangle [id:dp6544948052603841] 
+					\draw  [draw opacity=0][fill={rgb, 255:red, 193; green, 193; blue, 193 }  ,fill opacity=1 ] (217,109.51) -- (444,109.51) -- (444,123.11) -- (217,123.11) -- cycle ;
+					%Straight Lines [id:da7380313602006612] 
+					\draw    (217,109.51) -- (323,109.51) ;
+					%Straight Lines [id:da4282078680557073] 
+					\draw    (338,109.51) -- (444,109.51) ;
+					%Straight Lines [id:da27504521445203123] 
+					\draw    (331,109.51) -- (331,8.13) ;
+					\draw [shift={(331,109.51)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+					%Shape: Parabola [id:dp6859848157250097] 
+					\draw   (217,109.51) .. controls (292.67,-27.17) and (368.33,-27.17) .. (444,109.51) ;
+					%Shape: Arc [id:dp3912500619697681] 
+					\draw  [draw opacity=0] (230.74,85.73) .. controls (240.4,90.17) and (247,99.15) .. (247,109.51) -- (217,109.51) -- cycle ; \draw   (230.74,85.73) .. controls (240.4,90.17) and (247,99.15) .. (247,109.51) ;  
+					
+					% Text Node
+					\draw (335,48.43) node [anchor=north west][inner sep=0.75pt]    {$h$};
+					% Text Node
+					\draw (385,110.08) node [anchor=north west][inner sep=0.75pt]    {$\ell $};
+					% Text Node
+					\draw (265,110.08) node [anchor=north west][inner sep=0.75pt]    {$\ell $};
+					% Text Node
+					\draw (227.67,92.7) node [anchor=north west][inner sep=0.75pt]    {$\theta $};
+					
+					
+				\end{tikzpicture}
+				
+			}
+			\newline
+			\subfloat[Gambar 3]{
+				
+				
+				\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+				
+				\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+					%uncomment if require: \path (0,146); %set diagram left start at 0, and has height of 146
+					
+					%Shape: Rectangle [id:dp1612712199399231] 
+					\draw  [draw opacity=0][fill={rgb, 255:red, 193; green, 193; blue, 193 }  ,fill opacity=1 ] (217,109.51) -- (347.25,109.51) -- (347.25,125.79) -- (217,125.79) -- cycle ;
+					%Shape: Rectangle [id:dp5945915512002564] 
+					\draw  [draw opacity=0][fill={rgb, 255:red, 193; green, 193; blue, 193 }  ,fill opacity=1 ] (331,8.13) -- (380.08,8.13) -- (380.08,20.85) -- (331,20.85) -- cycle ;
+					%Shape: Rectangle [id:dp5587280642212664] 
+					\draw  [draw opacity=0][fill={rgb, 255:red, 193; green, 193; blue, 193 }  ,fill opacity=1 ] (217,109.51) -- (331,109.51) -- (331,123.11) -- (217,123.11) -- cycle ;
+					%Shape: Rectangle [id:dp44778194711185737] 
+					\draw  [draw opacity=0][fill={rgb, 255:red, 193; green, 193; blue, 193 }  ,fill opacity=1 ] (347.28,8.26) -- (347.28,123.11) -- (331,123.11) -- (331,8.26) -- cycle ;
+					%Straight Lines [id:da35959513511819075] 
+					\draw    (217,109.51) -- (331,109.51) ;
+					%Straight Lines [id:da8180654060169397] 
+					\draw    (331,8.13) -- (380,8.13) ;
+					%Straight Lines [id:da06977589276768703] 
+					\draw    (331,109.51) -- (331,8.13) ;
+					%Shape: Arc [id:dp0131526042255381] 
+					\draw  [draw opacity=0] (229.36,85.13) .. controls (239.76,89.33) and (247,98.66) .. (247,109.51) -- (217,109.51) -- cycle ; \draw   (229.36,85.13) .. controls (239.76,89.33) and (247,98.66) .. (247,109.51) ;  
+					%Curve Lines [id:da07498812160291646] 
+					\draw    (217,109.51) .. controls (262.48,9.06) and (313,8.34) .. (331,8.13) ;
+					%Straight Lines [id:da8197134236802519] 
+					\draw    (217,109.51) -- (243.77,50.22) ;
+					\draw [shift={(245,47.49)}, rotate = 114.3] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (7.14,-3.43) -- (0,0) -- (7.14,3.43) -- (4.74,0) -- cycle    ;
+					
+					% Text Node
+					\draw (333,47.43) node [anchor=north west][inner sep=0.75pt]    {$\ell $};
+					% Text Node
+					\draw (272,110.08) node [anchor=north west][inner sep=0.75pt]    {$\ell $};
+					% Text Node
+					\draw (226.67,91.7) node [anchor=north west][inner sep=0.75pt]    {$\theta $};
+					% Text Node
+					\draw (216.7,50.54) node [anchor=north west][inner sep=0.75pt]    {$v_{0}$};
+					
+					
+				\end{tikzpicture}
+			}
+			\qquad
+			\subfloat[Gambar 4]{
+				
+				
+				\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+				
+				\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+					%uncomment if require: \path (0,149); %set diagram left start at 0, and has height of 149
+					
+					%Shape: Polygon [id:ds08659877999462595] 
+					\draw  [fill={rgb, 255:red, 193; green, 193; blue, 193 }  ,fill opacity=1 ] (418.24,104.78) -- (367.25,115.98) -- (419.04,33) -- cycle ;
+					%Shape: Parallelogram [id:dp6925347175329952] 
+					\draw   (298.19,33) -- (419.04,33) -- (367.25,115.98) -- (246.4,115.98) -- cycle ;
+					%Shape: Circle [id:dp9560155113042932] 
+					\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (293.88,29) .. controls (293.88,26.07) and (296.26,23.69) .. (299.19,23.69) .. controls (302.13,23.69) and (304.5,26.07) .. (304.5,29) .. controls (304.5,31.93) and (302.13,34.31) .. (299.19,34.31) .. controls (296.26,34.31) and (293.88,31.93) .. (293.88,29) -- cycle ;
+					%Straight Lines [id:da06864681666295591] 
+					\draw    (304.5,29) -- (323.95,29) ;
+					\draw [shift={(326.95,29)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (6.25,-3) -- (0,0) -- (6.25,3) -- cycle    ;
+					%Curve Lines [id:da5981356394468158] 
+					\draw    (304.5,29) .. controls (324,27.57) and (324,76.57) .. (306.82,115.98) ;
+					%Straight Lines [id:da6153736696698278] 
+					\draw    (246.4,123.98) -- (306.82,123.98) ;
+					\draw [shift={(306.82,123.98)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,3.35) -- (0,-3.35)(6.56,-1.97) .. controls (4.17,-0.84) and (1.99,-0.18) .. (0,0) .. controls (1.99,0.18) and (4.17,0.84) .. (6.56,1.97)   ;
+					\draw [shift={(246.4,123.98)}, rotate = 0] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,3.35) -- (0,-3.35)(6.56,-1.97) .. controls (4.17,-0.84) and (1.99,-0.18) .. (0,0) .. controls (1.99,0.18) and (4.17,0.84) .. (6.56,1.97)   ;
+					%Straight Lines [id:da7508154030379404] 
+					\draw    (306.82,123.98) -- (367.25,123.98) ;
+					\draw [shift={(367.25,123.98)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,3.35) -- (0,-3.35)(6.56,-1.97) .. controls (4.17,-0.84) and (1.99,-0.18) .. (0,0) .. controls (1.99,0.18) and (4.17,0.84) .. (6.56,1.97)   ;
+					\draw [shift={(306.82,123.98)}, rotate = 0] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,3.35) -- (0,-3.35)(6.56,-1.97) .. controls (4.17,-0.84) and (1.99,-0.18) .. (0,0) .. controls (1.99,0.18) and (4.17,0.84) .. (6.56,1.97)   ;
+					%Straight Lines [id:da44589722860517456] 
+					\draw    (230.4,108.98) -- (282.19,26) ;
+					\draw [shift={(282.19,26)}, rotate = 121.97] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,3.35) -- (0,-3.35)(6.56,-1.97) .. controls (4.17,-0.84) and (1.99,-0.18) .. (0,0) .. controls (1.99,0.18) and (4.17,0.84) .. (6.56,1.97)   ;
+					\draw [shift={(230.4,108.98)}, rotate = 301.97] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,3.35) -- (0,-3.35)(6.56,-1.97) .. controls (4.17,-0.84) and (1.99,-0.18) .. (0,0) .. controls (1.99,0.18) and (4.17,0.84) .. (6.56,1.97)   ;
+					
+					% Text Node
+					\draw (306,10) node [anchor=north west][inner sep=0.75pt]    {$v_{0}$};
+					% Text Node
+					\draw (270,126) node [anchor=north west][inner sep=0.75pt]    {$x$};
+					% Text Node
+					\draw (331,126) node [anchor=north west][inner sep=0.75pt]    {$x$};
+					% Text Node
+					\draw (240,50) node [anchor=north west][inner sep=0.75pt]    {$d$};
+					% Text Node
+					\draw (422,62) node [anchor=north west][inner sep=0.75pt]    {$h$};
+				\end{tikzpicture}
+			}
+		\end{figure}
+		
+		\item $[$10 poin$]$ \textbf{Menghitung Ketinggian Awal} (***). Sebuah bola dilemparkan dari titik $A$ ke bawah dengan kecepatan awal $v_0$ (Gambar 1). Bola tersebut menghabiskan waktu selama $t_1$ untuk tiba di titik $B$. Bola kemudian terus jatuh hingga dipantulkan lenting sempurna oleh lantai, memerlukan waktu $t_2$ untuk mencapai $B$ kembali (waktu terhitung semenjak dijatuhkan dari titik $A$). Jika jarak antara $A$ dan $B$ adalah $S$, tentukan ketinggian titik $A$ dari lantai. (NB: Percepatan gravitasi Bumi ($g$) tidak diketahui.) [Vani Sugiyono]
+		
+		\item $[$10 poin$]$ \textbf{Lemparan Lintas Tembok} (***). Kamu ingin melempar bola kepada temanmu pada jarak $2 \ell$ (Gambar 2). Tepat di tengah-tengah jarak tersebut terdapat tembok setinggi $h$. Supaya bola melintas tepat di atas tembok, tentukan
+		
+		\begin{enumerate}[label=(\alph*)]
+			\item besar sudut $\theta$;
+			\item besar kecepatan awal $v_0$;
+			\item nilai $h$ supaya $v_0$ minimum dan nilai $\theta$ pada kasus tersebut. [Morin 3.10]
+		\end{enumerate}
+		
+		\item $[$10 poin$]$ \textbf{Menabrak Tebing dengan Gaya} (***). Sebuah bola dilemparkan dengan kecepatan $v_0$ dan sudut elevasi $\theta$. Bola dilempar pada jarak $\ell$ dari sebuah tebing yang tingginya $\ell$ juga (Gambar 3). Tentukan nilai $\theta$ dan $v_0$ supaya bola menumbuk pojok tebing secara horizontal. [Morin 3.7]
+		
+		\item $[$10 poin$]$ \textbf{Tembakan Meriam} (***). Seorang kapten ingin menembakkan selongsong meriamnya ke sisi musuh. Namun, ia mengetahui bahwa ada angin kuat bertiup di atas ketinggian $H$ yang akan meniup selongsong pelurunya sehingga salah sasaran. Jika meriamnya menembakkan selongsong pada kelajuan moncong $v_0$, berapakah jarak paling jauh yang dapat ia tembakkan ke sisi musuh tanpa selongsongnya salah sasaran? Nyatakan jawaban dalam $v_0$, $g$, dan $H$. [Marthen Kanginan 1.7]
+		
+		\item $[$10 poin$]$ \textbf{Kelereng Menggelinding di Bidang Miring} (***). Dari puncak sebuah bidang miring dengan tinggi $h$ dan panjang $d$, sebuah kelereng digelindingkan dengan kecepatan $v_0$ ke arah horizontal seperti pada Gambar 4. Ketika sampai di bawah, kelereng terletak pada jarak $x$ dari kedua pojok bawah bidang miring. Jika sistem berada pada pengaruh medan gravitasi Bumi dengan percepatan $g$ ke arah bawah, tentukan
+		\begin{enumerate}[label=(\alph*)]
+			\item nilai $x$;
+			\item volume bidang miring mengasumsikan bentuknya adalah prisma segitiga. [Nayaka]
+		\end{enumerate} 
+	\end{enumerate}
+	
+			\pagebreak
+	
+	\textbf{\small Jangan dibaca sebelum \textit{stuck}, nanti jadi \textit{nggak} seru.
+		\\[.5em]
+		\LARGE Penuntun Penyelesaian Soal}
+	\\ 
+	
+	\begin{enumerate}[label=\arabic*]
+		\item Anggap waktu ketika anak itu berangkat sekolah sebagai $t = 0$ dan waktu ketika bel berbunyi sebagai $t = T$. Misalkan juga jarak rumah anak itu ke sekolahnya adalah $S$. Dengan menggunakan informasi dari dua hari pertama, kita bisa dapatkan nilai $T$ dan $S$. Kalau ternyata ada dua kemungkinan jawaban, informasi dari hari ketiga akan membantu kita menentukan mana kemungkinan yang benar.
+		\item Misalkan ketiganya bertemu pada waktu $\tau$. Catat bahwa jika mobil $A$ bergerak selama $\tau$ maka mobil B dan mobil C bergerak selama $\tau - T$ dan $\tau - 4T$. Misalkan $S_A$, $S_B$, dan $S_C$ adalah jarak yang tiap mobil tempuh. Ketika ketiganya berada pada posisi yang sama, berlaku $S_A = S_B = S_C$. Dari sini, akan didapatkan hubungan antara $\tau$ dengan $T$. Silakan coba lanjutkan sendiri dari sini. Kita juga bisa buat grafik $v$-$t$ sebagai ilustrasi. 
+		\item Silakan digambar dulu skemanya. Ambil salah satu titik, misalnya titik $M$, sebagai acuan. Mi-\linebreak salkan jarak tiap partikel dari titik acuan tersebut adalah $S_A$ dan $S_B$ serta jarak antara $M$ dan $N$ adalah $L$. Ketika partikel $A$ dan $B$ berada pada posisi yang sama, $S_A = S_B$. Jika kedua partikel bertemu pada waktu $T$, maka mereka juga bertemu pada waktu $T + 4$. Kita akan mempunyai persamaan yang cukup untuk mencari $L$.
+		\item Anggap kedua bola mencapai tanah pada waktu $t$. Dari persamaan gerak jatuh bebas untuk bola pertama, kita akan dapatkan $t$. Substitusikan ini ke persamaan gerak untuk bola kedua. Jangan sampai terbalik dalam menuliskan tanda $+/-$ pada variabel---supaya mudah, ambil arah atas sebagai positif.
+		\item Bagian (a) lebih mudah diselesaikan dengan konsep gerak relatif. Relatif terhadap tanah, baut akan jatuh dengan percepatan $g$. Relatif terhadap elevator, berapa percepatannya? Setelah menemukan percepatan ini, kita hanya perlu memasukkannya ke dalam persamaan gerak jatuh bebas untuk menemukan $t$. Untuk bagian (b) gunakan acuan tanah. Berapa kecepatan elevator (dan baut) ketika baut mulai lepas? Masukkan nilai kecepatan tersebut dan $t$ ke persamaan GLBB, maka kita akan temukan perpindahannya. Untuk mencari jaraknya, catat bahwa menurut acuan tanah baut bergerak ke atas dahulu baru jatuh sejauh $\Delta s$.
+		\item Tinjau gerakan dari $A$ ke $B$ untuk menemukan percepatan bola. Misalkan $T$ adalah waktu yang diperlukan dari $A$ hingga ke tanah sehingga waktu dari $A$ ke tanah lalu ke $A$ lagi adalah $2T$. Karena $t_1$ adalah waktu dari $A$ ke $B$ dan $t_2$ adalah waktu dari $A$ ke tanah lalu ke $B$, maka $t_1 + t_2 = 2T$. 
+		\item Kita bisa gunakan rumus untuk ketinggian maksimum ($h_{max}$) dan jangkauan maksimum ($R$) untuk gerak parabola. Pada kasus ini, $h_{max} = h$ dan $R = 2\ell$. Ini cukup untuk menyelesaikan bagian (a) dan (b). Selanjutnya, nyatakan $v_0$ sebagai fungsi $h$. $v_0$ akan minimum ketika turunannya terhadap $h$ sama dengan nol ($\frac{d v_0}{dh} = 0$).
+		\item Dalam gerak parabola, benda akan memiliki kecepatan ke arah horizontal ketika kecepatan ke arah vertikalnya sama dengan nol. Kapan hal ini terjadi? Kita bisa dapatkan waktu ini dari dua persamaan. Hanya membutuhkan sedikit usaha lagi untuk menemukan jawabannya.
+		\item Supaya tidak salah sasaran, tinggi maksimumnya tidak boleh lebih dari $H$. Karena $h_{max} = (v_0^2 \sin^2 \theta_0)/2g$ dan $R = (v_0^2 \sin 2 \theta_0)/g$, kita bisa simpulkan bahwa besar dari keduanya bergantung pada sudut $\theta_0$. Untuk $0 \leq \theta_0 \leq 90^\circ$, makin besar $\theta_0$, maka nilai $\sin \theta_0$ dan $\sin 2 \theta_0$ makin besar sehingga $h_{max}$ dan $R$ juga makin besar. Kesimpulannya, $R$ akan maksimum ketika $H$ maksimum. Karena ketinggian maksimum yang bisa dicapai adalah $H$, maka supaya $R$ maksimum berlaku $h_{max} = H$.
+		\item Pada dasarnya gerakan kelereng adalah perpaduan dari dua gerakan: GLB dengan kecepatan $v_0$ ke arah horizontal dan gerak tanpa kecepatan awal menuruni bidang miring dengan percepatan tertentu. Cari dahulu berapa besar percepatan ini (percepatan menuruni bidang miring). Jika trigonometri perlu dipakai, manfaatkan sisi-sisi segitiga siku-siku yang dibentuk oleh bidang miring. Selanjutnya, cari berapa waktu $t$ yang diperlukan kelereng untuk mencapai dasar. Selanjutnya, masukkan $t$ ke dalam persamaan gerak kelereng di sumbu horizontal ($x = v_0 t$).
+	\end{enumerate}
+	
+\end{document}
+

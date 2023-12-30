@@ -1,0 +1,211 @@
+\documentclass[a4paper, 11.5pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[paperwidth=210mm, paperheight=297mm, margin=2cm]{geometry}
+\usepackage{amsmath, amsthm, amsthm}
+\usepackage{tikz, graphicx}
+\usepackage{rotating}
+\usepackage{cancel}
+\usepackage[shortlabels]{enumitem}
+\usepackage[colorlinks=true, linkcolor=black, urlcolor=black]{hyperref}
+\usepackage{fouriernc}
+
+\DeclareSymbolFont{matha}{OML}{txmi}{m}{it}% txfonts
+\DeclareMathSymbol{\varv}{\mathord}{matha}{118}
+
+\theoremstyle{definition}
+\newtheorem{soal}{Soal}
+\newtheorem{pembahasan}{Pembahasan}
+
+\AtBeginDocument{\renewcommand{\abstractname}{}}
+
+%opening
+\title{\textbf{Soal Kinematika dari Irodov}}
+\author{Z. Nayaka Athadiansyah}
+\date{23 Februari 2022}
+
+%
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	Soal-soal berikut diterjemahkan dan disadur dari buku \emph{Problems in General Physics} (1981), tepatnya bab Kinematika (1.1), yang ditulis oleh Igor Irodov. Tiap soal diberikan penuntun yang dicetak terbalik dengan warna abu-abu. Akan ada pembahasan untuk tiap soal di bagian akhir. Sebagai rekomendasi, Anda juga bisa berlatih dari \href{https://www.ioc.ee/~kalda/ipho/kin_ENG.pdf}{\color{blue} soal-soal kinematika oleh Jaan Kalda}. Selamat berlatih.
+\end{abstract}
+
+\begin{soal}
+	Sebuah perahu motor yang berlayar turun ke hilir berpapasan dengan sebuah rakit di titik $A$. Sejam kemudian, perahu motor berbalik arah dan beberapa saat kemudian berpapasan kembali dengan rakit pada jarak $\ell = 6{,}0$ km dari titik A. Tentukan besar kecepatan arus sungai dengan asumsi bahwa kecepatan perahu motor konstan.
+\end{soal}
+
+\begin{flushright}
+	\begin{rotate}{180}
+		\begin{minipage}{\linewidth}
+			\color{lightgray}
+			Penuntun: Gunakan konsep gerak relatif. Kecepatan perahu motor ketika menuruni sungai akan berbeda dengan kecepatannya ketika menaiki sungai.
+		\end{minipage}
+	\end{rotate}	
+\end{flushright}
+\vspace{.2em}
+
+\begin{soal}
+	Sebuah partikel menempuh setengah dari \textit{jarak} perjalanannya dengan kecepatan $\varv_0$. Jarak yang tersisa ditempuh dengan kecepatan $\varv_1$ untuk paruh \textit{waktu} pertama dan kecepatan $\varv_2$ untuk paruh \textit{waktu} kedua.\footnote{Dari KBBI: 'separuh' = 'setengah', 'seperdua'. Dalam konteks ini, misalkan jarak yang tersisa ditempuh dalam waktu $t$, maka durasi tiap paruh waktu adalah $t/2$.} Hitung kecepatan rata-rata dari partikel tersebut sepanjang gerakannya.
+\end{soal}
+
+\begin{flushright}
+	\begin{turn}{180}
+		\color{lightgray}
+		Penuntun: Gunakan grafik $v$-$t$ untuk mempermudah analisis.
+	\end{turn}
+\end{flushright}
+
+\begin{soal}
+	Sebuah mobil bergerak lurus dari keadaan diam, mula-mula dengan percepatan $a = 5{,}0$ m/s$^2$, lalu bergerak secara seragam\footnote{Dalam konteks ini, "bergerak secara seragam" artinya "bergerak dengan kecepatan yang seragam". Dengan demikian, kecepatannya konstan.}, lalu mengalami perlambatan sebesar $a$ hingga berhenti. Waktu total pergerakan mobil adalah $t = 25$ detik. Kecepatan rata-rata sepanjang selang waktu tersebut adalah $\varv = 72$ km/jam. Berapa lama mobil tersebut bergerak secara seragam?
+\end{soal}
+
+\begin{flushright}
+	\begin{rotate}{180}
+		\color{lightgray}
+		Penuntun: Gunakan grafik $\varv$-$t$ untuk mempermudah analisis.
+	\end{rotate}
+\end{flushright}
+
+\begin{soal}
+	Sebuah partikel bergerak lurus. Gambar 1 menunjukkan jarak $s$ yang ditempuh oleh partikel tersebut sebagai fungsi waktu $t$. Dari grafik ini, tentukan:
+	
+	\begin{enumerate}[label=(\alph*)]
+		\item kecepatan rata-rata partikel sepanjang gerakannya;
+		\item kecepatan maksimumnya;
+		\item waktu $t_0$ di mana kecepatan sesaatnya sama dengan kecepatan rata-rata dari $t_0$ detik pertama.
+	\end{enumerate}
+
+\end{soal}
+
+\begin{flushright}
+	\begin{rotate}{180}
+		\color{lightgray}
+		Penuntun: Kecepatan pada waktu tertentu sama dengan gradien garis singgung dari grafik $s$-$t$ pada waktu itu.
+	\end{rotate}
+\end{flushright}
+
+\begin{soal}
+	Dua partikel, 1 dan 2, bergerak dengan kecepatan konstan $\boldsymbol{\varv_1}$ dan $\boldsymbol{\varv_2}$. Mula-mula, vektor posisi keduanya adalah $\boldsymbol{r_1}$ dan $\boldsymbol{r_2}$. Bagaimana hubungan keempat vektor ini supaya kedua partikel bertumbukan?
+\end{soal}
+
+\vspace{1em}
+
+\begin{flushright}
+	\begin{rotate}{180}
+		\begin{minipage}{\linewidth}
+			\color{lightgray}
+			Penuntun: Gambarkan keempat vektor tersebut dalam bidang koordinat Kartesius---Anda bebas memisalkan besar dan arahnya. Anggaplah kedua partikel bertumbukan pada waktu $t$. Ketika kedua partikel bertumbukan, posisi kedua partikel berimpit. "Hubungan" yang dimaksud bisa berupa suatu persamaan.
+		\end{minipage}
+	\end{rotate}	
+\end{flushright}
+
+\vspace{1em}
+
+\begin{soal}
+	Sebuah kapal bergerak sepanjang garis khatulistiwa (ekuator) menuju timur dengan kecepatan $\varv_0 = 30$ km/jam. Angin dari sekitar arah tenggara bertiup membentuk sudut $\varphi = 60^{\circ}$ terhadap ekuator dengan kecepatan $\varv = 15$ km/jam. Tentukan kecepatan angin $\varv'$ relatif terhadap kapal dan sudut $\varphi'$ antara ekuator dengan kecepatan angin dengan kerangka acuan tetap pada kapal.
+\end{soal}
+
+\begin{flushright}
+	\begin{rotate}{180}
+		\begin{minipage}{\linewidth}
+			\color{lightgray}
+			Penuntun: Gambarkan vektor-vektor kecepatannya. Gunakan konsep kecepatan relatif untuk vektor.
+		\end{minipage}
+	\end{rotate}	
+\end{flushright}
+
+\begin{soal}
+	Dua orang perenang berenang dari titik $A$ pada bantaran sungai menuju titik $B$ yang terletak \textit{tepat} di seberang bantaran lainnya. Salah satu diantaranya berenang pada garis lurus $AB$ sedangkan yang lain mengarahkan kecepatannya tegak lurus arus sungai lalu menempuh jarak yang tersisa dengan berjalan kaki menuju titik $B$. Berapa besar kecepatan perenang, $\boldsymbol{u}$, ketika berjalan jika ternyata kedua perenang mencapai tujuan secara bersamaan? Kecepatan arus sungai $v_0 = 2$ km/jam dan kecepatan kedua perenang relatif terhadap sungai adalah $v' = 2{,}5$ km/jam.
+\end{soal}
+
+\begin{flushright}
+	\begin{rotate}{180}
+		\begin{minipage}{\linewidth}
+			\color{lightgray}
+			Penuntun: Karena titik B berada \textbf{"tepat di seberang bantaran lainnya"}, maka ruas garis $\overline{AB}$ tegak lurus dengan sungai. Supaya perenang pertama bisa berenang pada garis ini, harus diarahkan kemanakah kecepatannya? Pertimbangkan efek dari arus sungai.
+		\end{minipage}
+	\end{rotate}	
+\end{flushright}
+
+\vspace{1em}
+
+\begin{soal}
+	Di tengah-tengah sungai, dua kapal A dan B bergerak pada lintasan yang saling tegak lurus: kapal A searah arus sungai dan kapal B tegak lurus arus sungai. Tepat setelah keduanya menempuh jarak yang sama, kedua kapal bergerak kembali ke posisi awalnya. Tentukan perbandingan waktu gerakan kedua kapal tersebut, $\tau_A / \tau_B$, jika kecepatan tiap kapal relatif terhadap air adalah $\eta = 1{,}2$ kali kecepatan arus.
+\end{soal}
+
+\begin{soal}
+	Sebuah kapal bergerak relatif terhadap air dengan kecepatan $n = 2{,}0$ kali lipat lebih cepat dari kecepatan arus sungai. Terhadap arah arus sungai, tentukan pada sudut berapa kapal harus diarahkan agar pengaruh arus sungai dapat diminimalisir sebisa mungkin.
+\end{soal}
+
+\begin{soal}
+	Dua benda dilempar secara bersamaan dari titik yang sama: salah satunya dilempar tegak ke atas, yang lainnya dilempar dengan sudut $\vartheta = 60^\circ$ terhadap sumbu horizontal. Kecepatan awal tiap benda adalah $\varv_0 = 25$ m/s. Dengan mengabaikan gesekan udara, tentukan jarak kedua benda setelah $t = 1{,}70$ detik. 
+\end{soal}
+
+\begin{soal}
+	Dua partikel bergerak dalam suatu medan gravitasi seragam dengan percepatan $g$. Mula-mula kedua partikel berada pada satu titik dan bergerak dengan kecepatan $\varv_1 = 3{,}0$ m/s dan $\varv_2 = 4{,}0$ m/s secara horizontal dalam arah yang berlawanan. Hitung jarak antara kedua partikel ketika vektor kecepatan keduanya saling tegak lurus.
+\end{soal}
+
+\begin{soal}
+	Tiga partikel terletak pada titik sudut sebuah segitiga sama sisi dengan panjang sisi $a$. Ketiga partikel ini bergerak secara bersamaan dengan kecepatan konstan $\varv$. Partikel pertama bergerak menuju partikel kedua, partikel kedua menuju partikel ketiga, dan partikel ketiga menuju partikel pertama. Kapan ketiga partikel ini bertemu?
+\end{soal}
+
+\begin{soal}
+	Titik $A$ bergerak secara seragam dengan kecepatan $\varv$ sedemikian sehingga vektor $\boldsymbol{\varv}$ selalu mengarah kepada titik $B$ yang bergerak lurus secara seragam dengan kecepatan $u < v$. Mulanya $\boldsymbol{\varv} \perp \boldsymbol{u}$ dan kedua titik terpisah oleh jarak $\ell$. Kapan kedua titik ini bertemu?
+\end{soal}
+
+\begin{soal}
+	Kereta dengan panjang $\ell =$ 350 m mulai bergerak dengan percepatan konstan $a = 3{,}0 \cdot 10{}^{-2}$ m/s$^2$. $t = 30$ detik kemudian, lampu di ujung depan lokomotif dinyalakan (peristiwa 1) lalu $t = 60$ detik setelahnya lampu di ujung belakang kereta dinyalakan (peristiwa 2). Hitung jarak antara kedua peristiwa tersebut dengan kerangka acuan kereta maupun bumi. Untuk sebuah kerangka acuan $K$ tertentu, bagaimana dan dengan kecepatan $\varv$ konstan relatif terhadap bumi berapakah $K$ harus bergerak supaya kedua peristiwa terjadi pada titik yang sama?
+\end{soal}
+
+\begin{soal}
+	Sebuah elevator dengan tinggi $2{,}7$ m mulai bergerak ke atas dengan percepatan konstan $1{,}2$ m/s$^2$. $2{,}0$ detik kemudian, sebuah baut jatuh dari langit-langitnya. Tentukan:
+	
+	\begin{enumerate}[label=(\alph*)]
+		\item berapa lama baut jatuh bebas;
+		\item perpindahan dan jarak yang ditempuh baut selama jatuh bebas relatif terhadap acuan tanah.
+	\end{enumerate}
+\end{soal}
+
+\begin{soal}
+	Dua partikel, $1$ dan $2$, masing-masing bergerak dengan kecepatan konstan $\varv_1$ dan $\varv_2$ sepanjang sepasang garis lurus yang saling tegak lurus menuju titik potongnya, $O$. Ketika $t = 0$, masing-masing partikel berjarak $\ell_1$ dan $\ell_2$ dari titik $O$. Kapan jarak antara kedua partikel menjadi minimum? Berapa jaraknya?
+\end{soal}
+
+\begin{soal}
+	Dengan mengendarai mobil, kita bergegas dari titik $A$ pada sebuah jalan raya (Gambar) menuju titik $B$ yang terletak di sebuah lapangan pada jarak $\ell$ dari jalan raya. Diketahui mobil bergerak di lapangan $\eta$ kali lipat lebih lambat daripada di jalan raya. Pada jarak $d$ berapakah kita harus berbelok meninggalkan jalan raya dan melewati lapangan?
+\end{soal}
+
+\begin{soal}
+	Sebuah titik bergerak pada sumbu-x dengan kecepatan $\varv_x$ yang digambarkan sebagai fungsi waktu seperti yang digambarkan pada Gambar.\\
+	Mengasumsikan koordinat titik tersebut adalah $x = 0$ pada saat $t = 0$, gambarkan taksiran grafik yang menggambarkan kebergantungan percepatan $w_x$, koordinat $x$, dan jarak $s$ terhadap waktu.
+\end{soal}
+
+\begin{soal}
+	Sebuah titik melintasi setengah lingkaran berjari-jari $R = 160$ cm selama $\tau = 10{,}0$ detik. Hitunglah besaran berikut, yang dirata-rata sepanjang selang waktu tersebut:
+	
+	\begin{enumerate}[label=(\alph*)]
+		\item kelajuan rata-rata $\overline{\varv}$;
+		\item besar kecepatan rata-rata $|\overline{\boldsymbol{v}}|$;
+		\item besar percepatan rata-rata $|\overline{\boldsymbol{w}}|$.
+	\end{enumerate}
+\end{soal}
+
+\begin{soal}
+	Vektor posisi suatu partikel bervariasi terhadap waktu, dinyatakan dengan
+	
+	\begin{equation*}
+		\boldsymbol{r} = \boldsymbol{a}t(1 - \alpha t)
+	\end{equation*}
+
+	di mana $\boldsymbol{a}$ adalah vektor yang konstan dan $\alpha$ adalah suatu bilangan positif. Tentukan:
+	\begin{enumerate}[label=(\alph*)]
+		\item kecepatan $\boldsymbol{\varv}$ dan percepatan $\boldsymbol{w}$;
+		\item selang waktu $\Delta t$ yang diperlukan partikel untuk kembali ke posisi awal;
+		\item jarak $s$ yang ditempuh pada selang waktu tersebut.
+	\end{enumerate}
+\end{soal}
+
+\end{document}
